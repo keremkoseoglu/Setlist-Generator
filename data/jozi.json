@@ -1,0 +1,52 @@
+{
+  "songs": [
+    { "name": "Agua De Beber"     , "genre": "bossa"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 85   , "mood": "dark"    , "age": 4, "popular": 3, "we_like": 2, "we_play": 1, "volume": 2, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "A Ra"              , "genre": "samba"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 100  , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 1, "volume": 2, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Balada Boa"        , "genre": "samba"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 130  , "mood": "bright"  , "age": 2, "popular": 2, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": false },
+    { "name": "Batucada"          , "genre": "samba"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 120  , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": false },
+    { "name": "Bebete Vambora"    , "genre": "samba"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 100  , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Berimbau"          , "genre": "samba"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 100  , "mood": "dark"    , "age": 4, "popular": 2, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Brazil Nago"       , "genre": "samba"  , "key": "A"  , "chord": "minor"  , "duration": 5     , "bpm": 125  , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 3, "we_play": 3, "volume": 3, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Cafe Com Pao"      , "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 80   , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 1, "groove": 2, "gig_opener": true , "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Carnival"          , "genre": "samba"  , "key": "B"  , "chord": "minor"  , "duration": 5     , "bpm": 105  , "mood": "dark"    , "age": 4, "popular": 3, "we_like": 3, "we_play": 3, "volume": 3, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": true , "active": true },
+    { "name": "Cicatrizes"        , "genre": "samba"  , "key": "G"  , "chord": "minor"  , "duration": 5     , "bpm": 105  , "mood": "dark"    , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Corcovado"         , "genre": "bossa"  , "key": "A"  , "chord": "minor"  , "duration": 5     , "bpm": 75   , "mood": "dark"    , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Desafinado"        , "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 75   , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 1, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Escrudas Do Jo"    , "genre": "baiao"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 120  , "mood": "dark"    , "age": 3, "popular": 1, "we_like": 1, "we_play": 2, "volume": 2, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": false },
+    { "name": "Favela"            , "genre": "samba"  , "key": "B"  , "chord": "minor"  , "duration": 5     , "bpm": 105  , "mood": "dark"    , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 2, "groove": 1, "gig_opener": false, "set_closer": true , "gig_closer": false, "active": true },
+    { "name": "Fugir"             , "genre": "baiao"  , "key": "A"  , "chord": "minor"  , "duration": 5     , "bpm": 125  , "mood": "dark"    , "age": 3, "popular": 3, "we_like": 2, "we_play": 3, "volume": 3, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Girl From Ipanema" , "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 70   , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "How Insensitive"   , "genre": "bossa"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 60   , "mood": "dark"    , "age": 4, "popular": 3, "we_like": 2, "we_play": 2, "volume": 1, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Mais Que Nada"     , "genre": "samba"  , "key": "F"  , "chord": "minor"  , "duration": 5     , "bpm": 90   , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 3, "we_play": 3, "volume": 3, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Maracangalha"      , "genre": "samba"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 100  , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Muito A Vondate"   , "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 90   , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 1, "groove": 2, "gig_opener": true , "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "One Note Samba"    , "genre": "bossa"  , "key": "Bb" , "chord": "major"  , "duration": 5     , "bpm": 105  , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 2, "we_play": 2, "volume": 2, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Ponteio"           , "genre": "baiao"  , "key": "E"  , "chord": "major"  , "duration": 5     , "bpm": 125  , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 2, "we_play": 2, "volume": 3, "groove": 3, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": false },
+    { "name": "Samba Morrer"      , "genre": "bossa"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 85   , "mood": "dark"    , "age": 4, "popular": 2, "we_like": 1, "we_play": 2, "volume": 2, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Sim Ou Nao"        , "genre": "samba"  , "key": "B"  , "chord": "minor"  , "duration": 5     , "bpm": 105  , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "So Danco Samba"    , "genre": "samba"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 100  , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Soberana Rosa"     , "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 70   , "mood": "bright"  , "age": 2, "popular": 1, "we_like": 3, "we_play": 3, "volume": 1, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Tela Cigana"       , "genre": "baiao"  , "key": "C"  , "chord": "major"  , "duration": 5     , "bpm": 110  , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Telefone"          , "genre": "samba"  , "key": "G"  , "chord": "major"  , "duration": 5     , "bpm": 95   , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 3, "we_play": 3, "volume": 3, "groove": 2, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Triste"            , "genre": "bossa"  , "key": "A"  , "chord": "major"  , "duration": 5     , "bpm": 70   , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Voce Abousou"      , "genre": "samba"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 95   , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true },
+    { "name": "Wave"              , "genre": "bossa"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 75   , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "gig_opener": false, "set_closer": false, "gig_closer": false, "active": true }
+  ],
+  "sets": [
+    {
+      "number": 1,
+      "start": "2019-12-14T21:30:00.782Z",
+      "duration": 60,
+      "flow": [ { "part": 1 , "energy": 1, "percentage": 20 },
+                { "part": 2 , "energy": 2, "percentage": 45 },
+                { "part": 3 , "energy": 3, "percentage": 35 } ]
+    },
+    {
+      "number": 2,
+      "start": "2019-12-14T23:00:00.782Z",
+      "duration": 60,
+      "flow": [ { "part": 1 , "energy": 2, "percentage": 50 },
+                { "part": 2 , "energy": 3, "percentage": 50 } ]
+    }
+  ]
+}
