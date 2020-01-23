@@ -10,6 +10,10 @@ sequence of songs.
 - Create and put your JSON files into the /data folder. The file should look like the samples provided in /data. The format is very intuitive.
 - Run main.py
 
+### Non-Intuitive JSON Tags
+
+- reservation: Determines if the song should be placed to an ad-hoc location within the generated setlist. Accepted values: "gig_opener", "set_closer", "gig_closer"
+
 ## How To Extend
 
 If you want to add new song properties;

@@ -44,17 +44,17 @@ class Song:
         self.energy = 0
 
         try:
-            self.gig_opener = song_input["gig_opener"]
+            self.gig_opener = song_input["reservation"] == "gig_opener"
         except:
             self.gig_opener = False
 
         try:
-            self.gig_closer = song_input["gig_closer"]
+            self.gig_closer = song_input["reservation"] == "gig_closer"
         except:
             self.gig_closer = False
 
         try:
-            self.set_closer = song_input["set_closer"]
+            self.set_closer = song_input["reservation"] == "set_closer"
         except:
             self.set_closer = False
 

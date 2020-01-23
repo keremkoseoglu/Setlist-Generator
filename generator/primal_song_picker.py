@@ -54,7 +54,7 @@ class PrimalSongPicker:
         if p_input.prev_song is None or p_input.prev_song.gig_opener:
             candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(gig_opener=True, set_closer=False)))
 
-        candidate_sets.append(PrimalCandidateSet(self._get_desired_songs(by_key=True, by_genre=True)))
+        # candidate_sets.append(PrimalCandidateSet(self._get_desired_songs(by_key=True, by_genre=True)))
         candidate_sets.append(PrimalCandidateSet(self._get_desired_songs(by_key=True)))
         candidate_sets.append(PrimalCandidateSet(self._get_desired_songs()))
 
@@ -65,8 +65,14 @@ class PrimalSongPicker:
                 break
 
         if best_song is None:
-            return self._pop_set_closer()
+            if self._input.is_last_set:
+                return self._pop_gig_closer()
+            else:
+                return self._pop_set_closer()
         else:
+            if best_song.name == "Walking By Myself":
+                x = 2
+
             set_length_after_best_song = self._input.set.get_actual_duration() + best_song.duration
             if set_length_after_best_song >= self._input.set.plan_duration:
                 if self._input.is_last_set:
