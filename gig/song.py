@@ -15,6 +15,7 @@ class Song:
     genre: str
     gig_opener: bool
     gig_closer: bool
+    gig_closer_order: int
     mood: str
     age: int
     popular: int
@@ -49,9 +50,18 @@ class Song:
             self.gig_opener = False
 
         try:
-            self.gig_closer = song_input["reservation"] == "gig_closer"
+            self.gig_closer = song_input["reservation"][:10] == "gig_closer"
         except:
             self.gig_closer = False
+
+        if self.gig_closer:
+            if "-" in song_input["reservation"]:
+                split_reservation = song_input["reservation"].split("-")
+                self.gig_closer_order = int(split_reservation[1]) * -1
+            else:
+                self.gig_closer_order = 0
+        else:
+            self.gig_closer_order = 0
 
         try:
             self.set_closer = song_input["reservation"] == "set_closer"

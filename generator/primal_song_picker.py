@@ -152,6 +152,9 @@ class PrimalSongPicker:
         gig_closer_songs = self._input.song_pool.get_reserved_songs(gig_opener=False, set_closer=False, gig_closer=True)
         if len(gig_closer_songs) <= 0:
             return self._pop_set_closer()
+
+        gig_closer_songs.sort(key=lambda x: x.gig_closer_order)
+
         gig_closer_song = gig_closer_songs[0]
         self._input.song_pool.remove_song(gig_closer_song.name)
         return gig_closer_song
