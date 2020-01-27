@@ -92,13 +92,10 @@ class PrimalGenerator(AbstractGenerator):
                                                           p_set=set,
                                                           p_is_last_set=is_last_set)
 
-                        flow_step_song = PrimalSongPicker().pop_best_song(psi_input)
-
-                        if flow_step_song is None:
+                        song_found = PrimalSongPicker().pop_best_song(psi_input)
+                        if not song_found:
                             flow_set_ran_out_of_songs = True
                             break
-
-                        flow_step.songs.append(flow_step_song)
 
                         if _plan_set_duration_surpassed(set):
                             break
