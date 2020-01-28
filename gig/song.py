@@ -20,6 +20,7 @@ class Song:
     age: int
     popular: int
     set_closer: bool
+    set_opener: bool
     we_like: int
     we_play: int
     rating: int
@@ -62,6 +63,11 @@ class Song:
                 self.gig_closer_order = 0
         else:
             self.gig_closer_order = 0
+
+        try:
+            self.set_opener = song_input["reservation"] == "set_opener"
+        except:
+            self.set_opener = False
 
         try:
             self.set_closer = song_input["reservation"] == "set_closer"

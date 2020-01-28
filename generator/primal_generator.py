@@ -90,7 +90,8 @@ class PrimalGenerator(AbstractGenerator):
                                                           p_next_flow_step=next_flow_step,
                                                           p_is_last_flow_step_of_gig=is_last_flow_step_of_gig,
                                                           p_set=set,
-                                                          p_is_last_set=is_last_set)
+                                                          p_is_last_set=is_last_set,
+                                                          p_is_first_set=set_index == 0)
 
                         song_found = PrimalSongPicker().pop_best_song(psi_input)
                         if not song_found:

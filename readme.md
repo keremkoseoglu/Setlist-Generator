@@ -14,9 +14,10 @@ sequence of songs.
 
 reservation: Determines if the song should be placed to an ad-hoc location within the generated setlist. Accepted values: 
 - "gig_opener": Songs that should be at the beginning of the gig
-- "set_closer": Songs that should be at the end of a set
 - "gig_closer": Songs that should be at the end of the gig
 - "gig_closer-1": Song that should be placed before the last song of the gig. You can set values like -2 -3 -4 etc...
+- "set_opener": Songs that should be at the beginning of a set
+- "set_closer": Songs that should be at the end of a set
 
 ## How To Extend
 

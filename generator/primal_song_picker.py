@@ -12,6 +12,7 @@ class PrimalSongPickerInput:
     prev_flow_step: SetFlowStep
     next_flow_step: SetFlowStep
     is_last_flow_step_of_gig: bool
+    is_first_set: bool
     is_last_set: bool
     set: Set
 
@@ -23,7 +24,8 @@ class PrimalSongPickerInput:
                  p_next_flow_step: SetFlowStep,
                  p_is_last_flow_step_of_gig: bool,
                  p_set: Set,
-                 p_is_last_set: bool):
+                 p_is_last_set: bool,
+                 p_is_first_set:bool):
         self.song_pool = p_song_pool
         self.flow_step = p_flow_step
         self.prev_song = p_prev_song
@@ -31,6 +33,7 @@ class PrimalSongPickerInput:
         self.next_flow_step = p_next_flow_step
         self.is_last_flow_step_of_gig = p_is_last_flow_step_of_gig
         self.is_last_set = p_is_last_set
+        self.is_first_set = p_is_first_set
         self.set = p_set
 
 
@@ -51,9 +54,24 @@ class PrimalSongPicker:
         self._input = p_input
         candidate_sets = list()
 
-        if p_input.prev_song is None or p_input.prev_song.gig_opener:
-            candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(gig_opener=True,
-                                                                                              set_closer=False)))
+        if p_input.prev_song is None:
+            if self._input.is_first_set:
+                candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(gig_opener=True,
+                                                                                                  set_opener=False,
+                                                                                                  set_closer=False)))
+            else:
+                candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(gig_opener=False,
+                                                                                                  set_opener=True,
+                                                                                                  set_closer=False)))
+        else:
+            if p_input.prev_song.gig_opener:
+                candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(gig_opener=True,
+                                                                                                  set_opener=False,
+                                                                                                  set_closer=False)))
+            if p_input.prev_song.set_opener:
+                candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(gig_opener=False,
+                                                                                                  set_opener=True,
+                                                                                                  set_closer=False)))
 
         candidate_sets.append(PrimalCandidateSet(self._get_desired_songs(by_key=True)))
         candidate_sets.append(PrimalCandidateSet(self._get_desired_songs()))

@@ -96,10 +96,13 @@ class SongPool:
         output.sort(key=lambda x: x.name)
         return output
 
-    def get_reserved_songs(self, gig_opener=False, set_closer=False, gig_closer=False) -> []:
+    def get_reserved_songs(self, gig_opener=False, set_closer=False, gig_closer=False, set_opener=False) -> []:
         output = []
         for song in self.reserved_songs:
-            if song.gig_opener == gig_opener and song.set_closer == set_closer and song.gig_closer == gig_closer:
+            if song.gig_opener == gig_opener and \
+                    song.set_closer == set_closer and \
+                    song.gig_closer == gig_closer and \
+                    song.set_opener == set_opener:
                 output.append(song)
         return output
 
@@ -119,7 +122,7 @@ class SongPool:
         self.unreserved_songs = []
 
         for song in input_songs:
-            if song.gig_opener or song.set_closer or song.gig_closer:
+            if song.gig_opener or song.set_opener or song.set_closer or song.gig_closer:
                 self.reserved_songs.append(song)
             else:
                 self.unreserved_songs.append(song)
