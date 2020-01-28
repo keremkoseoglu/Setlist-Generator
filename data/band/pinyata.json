@@ -36,15 +36,5 @@
     { "name": "Valerie"                     , "genre": "pop"  , "key": "Eb" , "chord": "major"  , "duration": 4     , "bpm": 104  , "mood": "bright"  , "age": 2, "popular": 3, "we_like": 3, "we_play": 2, "volume": 2, "groove": 2, "reservation": ""           	, "active": true },
     { "name": "Walking By Myself"           , "genre": "rock" , "key": "G"  , "chord": "major"  , "duration": 3     , "bpm": 130  , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "reservation": ""           	, "active": true },
     { "name": "You Never Can Tell"          , "genre": "blues", "key": "G"  , "chord": "major"  , "duration": 2.5   , "bpm": 85   , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 3, "we_play": 2, "volume": 1, "groove": 1, "reservation": ""           	, "active": false }
-  ],
-  "sets": [
-    {
-      "number": 1,
-      "start": "2020-02-08T21:30:00.782Z",
-      "duration": 110,
-      "flow": [ { "part": 1 , "energy": 1, "percentage": 20 },
-                { "part": 2 , "energy": 2, "percentage": 45 },
-                { "part": 3 , "energy": 3, "percentage": 35 } ]
-    }
   ]
 }

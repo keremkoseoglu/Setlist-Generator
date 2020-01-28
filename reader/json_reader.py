@@ -40,27 +40,34 @@ class JsonReader(AbstractReader):
     def __init__(self):
         pass
 
-    def get_performance_list(self) -> list:
+    def get_event_list(self) -> list:
         output = []
-
-        for file in file_system.get_files_in_dir(DATA_DIR_PATH):
+        for file in file_system.get_files_in_dir(EVENT_DIR):
             output.append(file)
-
         return output
 
-    def read(self, param:str) -> performance.Performance:
+    def get_band_list(self) -> list:
+        output = []
+        for file in file_system.get_files_in_dir(BAND_DIR):
+            output.append(file)
+        return output
+
+    def read(self, band_param: str, event_param: str) -> performance.Performance:
         output_songs = []
         output_sets = []
 
-        with open(param) as f:
-            json_data = json.load(f)
+        with open(band_param) as f:
+            band_json = json.load(f)
 
-        for json_song in json_data["songs"]:
+        with open(event_param) as f:
+            event_json = json.load(f)
+
+        for json_song in band_json["songs"]:
             if json_song["active"]:
                 song_obj = song.Song(json_song)
                 output_songs.append(song_obj)
 
-        for json_set in json_data["sets"]:
+        for json_set in event_json["sets"]:
             set_flow = []
 
             for json_flow_step in json_set["flow"]:

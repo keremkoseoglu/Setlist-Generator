@@ -1,0 +1,12 @@
+{
+  "sets": [
+    {
+      "number": 1,
+      "start": "2020-02-08T21:30:00.782Z",
+      "duration": 110,
+      "flow": [ { "part": 1 , "energy": 1, "percentage": 20 },
+                { "part": 2 , "energy": 2, "percentage": 45 },
+                { "part": 3 , "energy": 3, "percentage": 35 } ]
+    }
+  ]
+}

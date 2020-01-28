@@ -7,9 +7,13 @@ class AbstractReader(ABC):
         pass
 
     @abstractmethod
-    def get_performance_list(self) -> list:
+    def get_event_list(self) -> list:
         pass
 
     @abstractmethod
-    def read(self, param: str) -> Performance:
+    def get_band_list(self) -> list:
+        pass
+
+    @abstractmethod
+    def read(self, band_param: str, event_param: str) -> Performance:
         pass
