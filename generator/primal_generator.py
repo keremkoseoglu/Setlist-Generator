@@ -2,6 +2,8 @@ from generator.abstract_generator import AbstractGenerator
 from generator.primal_song_picker import PrimalSongPicker, PrimalSongPickerInput
 from gig.performance import Performance
 from gig.set import Set
+from gig.song import SongCriteria
+from typing import List
 
 
 def _get_next_energy(current_set: Set, current_index: int):
@@ -30,7 +32,7 @@ class PrimalGenerator(AbstractGenerator):
         self._performance = None
         pass
 
-    def generate(self, perf: Performance):
+    def generate(self, perf: Performance, criteria: List[SongCriteria]):
         self._performance = perf
         self._performance.song_pool.categorize_songs_by_energy()
         set_count = len(self._performance.sets)
@@ -91,7 +93,8 @@ class PrimalGenerator(AbstractGenerator):
                                                           p_is_last_flow_step_of_gig=is_last_flow_step_of_gig,
                                                           p_set=set,
                                                           p_is_last_set=is_last_set,
-                                                          p_is_first_set=set_index == 0)
+                                                          p_is_first_set=set_index == 0,
+                                                          p_song_criteria=criteria)
 
                         song_found = PrimalSongPicker().pop_best_song(psi_input)
                         if not song_found:

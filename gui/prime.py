@@ -1,11 +1,14 @@
 import tkinter
 from gui.labeled_combobox import LabeledCombobox
+from gui.labeled_checkbox import LabeledCheckbox
 from config.constants import *
 from reader.json_reader import JsonReader
 import os
 from generator import primal_generator
 from writer import console_writer, html_writer
 from analysis.song_pool_analysis import SongPoolAnalysis, SongPoolAnalysisHtmlGenerator
+from gig.song import SongCriteria
+
 
 class Prime:
 
@@ -40,6 +43,21 @@ class Prime:
 
         gen_button = tkinter.Button(self._root, text="Edit", command=self._edit_event)
         gen_button.place(x=(GUI_CELL_WIDTH * 2)+75, y=cell_y)
+
+        cell_y += GUI_CELL_HEIGHT * 2
+
+        # Options
+        self._by_key = LabeledCheckbox(self._root, "Separate keys", 0, cell_y)
+        self._by_key.check()
+        cell_y += GUI_CELL_HEIGHT
+        self._by_genre = LabeledCheckbox(self._root, "Group by genre", 0, cell_y)
+        cell_y += GUI_CELL_HEIGHT
+        self._by_mood = LabeledCheckbox(self._root, "Group by mood", 0, cell_y)
+        cell_y += GUI_CELL_HEIGHT
+        self._by_age = LabeledCheckbox(self._root, "Group by age", 0, cell_y)
+        cell_y += GUI_CELL_HEIGHT
+        self._by_chord = LabeledCheckbox(self._root, "Group by chord", 0, cell_y)
+        cell_y += GUI_CELL_HEIGHT
 
         cell_y += GUI_CELL_HEIGHT
 
@@ -77,7 +95,24 @@ class Prime:
         selected_event_path = self._get_selected_event_path()
 
         performance = JsonReader().read(band_param=selected_band_path, event_param=selected_event_path)
-        primal_generator.PrimalGenerator().generate(performance)
+
+        # todo
+        # aşağıdaki criteria'ları GUI'den alıp ilet
+        # by_key = False, by_mood = False, by_genre = False, by_chord = False, by_age = False
+
+        song_criteria = []
+        if self._by_key.is_checked():
+            song_criteria.append(SongCriteria.key)
+        if self._by_mood.is_checked():
+            song_criteria.append(SongCriteria.mood)
+        if self._by_genre.is_checked():
+            song_criteria.append(SongCriteria.genre)
+        if self._by_chord.is_checked():
+            song_criteria.append(SongCriteria.chord)
+        if self._by_age.is_checked():
+            song_criteria.append(SongCriteria.age)
+
+        primal_generator.PrimalGenerator().generate(perf=performance, criteria=song_criteria)
 
         console_writer.ConsoleWriter().write(performance)
         html_writer.HtmlWriter().write(performance)

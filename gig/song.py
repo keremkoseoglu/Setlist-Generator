@@ -1,3 +1,15 @@
+from enum import Enum
+
+
+class SongCriteria(Enum):
+    undefined = 0
+    key = 1
+    mood = 2
+    genre = 3
+    chord = 4
+    age = 5
+
+
 class Song:
     _CHORD_MINOR = "minor"
 
