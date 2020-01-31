@@ -1,6 +1,6 @@
 import tkinter
 from gui.labeled_combobox import LabeledCombobox
-from gui.labeled_checkbox import LabeledCheckbox
+from gui.song_pick_option import SongPickOption
 from config.constants import *
 from reader.json_reader import JsonReader
 import os
@@ -47,17 +47,23 @@ class Prime:
         cell_y += GUI_CELL_HEIGHT * 2
 
         # Options
-        self._by_key = LabeledCheckbox(self._root, "Separate keys", 0, cell_y)
-        self._by_key.check()
+        self._by_key = SongPickOption(self._root, "Separate keys", 1, 0, cell_y)
+        self._by_key.checkbox.check()
         cell_y += GUI_CELL_HEIGHT
-        self._by_genre = LabeledCheckbox(self._root, "Group by genre", 0, cell_y)
+        self._by_genre = SongPickOption(self._root, "Group by genre", 2, 0, cell_y)
         cell_y += GUI_CELL_HEIGHT
-        self._by_mood = LabeledCheckbox(self._root, "Group by mood", 0, cell_y)
+        self._by_mood = SongPickOption(self._root, "Group by mood", 3, 0, cell_y)
         cell_y += GUI_CELL_HEIGHT
-        self._by_age = LabeledCheckbox(self._root, "Group by age", 0, cell_y)
+        self._by_age = SongPickOption(self._root, "Group by age", 4, 0, cell_y)
         cell_y += GUI_CELL_HEIGHT
-        self._by_chord = LabeledCheckbox(self._root, "Group by chord", 0, cell_y)
+        self._by_chord = SongPickOption(self._root, "Group by chord", 5, 0, cell_y)
         cell_y += GUI_CELL_HEIGHT
+
+        self._song_pick_options = [{"option": self._by_key, "criteria": SongCriteria.key},
+                                   {"option": self._by_genre, "criteria": SongCriteria.genre},
+                                   {"option": self._by_mood, "criteria": SongCriteria.mood},
+                                   {"option": self._by_age, "criteria": SongCriteria.age},
+                                   {"option": self._by_chord, "criteria": SongCriteria.chord}]
 
         cell_y += GUI_CELL_HEIGHT
 
@@ -96,21 +102,12 @@ class Prime:
 
         performance = JsonReader().read(band_param=selected_band_path, event_param=selected_event_path)
 
-        # todo
-        # aşağıdaki criteria'ları GUI'den alıp ilet
-        # by_key = False, by_mood = False, by_genre = False, by_chord = False, by_age = False
+        self._song_pick_options.sort(key=lambda x: x["option"].get_priority())
 
         song_criteria = []
-        if self._by_key.is_checked():
-            song_criteria.append(SongCriteria.key)
-        if self._by_mood.is_checked():
-            song_criteria.append(SongCriteria.mood)
-        if self._by_genre.is_checked():
-            song_criteria.append(SongCriteria.genre)
-        if self._by_chord.is_checked():
-            song_criteria.append(SongCriteria.chord)
-        if self._by_age.is_checked():
-            song_criteria.append(SongCriteria.age)
+        for pick_option in self._song_pick_options:
+            if pick_option["option"].checkbox.is_checked():
+                song_criteria.append(pick_option["criteria"])
 
         primal_generator.PrimalGenerator().generate(perf=performance, criteria=song_criteria)
 
