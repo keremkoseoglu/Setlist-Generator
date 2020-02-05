@@ -53,6 +53,7 @@ class Prime:
         self._by_genre = SongPickOption(self._root, "Group by genre", 2, 0, cell_y)
         cell_y += GUI_CELL_HEIGHT
         self._by_mood = SongPickOption(self._root, "Group by mood", 3, 0, cell_y)
+        self._by_mood.checkbox.check()
         cell_y += GUI_CELL_HEIGHT
         self._by_age = SongPickOption(self._root, "Group by age", 4, 0, cell_y)
         cell_y += GUI_CELL_HEIGHT

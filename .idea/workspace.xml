@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac768270-487e-45d6-98e3-1007b3627a1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gui/song_pick_option.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/band/pinyata.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/band/pinyata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/prime.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/prime.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,6 +157,8 @@
       <workItem from="1580200492165" duration="621000" />
       <workItem from="1580207543669" duration="2874000" />
       <workItem from="1580444676381" duration="2026000" />
+      <workItem from="1580468542964" duration="487000" />
+      <workItem from="1580883153118" duration="268000" />
     </task>
     <servers />
   </component>
@@ -173,25 +175,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1878" height="205" key="GridCell.Tab.0.bottom" timestamp="1580446759765">
+    <state width="918" height="205" key="GridCell.Tab.0.bottom" timestamp="1580883781802">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="205" key="GridCell.Tab.0.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1580446759765" />
+    <state width="918" height="205" key="GridCell.Tab.0.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1580883781802" />
     <state width="2518" height="303" key="GridCell.Tab.0.bottom/0.23.2560.1364@0.23.2560.1364" timestamp="1579940823481" />
-    <state width="1878" height="205" key="GridCell.Tab.0.center" timestamp="1580446759764">
+    <state width="918" height="205" key="GridCell.Tab.0.center" timestamp="1580883781801">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="205" key="GridCell.Tab.0.center/0.23.1920.1124@0.23.1920.1124" timestamp="1580446759764" />
+    <state width="918" height="205" key="GridCell.Tab.0.center/0.23.1920.1124@0.23.1920.1124" timestamp="1580883781801" />
     <state width="2518" height="303" key="GridCell.Tab.0.center/0.23.2560.1364@0.23.2560.1364" timestamp="1579940823481" />
-    <state width="1878" height="205" key="GridCell.Tab.0.left" timestamp="1580446759764">
+    <state width="918" height="205" key="GridCell.Tab.0.left" timestamp="1580883781800">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="205" key="GridCell.Tab.0.left/0.23.1920.1124@0.23.1920.1124" timestamp="1580446759764" />
+    <state width="918" height="205" key="GridCell.Tab.0.left/0.23.1920.1124@0.23.1920.1124" timestamp="1580883781800" />
     <state width="2518" height="303" key="GridCell.Tab.0.left/0.23.2560.1364@0.23.2560.1364" timestamp="1579940823480" />
-    <state width="1878" height="205" key="GridCell.Tab.0.right" timestamp="1580446759765">
+    <state width="918" height="205" key="GridCell.Tab.0.right" timestamp="1580883781801">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="205" key="GridCell.Tab.0.right/0.23.1920.1124@0.23.1920.1124" timestamp="1580446759765" />
+    <state width="918" height="205" key="GridCell.Tab.0.right/0.23.1920.1124@0.23.1920.1124" timestamp="1580883781801" />
     <state width="2518" height="303" key="GridCell.Tab.0.right/0.23.2560.1364@0.23.2560.1364" timestamp="1579940823481" />
     <state width="1878" height="240" key="GridCell.Tab.1.bottom" timestamp="1580101125381">
       <screen x="0" y="23" width="1920" height="1124" />
@@ -213,10 +215,10 @@
     </state>
     <state width="1878" height="240" key="GridCell.Tab.1.right/0.23.1920.1124@0.23.1920.1124" timestamp="1580101125380" />
     <state width="2518" height="303" key="GridCell.Tab.1.right/0.23.2560.1364@0.23.2560.1364" timestamp="1579940823482" />
-    <state x="730" y="447" key="com.intellij.ide.util.TipDialog" timestamp="1580444747456">
+    <state x="730" y="447" key="com.intellij.ide.util.TipDialog" timestamp="1580883153381">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state x="730" y="447" key="com.intellij.ide.util.TipDialog/0.23.1920.1124@0.23.1920.1124" timestamp="1580444747456" />
+    <state x="730" y="447" key="com.intellij.ide.util.TipDialog/0.23.1920.1124@0.23.1920.1124" timestamp="1580883153381" />
     <state x="973" y="537" key="com.intellij.ide.util.TipDialog/0.23.2560.1364@0.23.2560.1364" timestamp="1579940109185" />
   </component>
   <component name="XDebuggerManager">
@@ -229,7 +231,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/setlist$main.coverage" NAME="main Coverage Results" MODIFIED="1580446698439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/setlist$main.coverage" NAME="main Coverage Results" MODIFIED="1580883777821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
