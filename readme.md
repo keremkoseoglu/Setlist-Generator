@@ -1,4 +1,5 @@
 # Setlist Generator
+![Screenshot](scr.png)
 This project is targeted at musicians, who want to generate the best setlist possible.
 
 Basically; you provide your song pool and set flow in JSON format, and the program automatically generates the best 
