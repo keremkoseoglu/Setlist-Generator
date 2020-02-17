@@ -1,9 +1,12 @@
 from reader.abstract_reader import AbstractReader
 import json
-from gig import performance, set, set_flow_step, song
+from gig import performance, set_flow_step
+from gig.set import Set
+from gig.song import Song
 import datetime
 from config.constants import *
 from util import file_system
+from typing import List
 
 
 def _parse_json_date(json_date: str) -> datetime:
@@ -46,26 +49,11 @@ class JsonReader(AbstractReader):
             output.append(file)
         return output
 
-    def get_band_list(self) -> list:
-        output = []
-        for file in file_system.get_files_in_dir(BAND_DIR):
-            output.append(file)
-        return output
-
-    def read(self, band_param: str, event_param: str) -> performance.Performance:
-        output_songs = []
+    def get_event_sets(self, event_param) -> List[Set]:
         output_sets = []
-
-        with open(band_param) as f:
-            band_json = json.load(f)
 
         with open(event_param) as f:
             event_json = json.load(f)
-
-        for json_song in band_json["songs"]:
-            if json_song["active"]:
-                song_obj = song.Song(json_song)
-                output_songs.append(song_obj)
 
         for json_set in event_json["sets"]:
             set_flow = []
@@ -79,9 +67,33 @@ class JsonReader(AbstractReader):
                          "start": _parse_json_date(json_set["start"]),
                          "flow": set_flow}
 
-            set_obj = set.Set(set_input)
+            set_obj = Set(set_input)
             output_sets.append(set_obj)
 
+        return output_sets
+
+    def get_band_list(self) -> list:
+        output = []
+        for file in file_system.get_files_in_dir(BAND_DIR):
+            output.append(file)
+        return output
+
+    def get_band_songs(self, band_param: str) -> List[Song]:
+        output_songs = []
+
+        with open(band_param) as f:
+            band_json = json.load(f)
+
+        for json_song in band_json["songs"]:
+            if json_song["active"]:
+                song_obj = Song(json_song)
+                output_songs.append(song_obj)
+
+        return output_songs
+
+    def read(self, band_param: str, event_param: str) -> performance.Performance:
+        output_songs = self.get_band_songs(band_param)
+        output_sets = self.get_event_sets(event_param)
         return performance.Performance(output_sets, output_songs)
 
 

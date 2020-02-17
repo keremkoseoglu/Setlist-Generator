@@ -8,6 +8,7 @@ from generator import primal_generator
 from writer import console_writer, html_writer
 from analysis.song_pool_analysis import SongPoolAnalysis, SongPoolAnalysisHtmlGenerator
 from gig.song import SongCriteria
+from gig.song_pool import SongPool
 
 
 class Prime:
@@ -127,9 +128,9 @@ class Prime:
 
     def _stats(self):
         selected_band_path = self._get_selected_band_path()
-        selected_event_path = self._get_selected_event_path()
-        performance = JsonReader().read(band_param=selected_band_path, event_param=selected_event_path)
-        analysis = SongPoolAnalysis(performance.song_pool)
+        band_songs = JsonReader().get_band_songs(selected_band_path)
+        band_song_pool = SongPool(band_songs)
+        analysis = SongPoolAnalysis(band_song_pool)
         generator = SongPoolAnalysisHtmlGenerator(analysis)
         generator.generate()
 

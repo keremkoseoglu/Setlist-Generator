@@ -2,6 +2,7 @@ from writer.abstract_writer import AbstractWriter
 from gig import performance
 from datetime import datetime, timedelta
 import os
+from config.constants import *
 
 
 def _get_formatted_time(d: datetime) -> str:
@@ -18,10 +19,10 @@ def _get_formatted_time(d: datetime) -> str:
 
 class HtmlWriter(AbstractWriter):
 
-    _HTML_FILE = "/Users/kerem/Downloads/setlist.html"
+    _html_file: str
 
     def __init__(self):
-        pass
+        self._html_file = os.path.join(DOWNLOAD_DIR, 'setlist.html')
 
     def write(self, generated_performance: performance.Performance):
         html = "<html><head>"
@@ -69,8 +70,8 @@ class HtmlWriter(AbstractWriter):
 
         html += "</body></html>"
 
-        file2 = open(self._HTML_FILE, "w+")
+        file2 = open(self._html_file, "w+")
         file2.write(html)
         file2.close()
-        os.system("open " + self._HTML_FILE)
+        os.system("open " + self._html_file)
 
