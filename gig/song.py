@@ -19,27 +19,6 @@ class Song:
     _MULTIPLIER_LOW = 0.90
     _MULTIPLIER_HIGH = 1.10
 
-    name: str
-    key: str
-    chord: str
-    duration: int
-    bpm: int
-    genre: str
-    gig_opener: bool
-    gig_closer: bool
-    gig_closer_order: int
-    mood: str
-    age: int
-    popular: int
-    set_closer: bool
-    set_opener: bool
-    we_like: int
-    we_play: int
-    rating: int
-    energy: int
-    volume: int
-    groove: int
-
     def __init__(self, song_input: dict):
         self.name = song_input["name"]
         self.key = song_input["key"]
@@ -56,6 +35,7 @@ class Song:
         self.groove = song_input["groove"]
         self.rating = 0
         self.energy = 0
+        self.active = song_input["active"]
 
         try:
             self.gig_opener = song_input["reservation"] == "gig_opener"

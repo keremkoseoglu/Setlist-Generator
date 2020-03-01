@@ -67,6 +67,14 @@ class HtmlWriter(AbstractWriter):
                     leftover_html += ", "
                 leftover_html += leftover_song.name
             html += leftover_html
+        if len(generated_performance.song_pool.inactive_songs) > 0:
+            html += "<strong>Inactive: </strong>"
+            inactive_html = ""
+            for inactive_song in generated_performance.song_pool.inactive_songs:
+                if len(inactive_html) > 0:
+                    inactive_html += ", "
+                inactive_html += inactive_song.name
+            html += inactive_html
 
         html += "</body></html>"
 

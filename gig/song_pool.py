@@ -36,15 +36,13 @@ def _get_song_index(song_name: str, song_list: []) -> int:
 class SongPool:
     _INFINITY = 9999999
 
-    reserved_songs: list
-    unreserved_songs: list
-    low_energy: list
-    medium_energy: list
-    high_energy: list
-
     def __init__(self, input_songs: list):
         self.unreserved_songs = []
         self.reserved_songs = []
+        self.inactive_songs = []
+        self.low_energy = []
+        self.medium_energy = []
+        self.high_energy = []
         self._accept_songs_checking_reservation(input_songs)
         self.categorize_songs_by_energy()
 
@@ -120,9 +118,12 @@ class SongPool:
     def _accept_songs_checking_reservation(self, input_songs: list):
         self.reserved_songs = []
         self.unreserved_songs = []
+        self.inactive_songs = []
 
         for song in input_songs:
-            if song.gig_opener or song.set_opener or song.set_closer or song.gig_closer:
+            if not song.active:
+                self.inactive_songs.append(song)
+            elif song.gig_opener or song.set_opener or song.set_closer or song.gig_closer:
                 self.reserved_songs.append(song)
             else:
                 self.unreserved_songs.append(song)

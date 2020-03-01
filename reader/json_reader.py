@@ -85,9 +85,8 @@ class JsonReader(AbstractReader):
             band_json = json.load(f)
 
         for json_song in band_json["songs"]:
-            if json_song["active"]:
-                song_obj = Song(json_song)
-                output_songs.append(song_obj)
+            song_obj = Song(json_song)
+            output_songs.append(song_obj)
 
         return output_songs
 
