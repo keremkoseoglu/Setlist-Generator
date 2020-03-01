@@ -2,14 +2,8 @@ from gig.song import Song
 from gig.song_pool import SongPool
 import os
 
-class NumericSongStatistic:
-    max_value: int
-    max_song: Song
-    min_value: int
-    min_song: Song
-    total_value: int
-    song_count: int
 
+class NumericSongStatistic:
     def __init__(self):
         self.avg_value = 0
         self.max_song = None
@@ -24,8 +18,6 @@ class NumericSongStatistic:
 
 
 class NumericSongStatisticGenerator:
-    result: NumericSongStatistic
-
     def __init__(self):
         self.result = NumericSongStatistic()
 
@@ -43,50 +35,41 @@ class NumericSongStatisticGenerator:
 
 
 class SongPropertyCount:
-    counts: {}
-
     def __init__(self):
         self.counts = {}
 
-    def add(self, key: str):
+    def add(self, key: str, value: int = 1):
         if key in self.counts:
-            self.counts[key] = self.counts[key] + 1
+            self.counts[key] = self.counts[key] + value
         else:
-            self.counts[key] = 1
+            self.counts[key] = value
 
 
 class SongPoolAnalysisResult:
-    key_count: SongPropertyCount
-    duration_stats: NumericSongStatistic
-    genre_count: SongPropertyCount
-    energy_stats: NumericSongStatistic
-    rating_stats: NumericSongStatistic
-
     def __init__(self,
                  key_count: SongPropertyCount,
                  duration_stats: NumericSongStatistic,
                  genre_count: SongPropertyCount,
                  energy_stats: NumericSongStatistic,
-                 rating_stats: NumericSongStatistic
+                 rating_stats: NumericSongStatistic,
+                 genre_duration: SongPropertyCount
                  ):
         self.key_count = key_count
         self.duration_stats = duration_stats
         self.genre_count = genre_count
         self.energy_stats = energy_stats
         self.rating_stats = rating_stats
+        self.genre_duration = genre_duration
 
 
 class SongPoolAnalysis:
-
-    pool: SongPool
-    result: SongPoolAnalysisResult
-
     def __init__(self, pool: SongPool):
         self.pool = pool
         self.result = None
 
         key_count = SongPropertyCount()
         genre_count = SongPropertyCount()
+        genre_duration = SongPropertyCount()
 
         duration_generator = NumericSongStatisticGenerator()
         energy_generator = NumericSongStatisticGenerator()
@@ -98,12 +81,14 @@ class SongPoolAnalysis:
             rating_generator.analyse(p_song=song, p_value=song.rating)
             key_count.add(song.key)
             genre_count.add(song.genre)
+            genre_duration.add(song.genre, value=song.duration)
 
         self.result = SongPoolAnalysisResult(key_count=key_count,
                                              duration_stats=duration_generator.result,
                                              genre_count=genre_count,
                                              energy_stats=energy_generator.result,
-                                             rating_stats=rating_generator.result)
+                                             rating_stats=rating_generator.result,
+                                             genre_duration=genre_duration)
 
 
 class SongPoolAnalysisHtmlGenerator:
@@ -130,6 +115,7 @@ class SongPoolAnalysisHtmlGenerator:
 
         self._put_property_count(stat=self.analysis.result.genre_count, title="Genre")
         self._put_property_count(stat=self.analysis.result.key_count, title="Key")
+        self._put_property_count(stat=self.analysis.result.genre_duration, title="Genre Duration")
 
     def _download_file(self):
         file2 = open(self._HTML_FILE, "w+")
