@@ -128,8 +128,7 @@ class Prime:
 
     def _stats(self):
         selected_band_path = self._get_selected_band_path()
-        band_songs = JsonReader().get_band_songs(selected_band_path)
-        band_song_pool = SongPool(band_songs)
+        band_song_pool = JsonReader().get_band(selected_band_path).song_pool
         analysis = SongPoolAnalysis(band_song_pool)
         generator = SongPoolAnalysisHtmlGenerator(analysis)
         generator.generate()

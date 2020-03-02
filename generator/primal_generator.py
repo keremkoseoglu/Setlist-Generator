@@ -26,8 +26,6 @@ def _plan_set_duration_surpassed(set: Set):
 
 class PrimalGenerator(AbstractGenerator):
 
-    _performance: Performance
-
     def __init__(self):
         self._performance = None
         pass
@@ -36,7 +34,6 @@ class PrimalGenerator(AbstractGenerator):
         self._performance = perf
         self._performance.song_pool.categorize_songs_by_energy()
         set_count = len(self._performance.event.sets)
-        is_last_set = False
 
         for set_index in range(0, set_count):
             set = self._performance.event.sets[set_index]

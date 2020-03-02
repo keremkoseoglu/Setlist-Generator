@@ -24,5 +24,6 @@
     { "name": "Triste"            , "genre": "bossa"  , "key": "G"  , "chord": "major"  , "duration": 5     , "bpm": 70   , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "reservation": ""           , "active": true },
     { "name": "Voce Abousou"      , "genre": "samba"  , "key": "C"  , "chord": "major"  , "duration": 5     , "bpm": 95   , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "reservation": ""           , "active": true },
     { "name": "Wave"              , "genre": "bossa"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 75   , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "reservation": ""           , "active": true }
-  ]
+  ],
+  "event_settings": []
 }

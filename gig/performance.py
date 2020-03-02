@@ -1,10 +1,13 @@
+from gig.band import Band
 from gig.event import Event
-from gig.song import Song
 from gig.song_pool import SongPool
-from typing import List
 
 
 class Performance:
-    def __init__(self, input_event: Event, input_song_pool: List[Song]):
-        self.event = input_event
-        self.song_pool = SongPool(self.event, input_song_pool)
+    def __init__(self, event: Event, band: Band):
+        self.event = event
+        self.band = band
+        self.song_pool = SongPool(self.band.songs,
+                                  self.event,
+                                  self.band.event_settings.get_excluded_songs(self.event.name))
+

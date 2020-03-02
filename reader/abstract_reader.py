@@ -1,8 +1,7 @@
 from abc import ABC, abstractmethod
+from gig.band import Band
 from gig.event import Event
 from gig.performance import Performance
-from gig.song import Song
-from typing import List
 
 
 class AbstractReader(ABC):
@@ -22,7 +21,7 @@ class AbstractReader(ABC):
         pass
 
     @abstractmethod
-    def get_band_songs(self, band_param: str) -> List[Song]:
+    def get_band(self, band_param: str) -> Band:
         pass
 
     @abstractmethod

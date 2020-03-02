@@ -7,17 +7,6 @@ from typing import List
 
 
 class PrimalSongPickerInput:
-    song_pool: SongPool
-    flow_step: SetFlowStep
-    prev_song: Song
-    prev_flow_step: SetFlowStep
-    next_flow_step: SetFlowStep
-    is_last_flow_step_of_gig: bool
-    is_first_set: bool
-    is_last_set: bool
-    set: Set
-    song_criteria: List[SongCriteria]
-
     def __init__(self,
                  p_song_pool: SongPool,
                  p_flow_step: SetFlowStep,

@@ -8,6 +8,7 @@ class ObsoleteSongs:
     def __init__(self):
         self.inactive = []
         self.filtered_by_genre = []
+        self.filtered_for_event = []
 
     @property
     def all(self) -> List[Song]:
@@ -22,13 +23,17 @@ class ObsoleteSongs:
 class SongPool:
     _INFINITY = 9999999
 
-    def __init__(self, input_event: Event, input_songs: List[Song]):
+    def __init__(self,
+                 input_songs: List[Song],
+                 input_event: Event = None,
+                 input_songs_excluded_from_event: List[str] = None):
         self.unreserved_songs = []
         self.reserved_songs = []
         self.low_energy = []
         self.medium_energy = []
         self.high_energy = []
         self.event = input_event
+        self.songs_excluded_from_event = input_songs_excluded_from_event
         self.obsolete_songs = ObsoleteSongs()
         self._accept_songs_checking_reservation(input_songs)
         self.categorize_songs_by_energy()
@@ -110,8 +115,12 @@ class SongPool:
         for song in input_songs:
             if not song.active:
                 self.obsolete_songs.inactive.append(song)
-            elif len(self.event.genre_filter) > 0 and song.genre not in self.event.genre_filter:
+            elif self.event is not None and \
+                    len(self.event.genre_filter) > 0 and \
+                    song.genre not in self.event.genre_filter:
                 self.obsolete_songs.filtered_by_genre.append(song)
+            elif self.songs_excluded_from_event is not None and song.name in self.songs_excluded_from_event:
+                self.obsolete_songs.filtered_for_event.append(song)
             elif song.gig_opener or song.set_opener or song.set_closer or song.gig_closer:
                 self.reserved_songs.append(song)
             else:

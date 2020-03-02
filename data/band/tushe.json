@@ -50,5 +50,6 @@
     { "name": "Walking By Myself"           , "genre": "blues", "key": "G"  , "chord": "major"  , "duration": 4     , "bpm": 130  , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 1, "we_play": 1, "volume": 3, "groove": 1, "reservation": ""             , "active": false },
     { "name": "Wicked Game"                 , "genre": "rock" , "key": "B"  , "chord": "minor"  , "duration": 4.5   , "bpm": 120  , "mood": "dark"    , "age": 3, "popular": 3, "we_like": 3, "we_play": 3, "volume": 3, "groove": 1, "reservation": ""             , "active": true },
     { "name": "You Oughta Know"             , "genre": "rock" , "key": "F#" , "chord": "minor"  , "duration": 4     , "bpm": 110  , "mood": "dark"    , "age": 3, "popular": 2, "we_like": 2, "we_play": 2, "volume": 3, "groove": 2, "reservation": ""             , "active": true }
-  ]
+  ],
+  "event_settings": []
 }

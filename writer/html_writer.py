@@ -65,6 +65,8 @@ class HtmlWriter(AbstractWriter):
                                     generated_performance.song_pool.obsolete_songs.inactive)
         self._append_excluded_songs("Filtered by genre",
                                     generated_performance.song_pool.obsolete_songs.filtered_by_genre)
+        self._append_excluded_songs("Filtered for event",
+                                    generated_performance.song_pool.obsolete_songs.filtered_for_event)
 
         self.html += "</body></html>"
 
@@ -76,11 +78,15 @@ class HtmlWriter(AbstractWriter):
     def _append_excluded_songs(self, title: str, songs: List[Song]):
         if len(songs) <= 0:
             return
-        self.html += "<br><strong>" + title + ": </strong>"
+        self.html += "<br><br><strong>" + title + ": </strong><br>"
         leftover_html = ""
+        leftover_count = 0
         for leftover_song in songs:
+            leftover_count += 1
             if len(leftover_html) > 0:
                 leftover_html += ", "
+            if leftover_count % 4 == 0:
+                leftover_html += "<br>"
             leftover_html += leftover_song.name
         self.html += leftover_html
 

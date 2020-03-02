@@ -1,45 +1,45 @@
 from reader.abstract_reader import AbstractReader
 import json
 from gig import performance, set_flow_step
+from gig.band import Band, EventSetting
 from gig.event import Event
 from gig.set import Set
 from gig.song import Song
 import datetime
 from config.constants import *
 from util import file_system
-from typing import List
-
-
-def _parse_json_date(json_date: str) -> datetime:
-    try:
-        return datetime.datetime.strptime(json_date, '%Y-%m-%dT%H:%M:%S.%f')
-    except:
-        pass
-
-    try:
-        return datetime.datetime.strptime(json_date, '%Y-%m-%dT%H:%M:%S.%fZ')
-    except:
-        pass
-
-    try:
-        return datetime.datetime.strptime(json_date, '%Y-%m-%d %H:%M:%S.%f')
-    except:
-        pass
-
-    try:
-        return datetime.datetime.strptime(json_date, '%Y-%m-%dT%H:%M:%S')
-    except:
-        pass
-
-    try:
-        return datetime.datetime.strptime(json_date, '%Y-%m-%d %H:%M:%S')
-    except:
-        pass
-
-    return datetime.datetime.strptime(json_date, '%Y-%m-%d')
 
 
 class JsonReader(AbstractReader):
+
+    @staticmethod
+    def _parse_json_date(json_date: str) -> datetime:
+        try:
+            return datetime.datetime.strptime(json_date, '%Y-%m-%dT%H:%M:%S.%f')
+        except:
+            pass
+
+        try:
+            return datetime.datetime.strptime(json_date, '%Y-%m-%dT%H:%M:%S.%fZ')
+        except:
+            pass
+
+        try:
+            return datetime.datetime.strptime(json_date, '%Y-%m-%d %H:%M:%S.%f')
+        except:
+            pass
+
+        try:
+            return datetime.datetime.strptime(json_date, '%Y-%m-%dT%H:%M:%S')
+        except:
+            pass
+
+        try:
+            return datetime.datetime.strptime(json_date, '%Y-%m-%d %H:%M:%S')
+        except:
+            pass
+
+        return datetime.datetime.strptime(json_date, '%Y-%m-%d')
 
     def __init__(self):
         pass
@@ -56,6 +56,7 @@ class JsonReader(AbstractReader):
         with open(event_param) as f:
             event_json = json.load(f)
 
+        output.name = event_json["name"]
         output.genre_filter = event_json["genre_filter"]
 
         for json_set in event_json["sets"]:
@@ -67,7 +68,7 @@ class JsonReader(AbstractReader):
 
             set_input = {"number": json_set["number"],
                          "duration": json_set["duration"],
-                         "start": _parse_json_date(json_set["start"]),
+                         "start": JsonReader._parse_json_date(json_set["start"]),
                          "flow": set_flow}
 
             set_obj = Set(set_input)
@@ -81,21 +82,25 @@ class JsonReader(AbstractReader):
             output.append(file)
         return output
 
-    def get_band_songs(self, band_param: str) -> List[Song]:
-        output_songs = []
+    def get_band(self, band_param: str) -> Band:
+        output = Band()
 
         with open(band_param) as f:
             band_json = json.load(f)
 
         for json_song in band_json["songs"]:
             song_obj = Song(json_song)
-            output_songs.append(song_obj)
+            output.songs.append(song_obj)
 
-        return output_songs
+        for json_event_setting in band_json["event_settings"]:
+            event_setting_obj = EventSetting(json_event_setting["excluded_songs"])
+            output.event_settings.append(json_event_setting["name"], event_setting_obj)
+
+        return output
 
     def read(self, band_param: str, event_param: str) -> performance.Performance:
-        output_songs = self.get_band_songs(band_param)
+        output_band = self.get_band(band_param)
         output_event = self.get_event(event_param)
-        return performance.Performance(output_event, output_songs)
+        return performance.Performance(output_event, output_band)
 
 
