@@ -1,6 +1,7 @@
 from reader.abstract_reader import AbstractReader
 import json
 from gig import performance, set_flow_step
+from gig.event import Event
 from gig.set import Set
 from gig.song import Song
 import datetime
@@ -49,11 +50,13 @@ class JsonReader(AbstractReader):
             output.append(file)
         return output
 
-    def get_event_sets(self, event_param) -> List[Set]:
-        output_sets = []
+    def get_event(self, event_param) -> Event:
+        output = Event()
 
         with open(event_param) as f:
             event_json = json.load(f)
+
+        output.genre_filter = event_json["genre_filter"]
 
         for json_set in event_json["sets"]:
             set_flow = []
@@ -68,9 +71,9 @@ class JsonReader(AbstractReader):
                          "flow": set_flow}
 
             set_obj = Set(set_input)
-            output_sets.append(set_obj)
+            output.sets.append(set_obj)
 
-        return output_sets
+        return output
 
     def get_band_list(self) -> list:
         output = []
@@ -92,7 +95,7 @@ class JsonReader(AbstractReader):
 
     def read(self, band_param: str, event_param: str) -> performance.Performance:
         output_songs = self.get_band_songs(band_param)
-        output_sets = self.get_event_sets(event_param)
-        return performance.Performance(output_sets, output_songs)
+        output_event = self.get_event(event_param)
+        return performance.Performance(output_event, output_songs)
 
 

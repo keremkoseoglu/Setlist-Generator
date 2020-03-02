@@ -1,13 +1,7 @@
 from gig.set_flow_step import SetFlowStep
-import datetime
 
 
 class Set:
-    number: int
-    plan_duration: int
-    flow: list
-    start: datetime.date
-
     def __init__(self, set_input: dict):
         self.number = set_input["number"]
         self.plan_duration = set_input["duration"]

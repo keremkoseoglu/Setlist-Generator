@@ -110,7 +110,7 @@ class PrimalSongPicker:
 
         return step_index, song_index
 
-    def _get_candidate_sets(self) -> list:
+    def _get_candidate_sets(self) -> List[PrimalCandidateSet]:
         candidate_sets = []
 
         if self._input.prev_song is None:
@@ -152,33 +152,38 @@ class PrimalSongPicker:
             out_length += closer.duration
         return out_length
 
-    def _get_desired_songs(self, p_criteria: List[SongCriteria] = []):
+    def _get_desired_songs(self, p_criteria: List[SongCriteria] = None):
         output = self._get_songs_of_desired_energy()
         if len(output) <= 0:
             return output
 
         if self._input.prev_song is not None:
-            if SongCriteria.key in p_criteria:
+            if p_criteria is None:
+                criteria = []
+            else:
+                criteria = p_criteria
+
+            if SongCriteria.key in criteria:
                 for o in output:
                     if o.key == self._input.prev_song.key:
                         output.remove(o)
 
-            if SongCriteria.mood in p_criteria:
+            if SongCriteria.mood in criteria:
                 for o in output:
                     if o.mood != self._input.prev_song.mood:
                         output.remove(o)
 
-            if SongCriteria.genre in p_criteria:
+            if SongCriteria.genre in criteria:
                 for o in output:
                     if o.genre != self._input.prev_song.genre:
                         output.remove(o)
 
-            if SongCriteria.chord in p_criteria:
+            if SongCriteria.chord in criteria:
                 for o in output:
                     if o.chord != self._input.prev_song.chord:
                         output.remove(o)
 
-            if SongCriteria.age in p_criteria:
+            if SongCriteria.age in criteria:
                 for o in output:
                     if o.age != self._input.prev_song.age:
                         output.remove(o)

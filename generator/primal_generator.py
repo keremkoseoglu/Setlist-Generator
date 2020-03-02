@@ -35,11 +35,11 @@ class PrimalGenerator(AbstractGenerator):
     def generate(self, perf: Performance, criteria: List[SongCriteria]):
         self._performance = perf
         self._performance.song_pool.categorize_songs_by_energy()
-        set_count = len(self._performance.sets)
+        set_count = len(self._performance.event.sets)
         is_last_set = False
 
         for set_index in range(0, set_count):
-            set = self._performance.sets[set_index]
+            set = self._performance.event.sets[set_index]
             flow_step_count = len(set.flow)
 
             while not _plan_set_duration_surpassed(set):

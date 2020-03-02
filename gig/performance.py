@@ -1,10 +1,10 @@
+from gig.event import Event
+from gig.song import Song
 from gig.song_pool import SongPool
+from typing import List
 
 
 class Performance:
-    sets: list
-    song_pool: SongPool
-
-    def __init__(self, input_sets: list, input_song_pool: list):
-        self.sets = input_sets
-        self.song_pool = SongPool(input_song_pool)
+    def __init__(self, input_event: Event, input_song_pool: List[Song]):
+        self.event = input_event
+        self.song_pool = SongPool(self.event, input_song_pool)

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
+from gig.event import Event
 from gig.performance import Performance
-from gig.set import Set
 from gig.song import Song
 from typing import List
 
@@ -14,7 +14,7 @@ class AbstractReader(ABC):
         pass
 
     @abstractmethod
-    def get_event_sets(self, event_param: str) -> List[Set]:
+    def get_event(self, event_param) -> Event:
         pass
 
     @abstractmethod

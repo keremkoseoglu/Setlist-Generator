@@ -9,7 +9,7 @@ class ConsoleWriter(AbstractWriter):
 
     def write(self, generated_performance: performance.Performance):
 
-        for set in generated_performance.sets:
+        for set in generated_performance.event.sets:
             print("Set " + str(set.number))
 
             for flow_step in set.flow:
