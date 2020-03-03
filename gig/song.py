@@ -37,35 +37,6 @@ class Song:
         self.energy = 0
         self.active = song_input["active"]
 
-        try:
-            self.gig_opener = song_input["reservation"] == "gig_opener"
-        except:
-            self.gig_opener = False
-
-        try:
-            self.gig_closer = song_input["reservation"][:10] == "gig_closer"
-        except:
-            self.gig_closer = False
-
-        if self.gig_closer:
-            if "-" in song_input["reservation"]:
-                split_reservation = song_input["reservation"].split("-")
-                self.gig_closer_order = int(split_reservation[1]) * -1
-            else:
-                self.gig_closer_order = 0
-        else:
-            self.gig_closer_order = 0
-
-        try:
-            self.set_opener = song_input["reservation"] == "set_opener"
-        except:
-            self.set_opener = False
-
-        try:
-            self.set_closer = song_input["reservation"] == "set_closer"
-        except:
-            self.set_closer = False
-
         self._calculate_rating()
         self._calculate_energy()
 

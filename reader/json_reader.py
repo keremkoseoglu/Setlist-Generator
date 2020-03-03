@@ -1,7 +1,7 @@
 from reader.abstract_reader import AbstractReader
 import json
 from gig import performance, set_flow_step
-from gig.band import Band, EventSetting
+from gig.band import Band, EventSetting, SongReservation
 from gig.event import Event
 from gig.set import Set
 from gig.song import Song
@@ -93,7 +93,38 @@ class JsonReader(AbstractReader):
             output.songs.append(song_obj)
 
         for json_event_setting in band_json["event_settings"]:
-            event_setting_obj = EventSetting(json_event_setting["excluded_songs"])
+            excluded_songs = json_event_setting["excluded_songs"]
+            song_reservations = []
+            for json_song_reservation in json_event_setting["reservations"]:
+                song_reservation = SongReservation(json_song_reservation["name"])
+                try:
+                    song_reservation.gig_opener = json_song_reservation["reservation"] == "gig_opener"
+                except:
+                    pass
+
+                try:
+                    song_reservation.gig_closer = json_song_reservation["reservation"][:10] == "gig_closer"
+                except:
+                    pass
+
+                if song_reservation.gig_closer:
+                    if "-" in json_song_reservation["reservation"]:
+                        split_reservation = json_song_reservation["reservation"].split("-")
+                        song_reservation.gig_closer_order = int(split_reservation[1]) * -1
+
+                try:
+                    song_reservation.set_opener = json_song_reservation["reservation"] == "set_opener"
+                except:
+                    pass
+
+                try:
+                    song_reservation.set_closer = json_song_reservation["reservation"] == "set_closer"
+                except:
+                    pass
+
+                song_reservations.append(song_reservation)
+
+            event_setting_obj = EventSetting(excluded_songs, song_reservations)
             output.event_settings.append(json_event_setting["name"], event_setting_obj)
 
         return output

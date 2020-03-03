@@ -1,3 +1,4 @@
+from gig.band import Band
 from gig.event import Event
 from gig.song import Song
 from statistics import median
@@ -24,18 +25,18 @@ class SongPool:
     _INFINITY = 9999999
 
     def __init__(self,
-                 input_songs: List[Song],
-                 input_event: Event = None,
-                 input_songs_excluded_from_event: List[str] = None):
+                 input_band: Band,
+                 input_event: Event):
         self.unreserved_songs = []
         self.reserved_songs = []
         self.low_energy = []
         self.medium_energy = []
         self.high_energy = []
+        self.band = input_band
         self.event = input_event
-        self.songs_excluded_from_event = input_songs_excluded_from_event
+        self.songs_excluded_from_event = self.band.event_settings.get_excluded_songs(self.event.name)
         self.obsolete_songs = ObsoleteSongs()
-        self._accept_songs_checking_reservation(input_songs)
+        self._accept_songs_checking_reservation()
         self.categorize_songs_by_energy()
 
     def categorize_songs_by_energy(self):
@@ -88,12 +89,14 @@ class SongPool:
 
     def get_reserved_songs(self, gig_opener=False, set_closer=False, gig_closer=False, set_opener=False) -> []:
         output = []
-        for song in self.reserved_songs:
-            if song.gig_opener == gig_opener and \
-                    song.set_closer == set_closer and \
-                    song.gig_closer == gig_closer and \
-                    song.set_opener == set_opener:
-                output.append(song)
+        event_setting = self.band.event_settings.get(self.event.name)
+        if event_setting is not None:
+            for song in self.reserved_songs:
+                song_reservation = event_setting.get_song_reservation(song.name)
+                if song_reservation is not None and song_reservation.gig_opener == gig_opener and \
+                    song_reservation.set_closer == set_closer and song_reservation.gig_closer == gig_closer and \
+                    song_reservation.set_opener == set_opener:
+                    output.append(song)
         return output
 
     def remove_song(self, name: str):
@@ -107,12 +110,14 @@ class SongPool:
 
         self.categorize_songs_by_energy()
 
-    def _accept_songs_checking_reservation(self, input_songs: list):
+    def _accept_songs_checking_reservation(self):
         self.reserved_songs = []
         self.unreserved_songs = []
         self.obsolete_songs = ObsoleteSongs()
 
-        for song in input_songs:
+        event_setting = self.band.event_settings.get(self.event.name)
+
+        for song in self.band.songs:
             if not song.active:
                 self.obsolete_songs.inactive.append(song)
             elif self.event is not None and \
@@ -121,7 +126,7 @@ class SongPool:
                 self.obsolete_songs.filtered_by_genre.append(song)
             elif self.songs_excluded_from_event is not None and song.name in self.songs_excluded_from_event:
                 self.obsolete_songs.filtered_for_event.append(song)
-            elif song.gig_opener or song.set_opener or song.set_closer or song.gig_closer:
+            elif event_setting is not None and event_setting.is_song_reserved(song.name):
                 self.reserved_songs.append(song)
             else:
                 self.unreserved_songs.append(song)

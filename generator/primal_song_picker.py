@@ -1,3 +1,4 @@
+from gig.performance import Performance
 from gig.song_pool import SongPool
 from gig.song import Song, SongCriteria
 from gig.set_flow_step import SetFlowStep
@@ -17,7 +18,8 @@ class PrimalSongPickerInput:
                  p_set: Set,
                  p_is_last_set: bool,
                  p_is_first_set:bool,
-                 p_song_criteria: List[SongCriteria]):
+                 p_song_criteria: List[SongCriteria],
+                 p_performance: Performance):
         self.song_pool = p_song_pool
         self.flow_step = p_flow_step
         self.prev_song = p_prev_song
@@ -28,6 +30,7 @@ class PrimalSongPickerInput:
         self.is_first_set = p_is_first_set
         self.set = p_set
         self.song_criteria = p_song_criteria
+        self.performance = p_performance
 
 
 class PrimalCandidateSet:
@@ -114,16 +117,20 @@ class PrimalSongPicker:
                     set_opener=True,
                     set_closer=False)))
         else:
-            if self._input.prev_song.gig_opener:
-                candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(
-                    gig_opener=True,
-                    set_opener=False,
-                    set_closer=False)))
-            if self._input.prev_song.set_opener:
-                candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(
-                    gig_opener=False,
-                    set_opener=True,
-                    set_closer=False)))
+            event_setting = self._input.performance.event_setting
+            if event_setting is not None:
+                song_reservation = event_setting.get_song_reservation(self._input.prev_song.name)
+                if song_reservation is not None:
+                    if song_reservation.gig_opener:
+                        candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(
+                            gig_opener=True,
+                            set_opener=False,
+                            set_closer=False)))
+                    if song_reservation.set_opener:
+                        candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(
+                            gig_opener=False,
+                            set_opener=True,
+                            set_closer=False)))
 
         remaining_criteria = copy.deepcopy(self._input.song_criteria)
 
@@ -179,6 +186,10 @@ class PrimalSongPicker:
 
         return output
 
+    def _get_gig_closer_order(self, song_name: str) -> int:
+        song_reservation = self._input.performance.event_setting.get_song_reservation(song_name)
+        return song_reservation.gig_closer_order
+
     def _get_songs_of_desired_energy(self) -> []:
         output = []
 
@@ -216,7 +227,7 @@ class PrimalSongPicker:
         if len(gig_closer_songs) <= 0:
             return self._pop_set_closer()
 
-        gig_closer_songs.sort(key=lambda x: x.gig_closer_order)
+        gig_closer_songs.sort(key=lambda x: self._get_gig_closer_order(x.name))
 
         gig_closer_song = gig_closer_songs[0]
         self._input.song_pool.remove_song(gig_closer_song.name)
