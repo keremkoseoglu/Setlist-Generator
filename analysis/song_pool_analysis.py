@@ -52,7 +52,8 @@ class SongPoolAnalysisResult:
                  genre_count: SongPropertyCount,
                  energy_stats: NumericSongStatistic,
                  rating_stats: NumericSongStatistic,
-                 genre_duration: SongPropertyCount
+                 genre_duration: SongPropertyCount,
+                 language_count: SongPropertyCount
                  ):
         self.key_count = key_count
         self.duration_stats = duration_stats
@@ -60,6 +61,7 @@ class SongPoolAnalysisResult:
         self.energy_stats = energy_stats
         self.rating_stats = rating_stats
         self.genre_duration = genre_duration
+        self.language_count = language_count
 
 
 class SongPoolAnalysis:
@@ -70,6 +72,7 @@ class SongPoolAnalysis:
         key_count = SongPropertyCount()
         genre_count = SongPropertyCount()
         genre_duration = SongPropertyCount()
+        language_count = SongPropertyCount()
 
         duration_generator = NumericSongStatisticGenerator()
         energy_generator = NumericSongStatisticGenerator()
@@ -82,13 +85,15 @@ class SongPoolAnalysis:
             key_count.add(song.key)
             genre_count.add(song.genre)
             genre_duration.add(song.genre, value=song.duration)
+            language_count.add(song.language)
 
         self.result = SongPoolAnalysisResult(key_count=key_count,
                                              duration_stats=duration_generator.result,
                                              genre_count=genre_count,
                                              energy_stats=energy_generator.result,
                                              rating_stats=rating_generator.result,
-                                             genre_duration=genre_duration)
+                                             genre_duration=genre_duration,
+                                             language_count=language_count)
 
 
 class SongPoolAnalysisHtmlGenerator:
@@ -116,6 +121,7 @@ class SongPoolAnalysisHtmlGenerator:
         self._put_property_count(stat=self.analysis.result.genre_count, title="Genre")
         self._put_property_count(stat=self.analysis.result.key_count, title="Key")
         self._put_property_count(stat=self.analysis.result.genre_duration, title="Genre Duration")
+        self._put_property_count(stat=self.analysis.result.language_count, title="Language")
 
     def _download_file(self):
         file2 = open(self._HTML_FILE, "w+")
@@ -145,7 +151,8 @@ class SongPoolAnalysisHtmlGenerator:
                             bpm="BPM",
                             genre="Genre",
                             rating="Rating",
-                            energy="Energy")
+                            energy="Energy",
+                            language="Language")
 
         for song in self.analysis.pool.get_leftover_songs():
             self._put_song_line(name=song.name,
@@ -154,18 +161,20 @@ class SongPoolAnalysisHtmlGenerator:
                                 bpm=str(song.bpm),
                                 genre=song.genre,
                                 rating=str(int(song.rating)),
-                                energy=str(int(song.energy)))
+                                energy=str(int(song.energy)),
+                                language=song.language)
 
         self._html += "</table><hr>"
 
     def _put_song_line(self,
-                       name:str,
-                       formatted_key:str,
-                       duration:str,
-                       bpm:str,
-                       genre:str,
-                       rating:str,
-                       energy:str):
+                       name: str,
+                       formatted_key: str,
+                       duration: str,
+                       bpm: str,
+                       genre: str,
+                       rating: str,
+                       energy: str,
+                       language: str):
         song_html = "<tr>"
         song_html += "<td align=left valign=top>" + name + "</td>"
         song_html += "<td align=left valign=top>" + formatted_key + "</td>"
@@ -174,6 +183,7 @@ class SongPoolAnalysisHtmlGenerator:
         song_html += "<td align=left valign=top>" + genre + "</td>"
         song_html += "<td align=right valign=top>" + rating + "</td>"
         song_html += "<td align=right valign=top>" + energy + "</td>"
+        song_html += "<td align=left valign=top>" + language + "</td>"
         song_html += "</tr>"
 
         self._html += song_html

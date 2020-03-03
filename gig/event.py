@@ -3,7 +3,7 @@ from typing import List
 
 
 class Event:
-    def __init__(self, name: str = None, sets: List[Set] = None, genre_filter: List[str] = None):
+    def __init__(self, name: str = None, sets: List[Set] = None, genre_filter: List[str] = None, language_filter: List[str] = None):
         if name is None:
             self.name = ""
         else:
@@ -18,3 +18,8 @@ class Event:
             self.genre_filter = []
         else:
             self.genre_filter = genre_filter
+
+        if language_filter is None:
+            self.language_filter = []
+        else:
+            self.language_filter = language_filter

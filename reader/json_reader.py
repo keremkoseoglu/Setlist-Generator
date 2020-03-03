@@ -58,6 +58,7 @@ class JsonReader(AbstractReader):
 
         output.name = event_json["name"]
         output.genre_filter = event_json["genre_filter"]
+        output.language_filter = event_json["lang_filter"]
 
         for json_set in event_json["sets"]:
             set_flow = []

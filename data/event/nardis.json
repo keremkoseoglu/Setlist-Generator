@@ -1,6 +1,7 @@
 {
   "name": "Nardis",
   "genre_filter": [],
+  "lang_filter": [],
   "sets": [
     {
       "number": 1,

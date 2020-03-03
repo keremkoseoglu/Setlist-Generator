@@ -1,6 +1,7 @@
 {
   "name": "James Joyce",
   "genre_filter": [],
+  "lang_filter": ["EN"],
   "sets": [
     {
       "number": 1,

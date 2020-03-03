@@ -65,6 +65,8 @@ class HtmlWriter(AbstractWriter):
                                     generated_performance.song_pool.obsolete_songs.inactive)
         self._append_excluded_songs("Filtered by genre",
                                     generated_performance.song_pool.obsolete_songs.filtered_by_genre)
+        self._append_excluded_songs("Filtered by language",
+                                    generated_performance.song_pool.obsolete_songs.filtered_by_language)
         self._append_excluded_songs("Filtered for event",
                                     generated_performance.song_pool.obsolete_songs.filtered_for_event)
 

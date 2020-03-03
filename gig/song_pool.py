@@ -9,6 +9,7 @@ class ObsoleteSongs:
     def __init__(self):
         self.inactive = []
         self.filtered_by_genre = []
+        self.filtered_by_language = []
         self.filtered_for_event = []
 
     @property
@@ -17,6 +18,10 @@ class ObsoleteSongs:
         for song in self.inactive:
             output.append(song)
         for song in self.filtered_by_genre:
+            output.append(song)
+        for song in self.filtered_by_language:
+            output.append(song)
+        for song in self.filtered_for_event:
             output.append(song)
         return output
 
@@ -34,7 +39,12 @@ class SongPool:
         self.high_energy = []
         self.band = input_band
         self.event = input_event
-        self.songs_excluded_from_event = self.band.event_settings.get_excluded_songs(self.event.name)
+
+        if self.event is None:
+            self.songs_excluded_from_event = []
+        else:
+            self.songs_excluded_from_event = self.band.event_settings.get_excluded_songs(self.event.name)
+
         self.obsolete_songs = ObsoleteSongs()
         self._accept_songs_checking_reservation()
         self.categorize_songs_by_energy()
@@ -115,15 +125,18 @@ class SongPool:
         self.unreserved_songs = []
         self.obsolete_songs = ObsoleteSongs()
 
-        event_setting = self.band.event_settings.get(self.event.name)
+        if self.event is None:
+            event_setting = None
+        else:
+            event_setting = self.band.event_settings.get(self.event.name)
 
         for song in self.band.songs:
             if not song.active:
                 self.obsolete_songs.inactive.append(song)
-            elif self.event is not None and \
-                    len(self.event.genre_filter) > 0 and \
-                    song.genre not in self.event.genre_filter:
+            elif self.event is not None and len(self.event.genre_filter) > 0 and song.genre not in self.event.genre_filter:
                 self.obsolete_songs.filtered_by_genre.append(song)
+            elif self.event is not None and len(self.event.language_filter) > 0 and song.language not in self.event.language_filter:
+                self.obsolete_songs.filtered_by_language.append(song)
             elif self.songs_excluded_from_event is not None and song.name in self.songs_excluded_from_event:
                 self.obsolete_songs.filtered_for_event.append(song)
             elif event_setting is not None and event_setting.is_song_reserved(song.name):
