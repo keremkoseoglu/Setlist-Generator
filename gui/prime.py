@@ -13,8 +13,8 @@ from gig.song_pool import SongPool
 
 class Prime:
 
-    _WINDOW_WIDTH = 800
-    _WINDOW_HEIGHT = 350
+    _WINDOW_WIDTH = 425
+    _WINDOW_HEIGHT = 325
 
     def __init__(self):
         # Initialization
