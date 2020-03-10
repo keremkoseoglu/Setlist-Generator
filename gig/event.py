@@ -1,4 +1,5 @@
 from gig.set import Set
+from gig.song import Song
 from typing import List
 
 
@@ -23,3 +24,4 @@ class Event:
             self.language_filter = []
         else:
             self.language_filter = language_filter
+

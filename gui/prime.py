@@ -1,6 +1,6 @@
-from copy import copy
 import tkinter
 from gui.labeled_combobox import LabeledCombobox
+from gui.performance_preview import PerformancePreviewWindow
 from gui.song_pick_option import SongPickOption
 from config.constants import *
 from config.selection_variant import SelectionVariant, SelectionVariantEntry
@@ -150,10 +150,8 @@ class Prime:
                 song_criteria.append(pick_option["criteria"])
 
         primal_generator.PrimalGenerator().generate(perf=performance, criteria=song_criteria)
-
-        console_writer.ConsoleWriter().write(performance)
-        html_writer.HtmlWriter().write(performance)
         self._save_selection_variant(performance)
+        PerformancePreviewWindow(performance).mainloop()
 
     def _get_selected_band_path(self) -> str:
         selected_file_name = self._band_combo.get_selected_value()

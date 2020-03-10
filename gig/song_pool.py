@@ -37,6 +37,7 @@ class SongPool:
         self.low_energy = []
         self.medium_energy = []
         self.high_energy = []
+        self.dead_songs = []
         self.band = input_band
         self.event = input_event
 
@@ -94,6 +95,9 @@ class SongPool:
         for song in self.reserved_songs:
             output.append(song)
 
+        for song in self.dead_songs:
+            output.append(song)
+
         output.sort(key=lambda x: x.name)
         return output
 
@@ -109,15 +113,32 @@ class SongPool:
                     output.append(song)
         return output
 
+    def pop_leftover_song(self, name: str) -> Song:
+        output = SongPool._pop_song_from_list(name, self.low_energy)
+        if output is not None:
+            return output
+
+        output = SongPool._pop_song_from_list(name, self.medium_energy)
+        if output is not None:
+            return output
+
+        output = SongPool._pop_song_from_list(name, self.high_energy)
+        if output is not None:
+            return output
+
+        output = SongPool._pop_song_from_list(name, self.reserved_songs)
+        if output is not None:
+            return output
+
+        output = SongPool._pop_song_from_list(name, self.dead_songs)
+        if output is not None:
+            return output
+
+        return None
+
     def remove_song(self, name: str):
-        idx = SongPool._get_song_index(name, self.unreserved_songs)
-        if idx >= 0:
-            self.unreserved_songs.pop(idx)
-
-        idx = SongPool._get_song_index(name, self.reserved_songs)
-        if idx >= 0:
-            self.reserved_songs.pop(idx)
-
+        SongPool._pop_song_from_list(name, self.unreserved_songs)
+        SongPool._pop_song_from_list(name, self.reserved_songs)
         self.categorize_songs_by_energy()
 
     def _accept_songs_checking_reservation(self):
@@ -175,4 +196,11 @@ class SongPool:
             if song_name == song.name:
                 return output
         return -1
+
+    @staticmethod
+    def _pop_song_from_list(song_name: str, song_list: []) -> Song:
+        idx = SongPool._get_song_index(song_name, song_list)
+        if idx >= 0:
+            return song_list.pop(idx)
+        return None
 

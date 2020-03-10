@@ -44,14 +44,14 @@ class HtmlWriter(AbstractWriter):
 
             for flow_step in set.flow:
                 for song in flow_step.songs:
-                    self.html += "<tr>"
+                    self.html += "\n<tr>"
                     self.html += "<td>" + _get_formatted_time(time_bookmark) + "</td>"
                     self.html += "<td><strong>" + song.name + "</strong></td>"
                     self.html += "<td>" + song.get_formatted_key()
                     self.html += "</tr>"
                     time_bookmark = time_bookmark + timedelta(seconds=song.duration * 60)
 
-            self.html += "<tr>"
+            self.html += "\n<tr>"
             self.html += "<td>" + _get_formatted_time(time_bookmark) + "</td>"
             self.html += "<td>(END)</td>"
             self.html += "<td></td>"
