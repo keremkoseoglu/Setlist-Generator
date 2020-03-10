@@ -29,12 +29,9 @@
     {
       "name": "Nardis",
       "excluded_songs": [],
-      "reservations": [
-        { "name": "Cafe Com Pao"    , "reservation": "gig_opener" },
-        { "name": "Carnival"        , "reservation": "gig_closer" },
-        { "name": "Favela"          , "reservation": "set_closer" },
-        { "name": "Muito A Vondate" , "reservation": "gig_opener" }
-      ]
+      "gig_openers": ["Cafe Com Pao", "Muito A Vondate"],
+      "set_openers": [],
+      "set_closers": ["Favela"]
     }
   ]
 }

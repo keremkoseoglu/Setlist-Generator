@@ -78,16 +78,10 @@
         "Walk This Way",
         "Walking By Myself" 
       ],
-      "reservations": [
-        { "name": "Black Velvet"       , "reservation": "gig_opener" },
-        { "name": "Blue Suede Shoes"   , "reservation": "gig_closer-2" },
-        { "name": "Hound Dog"          , "reservation": "gig_closer-3" },
-        { "name": "Human"              , "reservation": "gig_opener" },
-        { "name": "Johnny B. Goode"    , "reservation": "gig_closer-1" },
-        { "name": "Lost On You"        , "reservation": "gig_opener" },
-        { "name": "Mercedes Benz"      , "reservation": "gig_closer" },
-        { "name": "Sweet Home Alabama" , "reservation": "gig_closer-4" }
-      ]
+      "gig_openers": ["Black Velvet", "Human", "Lost On You"],
+      "gig_closers": ["Sweet Home Alabama", "Hound Dog", "Blue Suede Shoes", "Johnny B. Goode", "Mercedes Benz"],
+      "set_openers": [],
+      "set_closers": []
     }
   ]
 }

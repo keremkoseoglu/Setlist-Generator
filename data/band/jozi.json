@@ -36,16 +36,10 @@
     {
       "name": "Nardis",
       "excluded_songs": [],
-      "reservations": [
-        { "name": "Berimbau"      	, "reservation": "set_opener" },
-        { "name": "Cafe Com Pao"    , "reservation": "gig_opener" },
-        { "name": "Carnival"        , "reservation": "gig_closer" },
-        { "name": "Favela"          , "reservation": "set_closer" },
-        { "name": "Fugir"  			, "reservation": "gig_closer-2" },
-        { "name": "Mais Que Nada"  	, "reservation": "gig_closer-3" },
-        { "name": "Muito A Vondate" , "reservation": "gig_opener" },
-        { "name": "Telefone" 		, "reservation": "gig_closer-1" }
-      ]
+      "gig_openers": ["Cafe Com Pao", "Muito A Vondate"],
+      "gig_closers": ["Mais Que Nada", "Fugir", "Telefone", "Carnival"],
+      "set_openers": ["Berimbau"],
+      "set_closers": ["Favela"]
     }
   ]
 }

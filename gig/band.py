@@ -19,16 +19,53 @@ class SongReservation:
 
 
 class EventSetting:
-    def __init__(self, excluded_songs: List[str] = None, song_reservations: List[SongReservation] = None):
+    def __init__(self,
+                 excluded_songs: List[str] = None,
+                 gig_openers: List[str] = None,
+                 gig_closers: List[str] = None,
+                 set_openers: List[str] = None,
+                 set_closers: List[str] = None):
         if excluded_songs is None:
             self.excluded_songs = []
         else:
             self.excluded_songs = excluded_songs
 
-        if song_reservations is None:
-            self.song_reservations = []
-        else:
-            self.song_reservations = song_reservations
+        self.song_reservations = []
+
+        if gig_openers is not None:
+            for gig_opener in gig_openers:
+                sr = self.get_song_reservation(gig_opener)
+                if sr is None:
+                    self.song_reservations.append(SongReservation(gig_opener, gig_opener=True))
+                else:
+                    sr.gig_opener = True
+
+        if gig_closers is not None:
+            gig_closer_index = -1
+            for gig_closer in gig_closers:
+                gig_closer_index += 1
+                sr = self.get_song_reservation(gig_closer)
+                if sr is None:
+                    self.song_reservations.append(SongReservation(gig_closer, gig_closer=True, gig_closer_order=gig_closer_index))
+                else:
+                    sr.gig_closer = True
+                    sr.gig_closer_order = gig_closer_index
+
+        if set_openers is not None:
+            for set_opener in set_openers:
+                sr = self.get_song_reservation(set_opener)
+                if sr is None:
+                    self.song_reservations.append(SongReservation(set_opener, set_opener=True))
+                else:
+                    sr.set_opener = True
+
+        if set_closers is not None:
+            for set_closer in set_closers:
+                sr = self.get_song_reservation(set_closer)
+                if sr is None:
+                    self.song_reservations.append(SongReservation(set_closer, set_closer=True))
+                else:
+                    sr.set_closer = True
 
     def get_song_reservation(self, song_name: str) -> SongReservation:
         for sr in self.song_reservations:
@@ -59,6 +96,13 @@ class EventSettings:
             return []
         else:
             return event_settings.excluded_songs
+
+    def get_gig_openers(self, event_name: str) -> List[str]:
+        event_settings = self.get(event_name)
+        if event_settings is None:
+            return []
+        else:
+            return event_settings.gig_openers
 
 
 class Band:
