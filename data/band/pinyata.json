@@ -1,4 +1,5 @@
 {
+  "name": "Pinyata",
   "songs": [
   	{ "name": "Aint No Sunshine"            , "lang": "EN", "genre": "pop"  , "key": "E"  , "chord": "minor"  , "duration": 3.25  , "bpm": 85   , "mood": "dark"    , "age": 3, "popular": 4, "we_like": 2, "we_play": 3, "volume": 1, "groove": 1, "active": true },
   	{ "name": "Bad Guy"                     , "lang": "EN", "genre": "pop"  , "key": "A"  , "chord": "minor"  , "duration": 3     , "bpm": 145  , "mood": "dark"    , "age": 1, "popular": 3, "we_like": 3, "we_play": 2, "volume": 3, "groove": 2, "active": true },
@@ -15,10 +16,10 @@
     { "name": "I Wish"                      , "lang": "EN", "genre": "funk" , "key": "D"  , "chord": "minor"  , "duration": 4.5   , "bpm": 115  , "mood": "bright"  , "age": 3, "popular": 3, "we_like": 4, "we_play": 3, "volume": 2, "groove": 3, "active": true },
     { "name": "Johnny B. Goode"             , "lang": "EN", "genre": "blues", "key": "Bb" , "chord": "major"  , "duration": 3.25  , "bpm": 160  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 2, "we_play": 3, "volume": 3, "groove": 1, "active": true },
     { "name": "Lady Marmalade + I Shot"     , "lang": "EN", "genre": "pop"  , "key": "G"  , "chord": "minor"  , "duration": 5     , "bpm": 110  , "mood": "bright"  , "age": 3, "popular": 3, "we_like": 3, "we_play": 2, "volume": 3, "groove": 2, "active": false },
-    { "name": "Lady Marmalade"     			, "lang": "EN", "genre": "pop"  , "key": "G"  , "chord": "minor"  , "duration": 4     , "bpm": 110  , "mood": "bright"  , "age": 3, "popular": 3, "we_like": 3, "we_play": 2, "volume": 3, "groove": 2, "active": true },
+    { "name": "Lady Marmalade"     			    , "lang": "EN", "genre": "pop"  , "key": "G"  , "chord": "minor"  , "duration": 4     , "bpm": 110  , "mood": "bright"  , "age": 3, "popular": 3, "we_like": 3, "we_play": 2, "volume": 3, "groove": 2, "active": true },
     { "name": "Lonely Boy"                  , "lang": "EN", "genre": "pop"  , "key": "A"  , "chord": "minor"  , "duration": 3.25  , "bpm": 170  , "mood": "bright"  , "age": 2, "popular": 3, "we_like": 3, "we_play": 2, "volume": 3, "groove": 1, "active": true },
     { "name": "Losing My Religion"          , "lang": "EN", "genre": "rock" , "key": "D"  , "chord": "minor"  , "duration": 4.5   , "bpm": 125  , "mood": "dark"    , "age": 3, "popular": 4, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "active": true },
-    { "name": "Lost On You"                 , "lang": "EN", "genre": "pop"  , "key": "F"  , "chord": "minor"  , "duration": 5.25  , "bpm": 90   , "mood": "dark"    , "age": 1, "popular": 3, "we_like": 3, "we_play": 2, "volume": 1, "groove": 1, "active": true },
+    { "name": "Lost On You"                 , "lang": "EN", "genre": "pop"  , "key": "F"  , "chord": "minor"  , "duration": 5.25  , "bpm": 90   , "mood": "dark"    , "age": 1, "popular": 3, "we_like": 3, "we_play": 2, "volume": 1, "groove": 1, "active": false },
     { "name": "Man Down"                    , "lang": "EN", "genre": "pop"  , "key": "C"  , "chord": "minor"  , "duration": 5.25  , "bpm": 83   , "mood": "dark"    , "age": 2, "popular": 4, "we_like": 3, "we_play": 2, "volume": 2, "groove": 3, "active": true },
     { "name": "Mary Had A Little Lamb"      , "lang": "EN", "genre": "blues", "key": "E"  , "chord": "major"  , "duration": 2.5   , "bpm": 120  , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 4, "we_play": 3, "volume": 2, "groove": 1, "active": true },
     { "name": "Mercedes Benz"               , "lang": "EN", "genre": "rock" , "key": "D"  , "chord": "major"  , "duration": 3     , "bpm": 120  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 4, "we_play": 3, "volume": 3, "groove": 1, "active": true },
@@ -31,7 +32,7 @@
     { "name": "Roadhouse Blues"             , "lang": "EN", "genre": "blues", "key": "E"  , "chord": "minor"  , "duration": 4.25  , "bpm": 120  , "mood": "dark"    , "age": 4, "popular": 4, "we_like": 2, "we_play": 1, "volume": 3, "groove": 1, "active": true },
     { "name": "Saved"                       , "lang": "EN", "genre": "blues", "key": "E"  , "chord": "major"  , "duration": 3.75  , "bpm": 260  , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 3, "we_play": 2, "volume": 2, "groove": 1, "active": true },
     { "name": "Something Got + La Bamba"  	, "lang": "EN", "genre": "pop"  , "key": "C"  , "chord": "major"  , "duration": 6     , "bpm": 70   , "mood": "bright"  , "age": 3, "popular": 3, "we_like": 3, "we_play": 2, "volume": 2, "groove": 2, "active": true },
-    { "name": "Stand By Me"         		, "lang": "EN", "genre": "pop"  , "key": "A"  , "chord": "major"  , "duration": 3.75  , "bpm": 117  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 4, "we_play": 3, "volume": 2, "groove": 2, "active": true },
+    { "name": "Stand By Me"         		    , "lang": "EN", "genre": "pop"  , "key": "A"  , "chord": "major"  , "duration": 3.75  , "bpm": 117  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 4, "we_play": 3, "volume": 2, "groove": 2, "active": true },
     { "name": "Superstition"                , "lang": "EN", "genre": "funk" , "key": "E"  , "chord": "minor"  , "duration": 4.75  , "bpm": 105  , "mood": "bright"  , "age": 3, "popular": 4, "we_like": 4, "we_play": 3, "volume": 3, "groove": 3, "active": true },
     { "name": "Sweet Home Alabama"          , "lang": "EN", "genre": "rock" , "key": "D"  , "chord": "major"  , "duration": 4     , "bpm": 108  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "active": true },
     { "name": "The House Is Rocking"        , "lang": "EN", "genre": "blues", "key": "C"  , "chord": "major"  , "duration": 2.5   , "bpm": 170  , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "active": true },
@@ -54,7 +55,7 @@
         "Sweet Home Alabama",
         "Walking By Myself"
       ],
-      "gig_openers": ["Aint No Sunshine", "Human", "Lost On You", "These Boots"],
+      "gig_openers": ["Aint No Sunshine", "Human", "These Boots"],
       "gig_closers": ["Hound Dog", "Blue Suede Shoes", "The House Is Rocking", "Mary Had A Little Lamb", "Mercedes Benz","Johnny B. Goode"],
       "set_openers": [],
       "set_closers": []

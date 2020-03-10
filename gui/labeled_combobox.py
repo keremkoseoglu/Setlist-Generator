@@ -20,5 +20,8 @@ class LabeledCombobox:
     def get_selected_value(self) -> str:
         return self._selected_value.get()
 
+    def set_callback(self, callback):
+        self._combobox.bind("<<ComboboxSelected>>", callback)
+
     def set_selected_value(self, value: str):
         self._selected_value.set(value)

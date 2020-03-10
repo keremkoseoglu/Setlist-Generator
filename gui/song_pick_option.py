@@ -21,3 +21,6 @@ class SongPickOption:
     def get_priority(self) -> int:
         return int(self._priority_text.get())
 
+    def set_priority(self, p: int):
+        self._priority_text.set(p)
+

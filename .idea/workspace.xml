@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac768270-487e-45d6-98e3-1007b3627a1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/selection_variant.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/selvar/Jozi__Levi__Nardis.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/selvar/Pinyata__James__Joyce.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/band/jozi.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/band/jozi.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/band/oya.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/band/oya.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/band/pinyata.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/band/pinyata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/band/tushe.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/band/tushe.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gig/band.py" beforeDir="false" afterPath="$PROJECT_DIR$/gig/band.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/labeled_combobox.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/labeled_combobox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/prime.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/prime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/song_pick_option.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/song_pick_option.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reader/json_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/reader/json_reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,13 +35,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WZ3lSo2ePpTbcS9nTF83w7Zamq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -201,53 +209,56 @@
       <workItem from="1583209540618" duration="2755000" />
       <workItem from="1583247306339" duration="1013000" />
       <workItem from="1583760351668" duration="41000" />
-      <workItem from="1583827827360" duration="2798000" />
+      <workItem from="1583827827360" duration="7399000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1878" height="202" key="GridCell.Tab.0.bottom" timestamp="1583835359889">
+    <state width="1878" height="238" key="GridCell.Tab.0.bottom" timestamp="1583839768790">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="202" key="GridCell.Tab.0.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1583835359889" />
+    <state width="1878" height="238" key="GridCell.Tab.0.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1583839768790" />
     <state width="2518" height="301" key="GridCell.Tab.0.bottom/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324368" />
-    <state width="1878" height="202" key="GridCell.Tab.0.center" timestamp="1583835359889">
+    <state width="1878" height="238" key="GridCell.Tab.0.center" timestamp="1583839768790">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="202" key="GridCell.Tab.0.center/0.23.1920.1124@0.23.1920.1124" timestamp="1583835359889" />
+    <state width="1878" height="238" key="GridCell.Tab.0.center/0.23.1920.1124@0.23.1920.1124" timestamp="1583839768790" />
     <state width="2518" height="301" key="GridCell.Tab.0.center/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324368" />
-    <state width="1878" height="202" key="GridCell.Tab.0.left" timestamp="1583835359888">
+    <state width="1878" height="238" key="GridCell.Tab.0.left" timestamp="1583839768789">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="202" key="GridCell.Tab.0.left/0.23.1920.1124@0.23.1920.1124" timestamp="1583835359888" />
+    <state width="1878" height="238" key="GridCell.Tab.0.left/0.23.1920.1124@0.23.1920.1124" timestamp="1583839768789" />
     <state width="2518" height="301" key="GridCell.Tab.0.left/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324367" />
-    <state width="1878" height="202" key="GridCell.Tab.0.right" timestamp="1583835359889">
+    <state width="1878" height="238" key="GridCell.Tab.0.right" timestamp="1583839768790">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="202" key="GridCell.Tab.0.right/0.23.1920.1124@0.23.1920.1124" timestamp="1583835359889" />
+    <state width="1878" height="238" key="GridCell.Tab.0.right/0.23.1920.1124@0.23.1920.1124" timestamp="1583839768790" />
     <state width="2518" height="301" key="GridCell.Tab.0.right/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324368" />
-    <state width="2518" height="301" key="GridCell.Tab.1.bottom" timestamp="1583248324370">
-      <screen x="0" y="23" width="2560" height="1364" />
+    <state width="1878" height="238" key="GridCell.Tab.1.bottom" timestamp="1583839768791">
+      <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="239" key="GridCell.Tab.1.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1583212302370" />
+    <state width="1878" height="238" key="GridCell.Tab.1.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1583839768791" />
     <state width="2518" height="301" key="GridCell.Tab.1.bottom/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324370" />
-    <state width="2518" height="301" key="GridCell.Tab.1.center" timestamp="1583248324369">
-      <screen x="0" y="23" width="2560" height="1364" />
+    <state width="1878" height="238" key="GridCell.Tab.1.center" timestamp="1583839768791">
+      <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="239" key="GridCell.Tab.1.center/0.23.1920.1124@0.23.1920.1124" timestamp="1583212302369" />
+    <state width="1878" height="238" key="GridCell.Tab.1.center/0.23.1920.1124@0.23.1920.1124" timestamp="1583839768791" />
     <state width="2518" height="301" key="GridCell.Tab.1.center/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324369" />
-    <state width="2518" height="301" key="GridCell.Tab.1.left" timestamp="1583248324369">
-      <screen x="0" y="23" width="2560" height="1364" />
+    <state width="1878" height="238" key="GridCell.Tab.1.left" timestamp="1583839768790">
+      <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="239" key="GridCell.Tab.1.left/0.23.1920.1124@0.23.1920.1124" timestamp="1583212302369" />
+    <state width="1878" height="238" key="GridCell.Tab.1.left/0.23.1920.1124@0.23.1920.1124" timestamp="1583839768790" />
     <state width="2518" height="301" key="GridCell.Tab.1.left/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324369" />
-    <state width="2518" height="301" key="GridCell.Tab.1.right" timestamp="1583248324369">
-      <screen x="0" y="23" width="2560" height="1364" />
+    <state width="1878" height="238" key="GridCell.Tab.1.right" timestamp="1583839768791">
+      <screen x="0" y="23" width="1920" height="1124" />
     </state>
-    <state width="1878" height="239" key="GridCell.Tab.1.right/0.23.1920.1124@0.23.1920.1124" timestamp="1583212302369" />
+    <state width="1878" height="238" key="GridCell.Tab.1.right/0.23.1920.1124@0.23.1920.1124" timestamp="1583839768791" />
     <state width="2518" height="301" key="GridCell.Tab.1.right/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324369" />
     <state x="730" y="447" key="com.intellij.ide.util.TipDialog" timestamp="1583760352777">
       <screen x="0" y="23" width="1920" height="1124" />
@@ -271,7 +282,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/setlist$json_reader.coverage" NAME="json_reader Coverage Results" MODIFIED="1583122920438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reader" />
-    <SUITE FILE_PATH="coverage/setlist$main.coverage" NAME="main Coverage Results" MODIFIED="1583835359879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/setlist$main.coverage" NAME="main Coverage Results" MODIFIED="1583839768772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">

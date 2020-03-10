@@ -1,4 +1,5 @@
 {
+  "name": "Jozi Levi",
   "songs": [
     { "name": "Agua De Beber"     , "lang": "PT", "genre": "bossa"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 85   , "mood": "dark"    , "age": 4, "popular": 3, "we_like": 2, "we_play": 1, "volume": 2, "groove": 2, "active": true },
     { "name": "A Ra"              , "lang": "PT", "genre": "samba"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 100  , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 1, "volume": 2, "groove": 2, "active": true },

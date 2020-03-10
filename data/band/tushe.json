@@ -1,4 +1,5 @@
 {
+  "name": "Tushe",
   "songs": [
     { "name": "Bad Guy"                     , "lang": "EN", "genre": "pop"  , "key": "A"  , "chord": "minor"  , "duration": 3     , "bpm": 145  , "mood": "dark"    , "age": 1, "popular": 3, "we_like": 3, "we_play": 2, "volume": 3, "groove": 2, "active": true },
     { "name": "Black Horse & A Cherry Tree" , "lang": "EN", "genre": "pop"  , "key": "E"  , "chord": "minor"  , "duration": 3.5   , "bpm": 110  , "mood": "dark"    , "age": 3, "popular": 3, "we_like": 1, "we_play": 1, "volume": 1, "groove": 3, "active": true },
