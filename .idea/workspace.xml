@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ac768270-487e-45d6-98e3-1007b3627a1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/band/pinyata.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/band/pinyata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator/primal_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/primal_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator/primal_song_picker.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/primal_song_picker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gig/band.py" beforeDir="false" afterPath="$PROJECT_DIR$/gig/band.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gig/event.py" beforeDir="false" afterPath="$PROJECT_DIR$/gig/event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gig/performance.py" beforeDir="false" afterPath="$PROJECT_DIR$/gig/performance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gig/song_pool.py" beforeDir="false" afterPath="$PROJECT_DIR$/gig/song_pool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/labeled_checkbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/labeled_checkbox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/prime.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/prime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reader/json_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/reader/json_reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/file_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/file_system.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writer/abstract_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/writer/abstract_writer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writer/console_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/writer/console_writer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writer/html_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/writer/html_writer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,8 +202,23 @@
       <workItem from="1583988066255" duration="20000" />
       <workItem from="1583995565818" duration="41000" />
       <workItem from="1584024972220" duration="560000" />
-      <workItem from="1584026564173" duration="350000" />
+      <workItem from="1584026564173" duration="417000" />
     </task>
+    <task id="LOCAL-00001" summary="Code inspection">
+      <created>1584026963023</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584026963023</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Code inspection">
+      <created>1584026977407</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584026977407</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,32 +226,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Code inspection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code inspection" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="568" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584026572099">
       <screen x="0" y="23" width="2560" height="1364" />
     </state>
     <state x="1032" y="568" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1364@0.23.2560.1364" timestamp="1584026572099" />
-    <state width="1878" height="238" key="GridCell.Tab.0.bottom" timestamp="1583847825654">
-      <screen x="0" y="23" width="1920" height="1124" />
+    <state x="873" y="306" key="CommitChangelistDialog2" timestamp="1584026977253">
+      <screen x="0" y="23" width="2560" height="1364" />
+    </state>
+    <state x="873" y="306" key="CommitChangelistDialog2/0.23.2560.1364@0.23.2560.1364" timestamp="1584026977253" />
+    <state width="2518" height="255" key="GridCell.Tab.0.bottom" timestamp="1584026982231">
+      <screen x="0" y="23" width="2560" height="1364" />
     </state>
     <state width="1878" height="238" key="GridCell.Tab.0.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1583847825654" />
-    <state width="2518" height="301" key="GridCell.Tab.0.bottom/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324368" />
-    <state width="1878" height="238" key="GridCell.Tab.0.center" timestamp="1583847825653">
-      <screen x="0" y="23" width="1920" height="1124" />
+    <state width="2518" height="255" key="GridCell.Tab.0.bottom/0.23.2560.1364@0.23.2560.1364" timestamp="1584026982231" />
+    <state width="2518" height="255" key="GridCell.Tab.0.center" timestamp="1584026982231">
+      <screen x="0" y="23" width="2560" height="1364" />
     </state>
     <state width="1878" height="238" key="GridCell.Tab.0.center/0.23.1920.1124@0.23.1920.1124" timestamp="1583847825653" />
-    <state width="2518" height="301" key="GridCell.Tab.0.center/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324368" />
-    <state width="1878" height="238" key="GridCell.Tab.0.left" timestamp="1583847825653">
-      <screen x="0" y="23" width="1920" height="1124" />
+    <state width="2518" height="255" key="GridCell.Tab.0.center/0.23.2560.1364@0.23.2560.1364" timestamp="1584026982231" />
+    <state width="2518" height="255" key="GridCell.Tab.0.left" timestamp="1584026982230">
+      <screen x="0" y="23" width="2560" height="1364" />
     </state>
     <state width="1878" height="238" key="GridCell.Tab.0.left/0.23.1920.1124@0.23.1920.1124" timestamp="1583847825653" />
-    <state width="2518" height="301" key="GridCell.Tab.0.left/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324367" />
-    <state width="1878" height="238" key="GridCell.Tab.0.right" timestamp="1583847825654">
-      <screen x="0" y="23" width="1920" height="1124" />
+    <state width="2518" height="255" key="GridCell.Tab.0.left/0.23.2560.1364@0.23.2560.1364" timestamp="1584026982230" />
+    <state width="2518" height="255" key="GridCell.Tab.0.right" timestamp="1584026982231">
+      <screen x="0" y="23" width="2560" height="1364" />
     </state>
     <state width="1878" height="238" key="GridCell.Tab.0.right/0.23.1920.1124@0.23.1920.1124" timestamp="1583847825654" />
-    <state width="2518" height="301" key="GridCell.Tab.0.right/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324368" />
+    <state width="2518" height="255" key="GridCell.Tab.0.right/0.23.2560.1364@0.23.2560.1364" timestamp="1584026982231" />
     <state width="1878" height="238" key="GridCell.Tab.1.bottom" timestamp="1583847825655">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
