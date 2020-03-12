@@ -17,7 +17,7 @@ class PrimalSongPickerInput:
                  p_is_last_flow_step_of_gig: bool,
                  p_set: Set,
                  p_is_last_set: bool,
-                 p_is_first_set:bool,
+                 p_is_first_set: bool,
                  p_song_criteria: List[SongCriteria],
                  p_performance: Performance):
         self.song_pool = p_song_pool
@@ -83,7 +83,7 @@ class PrimalSongPicker:
             self._input.flow_step.songs.append(out_song)
         return out_song
 
-    def _get_best_song_position(self, best_song:Song) -> tuple:
+    def _get_best_song_position(self, best_song: Song) -> tuple:
         step_index = 0
         song_index = 0
         best_energy_difference = 999999999

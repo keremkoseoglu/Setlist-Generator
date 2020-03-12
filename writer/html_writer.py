@@ -22,6 +22,7 @@ def _get_formatted_time(d: datetime) -> str:
 class HtmlWriter(AbstractWriter):
 
     def __init__(self):
+        super().__init__()
         self._html_file = os.path.join(DOWNLOAD_DIR, 'setlist.html')
         self.html = ""
 
@@ -34,15 +35,15 @@ class HtmlWriter(AbstractWriter):
         self.html += "</style>"
         self.html += "</head><body>"
 
-        for set in generated_performance.event.sets:
-            time_bookmark = set.start
+        for event_set in generated_performance.event.sets:
+            time_bookmark = event_set.start
 
             if len(generated_performance.event.sets) > 1:
-                self.html += "<h1>Set " + str(set.number) + "</h1>"
+                self.html += "<h1>Set " + str(event_set.number) + "</h1>"
 
             self.html += "<table>"
 
-            for flow_step in set.flow:
+            for flow_step in event_set.flow:
                 for song in flow_step.songs:
                     self.html += "\n<tr>"
                     self.html += "<td>" + _get_formatted_time(time_bookmark) + "</td>"

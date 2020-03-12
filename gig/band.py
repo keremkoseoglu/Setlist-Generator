@@ -46,7 +46,9 @@ class EventSetting:
                 gig_closer_index += 1
                 sr = self.get_song_reservation(gig_closer)
                 if sr is None:
-                    self.song_reservations.append(SongReservation(gig_closer, gig_closer=True, gig_closer_order=gig_closer_index))
+                    self.song_reservations.append(SongReservation(gig_closer,
+                                                                  gig_closer=True,
+                                                                  gig_closer_order=gig_closer_index))
                 else:
                     sr.gig_closer = True
                     sr.gig_closer_order = gig_closer_index
@@ -96,13 +98,6 @@ class EventSettings:
             return []
         else:
             return event_settings.excluded_songs
-
-    def get_gig_openers(self, event_name: str) -> List[str]:
-        event_settings = self.get(event_name)
-        if event_settings is None:
-            return []
-        else:
-            return event_settings.gig_openers
 
 
 class Band:

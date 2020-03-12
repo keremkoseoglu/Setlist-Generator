@@ -1,7 +1,7 @@
 from reader.abstract_reader import AbstractReader
 import json
 from gig import performance, set_flow_step
-from gig.band import Band, EventSetting, SongReservation
+from gig.band import Band, EventSetting
 from gig.event import Event
 from gig.set import Set
 from gig.song import Song
@@ -42,7 +42,7 @@ class JsonReader(AbstractReader):
         return datetime.datetime.strptime(json_date, '%Y-%m-%d')
 
     def __init__(self):
-        pass
+        super().__init__()
 
     def get_event_list(self) -> list:
         output = []

@@ -2,10 +2,6 @@ import os
 from config.constants import *
 
 
-def get_data_file_list() -> []:
-    return get_files_in_dir(DATA_DIR_PATH)
-
-
 def get_desktop_path():
     return os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop')
 

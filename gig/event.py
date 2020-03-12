@@ -1,10 +1,13 @@
 from gig.set import Set
-from gig.song import Song
 from typing import List
 
 
 class Event:
-    def __init__(self, name: str = None, sets: List[Set] = None, genre_filter: List[str] = None, language_filter: List[str] = None):
+    def __init__(self,
+                 name: str = None,
+                 sets: List[Set] = None,
+                 genre_filter: List[str] = None,
+                 language_filter: List[str] = None):
         if name is None:
             self.name = ""
         else:

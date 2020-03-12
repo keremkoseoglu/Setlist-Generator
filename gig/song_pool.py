@@ -5,6 +5,14 @@ from statistics import median
 from typing import List
 
 
+def _merge_song_lists(song_lists: List[List[Song]]) -> List[Song]:
+    output = []
+    for song_list in song_lists:
+        for song in song_list:
+            output.append(song)
+    return output
+
+
 class ObsoleteSongs:
     def __init__(self):
         self.inactive = []
@@ -14,16 +22,11 @@ class ObsoleteSongs:
 
     @property
     def all(self) -> List[Song]:
-        output = []
-        for song in self.inactive:
-            output.append(song)
-        for song in self.filtered_by_genre:
-            output.append(song)
-        for song in self.filtered_by_language:
-            output.append(song)
-        for song in self.filtered_for_event:
-            output.append(song)
-        return output
+        return _merge_song_lists([
+            self.inactive,
+            self.filtered_by_genre,
+            self.filtered_by_language,
+            self.filtered_for_event])
 
 
 class SongPool:
@@ -81,22 +84,12 @@ class SongPool:
         self.high_energy.sort(key=lambda x: x.energy)
 
     def get_leftover_songs(self) -> list:
-        output = []
-
-        for song in self.low_energy:
-            output.append(song)
-
-        for song in self.medium_energy:
-            output.append(song)
-
-        for song in self.high_energy:
-            output.append(song)
-
-        for song in self.reserved_songs:
-            output.append(song)
-
-        for song in self.dead_songs:
-            output.append(song)
+        output = _merge_song_lists([
+            self.low_energy,
+            self.medium_energy,
+            self.high_energy,
+            self.reserved_songs,
+            self.dead_songs])
 
         output.sort(key=lambda x: x.name)
         return output
@@ -108,8 +101,8 @@ class SongPool:
             for song in self.reserved_songs:
                 song_reservation = event_setting.get_song_reservation(song.name)
                 if song_reservation is not None and song_reservation.gig_opener == gig_opener and \
-                    song_reservation.set_closer == set_closer and song_reservation.gig_closer == gig_closer and \
-                    song_reservation.set_opener == set_opener:
+                   song_reservation.set_closer == set_closer and song_reservation.gig_closer == gig_closer and \
+                   song_reservation.set_opener == set_opener:
                     output.append(song)
         return output
 
@@ -154,9 +147,13 @@ class SongPool:
         for song in self.band.songs:
             if not song.active:
                 self.obsolete_songs.inactive.append(song)
-            elif self.event is not None and len(self.event.genre_filter) > 0 and song.genre not in self.event.genre_filter:
+            elif self.event is not None and \
+                    len(self.event.genre_filter) > 0 and \
+                    song.genre not in self.event.genre_filter:
                 self.obsolete_songs.filtered_by_genre.append(song)
-            elif self.event is not None and len(self.event.language_filter) > 0 and song.language not in self.event.language_filter:
+            elif self.event is not None and \
+                    len(self.event.language_filter) > 0 and \
+                    song.language not in self.event.language_filter:
                 self.obsolete_songs.filtered_by_language.append(song)
             elif self.songs_excluded_from_event is not None and song.name in self.songs_excluded_from_event:
                 self.obsolete_songs.filtered_for_event.append(song)

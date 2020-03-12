@@ -8,7 +8,6 @@ from reader.json_reader import JsonReader
 import os
 from generator import primal_generator
 from gig.performance import Performance
-from writer import console_writer, html_writer
 from analysis.song_pool_analysis import SongPoolAnalysis, SongPoolAnalysisHtmlGenerator
 from gig.song import SongCriteria
 from gig.song_pool import SongPool

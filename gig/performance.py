@@ -15,8 +15,8 @@ class Performance:
 
     def kill_song(self, name: str):
         song_to_backup = None
-        for set in self.event.sets:
-            for flow_step in set.flow:
+        for event_set in self.event.sets:
+            for flow_step in event_set.flow:
                 song_index = -1
                 for song in flow_step.songs:
                     song_index += 1
