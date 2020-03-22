@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac768270-487e-45d6-98e3-1007b3627a1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ac768270-487e-45d6-98e3-1007b3627a1d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,6 +201,7 @@
       <workItem from="1583995565818" duration="41000" />
       <workItem from="1584024972220" duration="560000" />
       <workItem from="1584026564173" duration="417000" />
+      <workItem from="1584027067291" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="Code inspection">
       <created>1584026963023</created>
@@ -278,11 +277,11 @@
     </state>
     <state width="1878" height="238" key="GridCell.Tab.1.right/0.23.1920.1124@0.23.1920.1124" timestamp="1583847825655" />
     <state width="2518" height="301" key="GridCell.Tab.1.right/0.23.2560.1364@0.23.2560.1364" timestamp="1583248324369" />
-    <state x="973" y="537" key="com.intellij.ide.util.TipDialog" timestamp="1584026564365">
+    <state x="973" y="537" key="com.intellij.ide.util.TipDialog" timestamp="1584027068044">
       <screen x="0" y="23" width="2560" height="1364" />
     </state>
     <state x="730" y="447" key="com.intellij.ide.util.TipDialog/0.23.1920.1124@0.23.1920.1124" timestamp="1583760352777" />
-    <state x="973" y="537" key="com.intellij.ide.util.TipDialog/0.23.2560.1364@0.23.2560.1364" timestamp="1584026564365" />
+    <state x="973" y="537" key="com.intellij.ide.util.TipDialog/0.23.2560.1364@0.23.2560.1364" timestamp="1584027068044" />
     <state x="709" y="279" width="670" height="558" key="search.everywhere.popup" timestamp="1583828135743">
       <screen x="0" y="23" width="1920" height="1124" />
     </state>
