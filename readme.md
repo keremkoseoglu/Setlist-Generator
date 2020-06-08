@@ -11,6 +11,12 @@ sequence of songs.
 - Create and put your JSON files into the /data folder. The file should look like the samples provided in /data. The format is very intuitive.
 - Run main.py
 
+## Igigi integration
+
+Igigi is a mobile gig helper app, available at https://github.com/keremkoseoglu/igigi . 
+
+When you generate an HTML output, it will also generate an output for Igigi which can later be downloaded to Igigi (iPad) over Dropbox.
+
 ## How To Extend
 
 If you want to add new song properties;
