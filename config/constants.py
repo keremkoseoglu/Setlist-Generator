@@ -9,7 +9,7 @@ SELECTION_VARIANT_DIR = "/Users/kerem/Dropbox/Software/Kerem/Development/setlist
 IGIGI_DIR = "/Users/kerem/Dropbox/Apps/igigi/"
 IGIGI_JSON = "igigi.json"
 LYRIC_DIR = "/Users/kerem/Dropbox/Software/Kerem/Development/setlist/data/lyric/"
-SAMPLE_DIR = "/Users/kerem/Dropbox/Software/Kerem/Development/setlist/data/lyric/"
+SAMPLE_DIR = "/Users/kerem/Dropbox/Software/Kerem/Development/setlist/data/sample/"
 SAMPLE_JSON = "sample.json"
 
 # GUI

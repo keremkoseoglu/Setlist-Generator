@@ -73,6 +73,11 @@ class Song:
             output = lyric_file.readlines()
 
         output = [x.strip() for x in output]
+        for line_index in range(0, len(output)):
+            line = output[line_index]
+            if line.replace(" ", "") == "":
+                line = "__________"
+                output[line_index] = line
         return output
 
     def _calculate_energy(self):
