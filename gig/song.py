@@ -44,6 +44,7 @@ class Song:
         self.active = song_input["active"]
         self.language = song_input["lang"]
         self.lyrics = song_input["lyrics"]
+        self.pads = song_input["pads"]
 
         self._calculate_rating()
         self._calculate_energy()
