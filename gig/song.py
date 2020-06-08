@@ -46,6 +46,7 @@ class Song:
 
     def get_formatted_key(self) -> str:
         """ Returns the well formatted song key """
+        # todo bu aslında property olabilir
         output = self.key
         if self.chord == self._CHORD_MINOR:
             output += "m"
