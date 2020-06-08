@@ -174,7 +174,7 @@ class SongPoolAnalysisHtmlGenerator:
 
         for song in self.analysis.pool.leftover_songs:
             self._put_song_line(name=song.name,
-                                formatted_key=song.get_formatted_key(),
+                                formatted_key=song.formatted_key,
                                 duration=str(song.duration),
                                 bpm=str(song.bpm),
                                 genre=song.genre,

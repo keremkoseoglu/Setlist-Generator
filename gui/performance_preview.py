@@ -3,6 +3,7 @@ import tkinter.ttk
 import tkinter
 from gig.performance import Performance
 from writer.html_writer import HtmlWriter
+from writer.igigi_writer import IgigiWriter
 
 
 class PerformancePreviewWindow(tkinter.Toplevel):
@@ -50,7 +51,6 @@ class PerformancePreviewWindow(tkinter.Toplevel):
 
         save_button = tkinter.Button(self, text="Save", command=self._save)
         save_button.place(x=cell_x, y=cell_y)
-
         cell_y += PerformancePreviewWindow._BUTTON_HEIGHT + PerformancePreviewWindow._X_SPACING
 
         self._dead_list = tkinter.Listbox(self, exportselection=False)
@@ -119,3 +119,4 @@ class PerformancePreviewWindow(tkinter.Toplevel):
 
     def _save(self):
         HtmlWriter().write(self._performance)
+        IgigiWriter().write(self._performance)

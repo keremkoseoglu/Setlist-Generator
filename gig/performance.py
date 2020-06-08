@@ -9,7 +9,9 @@ class Performance:
     def __init__(self, event: Event, band: Band):
         self.event = event
         self.band = band
-        self.song_pool = SongPool(self.band, self.event)
+
+        if self.event is not None and self.band is not None:
+            self.song_pool = SongPool(self.band, self.event)
 
     @property
     def event_setting(self) -> EventSetting:
