@@ -73,12 +73,15 @@ class IgigiWriter(AbstractWriter):
                 song_to_igigi_dict'e ek yap
             setlist test
             igigi test
+            faz 1'e pull request
         faz 3: sample dosyaları
+            yeni branch aç
             tamamla
                 mimari kur
                 song_to_igigi_dict'e ek yap
             setlist test
             igigi test
+            faz 1'e pull request
         """
 
     def _write_sets(self, igigi_gig: dict):

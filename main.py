@@ -11,5 +11,5 @@ test
 doküman
     readme.md güncelle
 canlı
-    pull request
+    main'e pull request
 """
