@@ -15,6 +15,7 @@ from copy import deepcopy
 from datetime import datetime
 from gig import performance
 from gig.song import Song
+from gig.sample import get_samples_as_list
 from writer.abstract_writer import AbstractWriter
 from config.constants import IGIGI_DIR, IGIGI_JSON
 
@@ -64,18 +65,10 @@ class IgigiWriter(AbstractWriter):
         self._write_sets(igigi_gig)
         self._write_inactive_songs(igigi_gig)
         self._write_filtered_songs(igigi_gig)
+        self._write_samples()
 
-        # todo
-        """
-        faz 3: sample dosyaları
-            yeni branch aç
-            tamamla
-                mimari kur
-                song_to_igigi_dict'e ek yap
-            setlist test
-            igigi test
-            issue1 pull request
-        """
+    def _write_samples(self):
+        self._json["samples"] = get_samples_as_list()
 
     def _write_sets(self, igigi_gig: dict):
         for event_set in self._performance.event.sets:
@@ -115,7 +108,7 @@ class IgigiWriter(AbstractWriter):
             "name": song.name,
             "duration": song.duration,
             "key": song.formatted_key,
-            "pads": [],
+            "pads": song.pads,
             "lyrics": song.lyrics_as_list
         }
         return output
