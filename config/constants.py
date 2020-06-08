@@ -8,6 +8,7 @@ EVENT_DIR = "/Users/kerem/Dropbox/Software/Kerem/Development/setlist/data/event/
 SELECTION_VARIANT_DIR = "/Users/kerem/Dropbox/Software/Kerem/Development/setlist/data/selvar/"
 IGIGI_DIR = "/Users/kerem/Dropbox/Apps/igigi/"
 IGIGI_JSON = "igigi.json"
+LYRIC_DIR = "/Users/kerem/Dropbox/Software/Kerem/Development/setlist/data/lyric/"
 
 # GUI
 GUI_CELL_HEIGHT = 30

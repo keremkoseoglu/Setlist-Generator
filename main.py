@@ -7,6 +7,7 @@ Prime()
 """
 geliştirme
     igigi_Writer tamamlanacak
+    igigi generation sırasında hata verirse kullanıcı görmeli
 test
 doküman
     readme.md güncelle
