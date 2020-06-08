@@ -67,18 +67,14 @@ class IgigiWriter(AbstractWriter):
 
         # todo
         """
-        faz 2: şarkı sözleri
-            tamamla
-                mimari kur
-                song_to_igigi_dict'e ek yap
-            setlist test
-            igigi test
         faz 3: sample dosyaları
+            yeni branch aç
             tamamla
                 mimari kur
                 song_to_igigi_dict'e ek yap
             setlist test
             igigi test
+            issue1 pull request
         """
 
     def _write_sets(self, igigi_gig: dict):
@@ -118,9 +114,9 @@ class IgigiWriter(AbstractWriter):
         output = {
             "name": song.name,
             "duration": song.duration,
-            "key": song.get_formatted_key(),
+            "key": song.formatted_key,
             "pads": [],
-            "lyrics": []
+            "lyrics": song.lyrics_as_list
         }
         return output
 

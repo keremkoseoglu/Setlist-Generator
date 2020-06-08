@@ -1,5 +1,8 @@
 """ Song module """
 from enum import Enum
+from typing import List
+from os import path
+from config.constants import LYRIC_DIR
 
 
 class SongCriteria(Enum):
@@ -40,16 +43,35 @@ class Song:
         self.energy = 0
         self.active = song_input["active"]
         self.language = song_input["lang"]
+        self.lyrics = song_input["lyrics"]
 
         self._calculate_rating()
         self._calculate_energy()
 
-    def get_formatted_key(self) -> str:
+    @property
+    def formatted_key(self) -> str:
         """ Returns the well formatted song key """
-        # todo bu aslında property olabilir
         output = self.key
         if self.chord == self._CHORD_MINOR:
             output += "m"
+        return output
+
+    @property
+    def lyrics_as_list(self) -> List[str]:
+        """ Returns the lyrics as list """
+        output = []
+
+        if self.lyrics == "":
+            return output
+
+        lyric_path = path.join(LYRIC_DIR, self.lyrics)
+        if not path.exists(lyric_path):
+            raise Exception("File not found: " + lyric_path)
+
+        with open(lyric_path) as lyric_file:
+            output = lyric_file.readlines()
+
+        output = [x.strip() for x in output]
         return output
 
     def _calculate_energy(self):
