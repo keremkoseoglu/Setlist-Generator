@@ -1,13 +1,15 @@
+""" Song picker module, used by primal generator """
+import copy
+from typing import List
 from gig.performance import Performance
 from gig.song_pool import SongPool
 from gig.song import Song, SongCriteria
 from gig.set_flow_step import SetFlowStep
 from gig.set import Set
-import copy
-from typing import List
 
 
 class PrimalSongPickerInput:
+    """ Picks the next best song """
     def __init__(self,
                  p_song_pool: SongPool,
                  p_flow_step: SetFlowStep,
@@ -34,6 +36,7 @@ class PrimalSongPickerInput:
 
 
 class PrimalCandidateSet:
+    """ Defines a set of candidates """
     candidates: []
 
     def __init__(self, p_candidates: []):
@@ -41,12 +44,14 @@ class PrimalCandidateSet:
 
 
 class PrimalSongPicker:
+    """ Class to pick the best next song """
 
     def __init__(self):
         self._input = None
         self._pop_recursion = False
 
     def pop_best_song(self, p_input: PrimalSongPickerInput) -> bool:
+        """ Chooses the next best next song and removes from the song pool """
         self._input = p_input
         candidate_sets = self._get_candidate_sets()
         best_song = None
@@ -59,8 +64,8 @@ class PrimalSongPicker:
         if best_song is None:
             best_song = self._append_closer()
         else:
-            set_length_after_best_song = self._input.set.get_actual_duration() + best_song.duration
-            set_length_after_best_song_and_closers = set_length_after_best_song + self._get_closer_length()
+            set_length_after_best_song = self._input.set.actual_duration + best_song.duration
+            set_length_after_best_song_and_closers = set_length_after_best_song + self._get_closer_length() # pylint: disable=C0301
 
             if set_length_after_best_song_and_closers > self._input.set.plan_duration:
                 best_song = self._append_closer()
@@ -69,9 +74,8 @@ class PrimalSongPicker:
 
         if best_song is None:
             return False
-        else:
-            self._input.song_pool.remove_song(best_song.name)
-            return True
+        self._input.song_pool.remove_song(best_song.name)
+        return True
 
     def _append_closer(self) -> Song:
         out_song = None
@@ -122,29 +126,39 @@ class PrimalSongPicker:
                 song_reservation = event_setting.get_song_reservation(self._input.prev_song.name)
                 if song_reservation is not None:
                     if song_reservation.gig_opener:
-                        candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(
-                            gig_opener=True,
-                            set_opener=False,
-                            set_closer=False)))
+                        candidate_sets.append(
+                            PrimalCandidateSet(
+                                self._input.song_pool.get_reserved_songs(
+                                    gig_opener=True,
+                                    set_opener=False,
+                                    set_closer=False)))
                     if song_reservation.set_opener:
-                        candidate_sets.append(PrimalCandidateSet(self._input.song_pool.get_reserved_songs(
-                            gig_opener=False,
-                            set_opener=True,
-                            set_closer=False)))
+                        candidate_sets.append(
+                            PrimalCandidateSet(
+                                self._input.song_pool.get_reserved_songs(
+                                    gig_opener=False,
+                                    set_opener=True,
+                                    set_closer=False)))
 
         remaining_criteria = copy.deepcopy(self._input.song_criteria)
 
         while len(remaining_criteria) > 0:
-            candidate_sets.append(PrimalCandidateSet(self._get_desired_songs(p_criteria=remaining_criteria)))
+            candidate_sets.append(
+                PrimalCandidateSet(
+                    self._get_desired_songs(p_criteria=remaining_criteria)))
             remaining_criteria.pop()
-        candidate_sets.append(PrimalCandidateSet(self._get_desired_songs()))
+        candidate_sets.append(
+            PrimalCandidateSet(
+                self._get_desired_songs()))
 
         return candidate_sets
 
     def _get_closer_length(self) -> int:
         out_length = 0
-        for closer in self._input.song_pool.get_reserved_songs(gig_closer=self._input.is_last_set,
-                                                               set_closer=not self._input.is_last_set):
+        closers = self._input.song_pool.get_reserved_songs(
+            gig_closer=self._input.is_last_set,
+            set_closer=not self._input.is_last_set)
+        for closer in closers:
             out_length += closer.duration
         return out_length
 
@@ -160,29 +174,29 @@ class PrimalSongPicker:
                 criteria = p_criteria
 
             if SongCriteria.key in criteria:
-                for o in output:
-                    if o.key == self._input.prev_song.key:
-                        output.remove(o)
+                for output_item in output:
+                    if output_item.key == self._input.prev_song.key:
+                        output.remove(output_item)
 
             if SongCriteria.mood in criteria:
-                for o in output:
-                    if o.mood != self._input.prev_song.mood:
-                        output.remove(o)
+                for output_item in output:
+                    if output_item.mood != self._input.prev_song.mood:
+                        output.remove(output_item)
 
             if SongCriteria.genre in criteria:
-                for o in output:
-                    if o.genre != self._input.prev_song.genre:
-                        output.remove(o)
+                for output_item in output:
+                    if output_item.genre != self._input.prev_song.genre:
+                        output.remove(output_item)
 
             if SongCriteria.chord in criteria:
-                for o in output:
-                    if o.chord != self._input.prev_song.chord:
-                        output.remove(o)
+                for output_item in output:
+                    if output_item.chord != self._input.prev_song.chord:
+                        output.remove(output_item)
 
             if SongCriteria.age in criteria:
-                for o in output:
-                    if o.age != self._input.prev_song.age:
-                        output.remove(o)
+                for output_item in output:
+                    if output_item.age != self._input.prev_song.age:
+                        output.remove(output_item)
 
         return output
 
@@ -201,13 +215,13 @@ class PrimalSongPicker:
             output = copy.deepcopy(self._input.song_pool.high_energy)
 
         if self._input.prev_flow_step is not None and self._input.next_flow_step is not None:
-            if self._input.prev_flow_step.energy < self._input.flow_step.energy < self._input.next_flow_step.energy:
+            if self._input.prev_flow_step.energy < self._input.flow_step.energy < self._input.next_flow_step.energy: # pylint: disable=C0301
                 output.sort(key=lambda x: x.energy)
-            elif self._input.prev_flow_step.energy < self._input.flow_step.energy > self._input.next_flow_step.energy:
+            elif self._input.prev_flow_step.energy < self._input.flow_step.energy > self._input.next_flow_step.energy: # pylint: disable=C0301
                 pass
-            elif self._input.prev_flow_step.energy > self._input.flow_step.energy < self._input.next_flow_step.energy:
+            elif self._input.prev_flow_step.energy > self._input.flow_step.energy < self._input.next_flow_step.energy: # pylint: disable=C0301
                 pass
-            elif self._input.prev_flow_step.energy > self._input.flow_step.energy > self._input.next_flow_step.energy:
+            elif self._input.prev_flow_step.energy > self._input.flow_step.energy > self._input.next_flow_step.energy: # pylint: disable=C0301
                 output.sort(key=lambda x: x.energy, reverse=True)
         elif self._input.prev_flow_step is not None:
             if self._input.prev_flow_step.energy < self._input.flow_step.energy:
@@ -223,7 +237,11 @@ class PrimalSongPicker:
         return output
 
     def _pop_gig_closer(self) -> Song:
-        gig_closer_songs = self._input.song_pool.get_reserved_songs(gig_opener=False, set_closer=False, gig_closer=True)
+        gig_closer_songs = self._input.song_pool.get_reserved_songs(
+            gig_opener=False,
+            set_closer=False,
+            gig_closer=True)
+
         if len(gig_closer_songs) <= 0:
             return self._pop_set_closer()
 
@@ -234,11 +252,14 @@ class PrimalSongPicker:
         return gig_closer_song
 
     def _pop_set_closer(self) -> Song:
-        set_closer_songs = self._input.song_pool.get_reserved_songs(gig_opener=False, set_closer=True, gig_closer=False)
+        set_closer_songs = self._input.song_pool.get_reserved_songs(
+            gig_opener=False,
+            set_closer=True,
+            gig_closer=False)
+
         if len(set_closer_songs) <= 0:
             return None
+
         set_closer_song = set_closer_songs[0]
         self._input.song_pool.remove_song(set_closer_song.name)
         return set_closer_song
-
-

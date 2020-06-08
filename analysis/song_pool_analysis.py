@@ -1,11 +1,12 @@
+""" Song pool analysis module """
+import os
 from gig.song import Song
 from gig.song_pool import SongPool
-import os
 
 
 class NumericSongStatistic:
+    """ Numeric song statistic, containing average, min, max, etc values """
     def __init__(self):
-        self.avg_value = 0
         self.max_song = None
         self.max_value = -999999
         self.min_song = None
@@ -13,15 +14,19 @@ class NumericSongStatistic:
         self.total_value = 0
         self.song_count = 0
 
-    def get_average_value(self) -> int:
+    @property
+    def avg_value(self) -> int:
+        """ Returns the average value """
         return int(self.total_value / self.song_count)
 
 
 class NumericSongStatisticGenerator:
+    """ Class to determine min / max values for the given stat """
     def __init__(self):
         self.result = NumericSongStatistic()
 
     def analyse(self, p_song: Song, p_value: int):
+        """ Determines min/max values """
         self.result.song_count += 1
         self.result.total_value += p_value
 
@@ -35,10 +40,13 @@ class NumericSongStatisticGenerator:
 
 
 class SongPropertyCount:
+    """ Counter for any song property """
+
     def __init__(self):
         self.counts = {}
 
     def add(self, key: str, value: int = 1):
+        """ Count++ """
         if key in self.counts:
             self.counts[key] = self.counts[key] + value
         else:
@@ -46,6 +54,8 @@ class SongPropertyCount:
 
 
 class SongPoolAnalysisResult:
+    """ Result of a song pool analysis """
+
     def __init__(self,
                  key_count: SongPropertyCount,
                  duration_stats: NumericSongStatistic,
@@ -65,6 +75,11 @@ class SongPoolAnalysisResult:
 
 
 class SongPoolAnalysis:
+    """ Analyses the song pool and generates statistics
+    Note that this class executes upon object creation,
+    immediately.
+    """
+
     def __init__(self, pool: SongPool):
         self.pool = pool
         self.result = None
@@ -78,7 +93,7 @@ class SongPoolAnalysis:
         energy_generator = NumericSongStatisticGenerator()
         rating_generator = NumericSongStatisticGenerator()
 
-        for song in pool.get_leftover_songs():
+        for song in pool.leftover_songs:
             duration_generator.analyse(p_song=song, p_value=song.duration)
             energy_generator.analyse(p_song=song, p_value=song.energy)
             rating_generator.analyse(p_song=song, p_value=song.rating)
@@ -97,6 +112,8 @@ class SongPoolAnalysis:
 
 
 class SongPoolAnalysisHtmlGenerator:
+    """ Generates an HTML Report which analyses the song pool """
+
     _HTML_FILE = "/Users/kerem/Downloads/stats.html"
     analysis: SongPoolAnalysis
     _html: str
@@ -106,6 +123,7 @@ class SongPoolAnalysisHtmlGenerator:
         self._html = ""
 
     def generate(self):
+        """ Entry method to generate analysis HTML """
         self._generate_html()
         self._download_file()
 
@@ -133,7 +151,7 @@ class SongPoolAnalysisHtmlGenerator:
         self._html += "<h1>" + title + "</h1><ul>"
         self._html += "<li>Max: " + stat.max_song.name + " (" + str(stat.max_value) + ")</li>"
         self._html += "<li>Min: " + stat.min_song.name + " (" + str(stat.min_value) + ")</li>"
-        self._html += "<li>Avg: " + str(stat.get_average_value()) + "</li>"
+        self._html += "<li>Avg: " + str(stat.avg_value) + "</li>"
         self._html += "<li>Sum: " + str(stat.total_value) + "</li>"
         self._html += "</ul><hr>"
 
@@ -154,7 +172,7 @@ class SongPoolAnalysisHtmlGenerator:
                             energy="Energy",
                             language="Language")
 
-        for song in self.analysis.pool.get_leftover_songs():
+        for song in self.analysis.pool.leftover_songs:
             self._put_song_line(name=song.name,
                                 formatted_key=song.get_formatted_key(),
                                 duration=str(song.duration),

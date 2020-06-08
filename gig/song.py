@@ -1,7 +1,9 @@
+""" Song module """
 from enum import Enum
 
 
 class SongCriteria(Enum):
+    """ Criteria to pick a song """
     undefined = 0
     key = 1
     mood = 2
@@ -11,6 +13,7 @@ class SongCriteria(Enum):
 
 
 class Song:
+    """ Song class """
     _CHORD_MINOR = "minor"
 
     _MOOD_BRIGHT = "bright"
@@ -42,6 +45,7 @@ class Song:
         self._calculate_energy()
 
     def get_formatted_key(self) -> str:
+        """ Returns the well formatted song key """
         output = self.key
         if self.chord == self._CHORD_MINOR:
             output += "m"

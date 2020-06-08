@@ -1,9 +1,11 @@
+""" Performance module """
 from gig.band import Band, EventSetting
 from gig.event import Event
 from gig.song_pool import SongPool
 
 
 class Performance:
+    """ Performance class """
     def __init__(self, event: Event, band: Band):
         self.event = event
         self.band = band
@@ -11,9 +13,11 @@ class Performance:
 
     @property
     def event_setting(self) -> EventSetting:
+        """ Returns settings of the event """
         return self.band.event_settings.get(self.event.name)
 
     def kill_song(self, name: str):
+        """ Kills the given song """
         song_to_backup = None
         for event_set in self.event.sets:
             for flow_step in event_set.flow:
@@ -35,8 +39,8 @@ class Performance:
         self.song_pool.dead_songs.append(song_to_backup)
 
     def resurrect_song(self, name: str, set_index: int, song_index: int):
+        """ Resurrects the given song """
         lazarus = self.song_pool.pop_leftover_song(name)
         if lazarus is None:
             return
         self.event.sets[set_index].insert_song(lazarus, song_index)
-
