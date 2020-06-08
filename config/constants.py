@@ -1,3 +1,5 @@
+""" Constants used throughout the program """
+
 # File system
 BAND_DIR = "/Users/kerem/Dropbox/Software/Kerem/Development/setlist/data/band/"
 DATA_FILE_EXTENSION = "json"

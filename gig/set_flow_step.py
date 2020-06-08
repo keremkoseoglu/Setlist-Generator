@@ -1,4 +1,7 @@
+""" Set flow step module """
+
 class SetFlowStep:
+    """ Set flow step class """
     part: int
     energy: int
     songs: list
@@ -10,7 +13,9 @@ class SetFlowStep:
         self.percentage = step_input["percentage"]
         self.songs = []
 
-    def get_duration(self) -> int:
+    @property
+    def duration(self) -> int:
+        """ Returns duration of the set flow step """
         output = 0
         for song in self.songs:
             output += song.duration

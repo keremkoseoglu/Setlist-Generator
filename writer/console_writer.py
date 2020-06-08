@@ -1,13 +1,13 @@
+""" Console writer module """
 from writer.abstract_writer import AbstractWriter
 from gig import performance
 
 
 class ConsoleWriter(AbstractWriter):
-
-    def __init__(self):
-        super().__init__()
+    """ Console writer class """
 
     def write(self, generated_performance: performance.Performance):
+        """ Prints everything to console """
 
         for event_set in generated_performance.event.sets:
             print("Set " + str(event_set.number))
@@ -18,4 +18,3 @@ class ConsoleWriter(AbstractWriter):
 
             print("")
             print("Total set duration: " + str(event_set.get_actual_duration()))
-

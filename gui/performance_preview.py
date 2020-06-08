@@ -1,10 +1,12 @@
-from gig.performance import Performance
-import tkinter
+""" Performance preview module """
 import tkinter.ttk
+import tkinter
+from gig.performance import Performance
 from writer.html_writer import HtmlWriter
 
 
 class PerformancePreviewWindow(tkinter.Toplevel):
+    """ Performance preview window """
 
     _BUTTON_HEIGHT = 50
     _BUTTON_WIDTH = 50
@@ -85,7 +87,7 @@ class PerformancePreviewWindow(tkinter.Toplevel):
 
         self._dead_list.delete(0, tkinter.END)
         song_index = -1
-        for song in self._performance.song_pool.get_leftover_songs():
+        for song in self._performance.song_pool.leftover_songs:
             song_index += 1
             self._dead_list.insert(song_index, song.name)
 
@@ -108,7 +110,11 @@ class PerformancePreviewWindow(tkinter.Toplevel):
         self._fill_song_list()
 
     def _resurrect(self):
-        self._performance.resurrect_song(self._selected_dead_song, self._set_index, self._song_list.curselection()[0])
+        self._performance.resurrect_song(
+            self._selected_dead_song,
+            self._set_index,
+            self._song_list.curselection()[0])
+
         self._fill_song_list()
 
     def _save(self):

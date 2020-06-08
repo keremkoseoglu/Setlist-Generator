@@ -1,18 +1,19 @@
+""" HTML writer module """
+from datetime import datetime, timedelta
+import os
+from typing import List
 from writer.abstract_writer import AbstractWriter
 from gig import performance
 from gig.song import Song
-from datetime import datetime, timedelta
-import os
-from config.constants import *
-from typing import List
+from config.constants import DOWNLOAD_DIR
 
 
-def _get_formatted_time(d: datetime) -> str:
-    hour_txt = str(d.hour)
+def _get_formatted_time(raw_datetime: datetime) -> str:
+    hour_txt = str(raw_datetime.hour)
     while len(hour_txt) < 2:
         hour_txt = "0" + hour_txt
 
-    minute_txt = str(d.minute)
+    minute_txt = str(raw_datetime.minute)
     while len(minute_txt) < 2:
         minute_txt = "0" + minute_txt
 
@@ -20,6 +21,7 @@ def _get_formatted_time(d: datetime) -> str:
 
 
 class HtmlWriter(AbstractWriter):
+    """ HTML writer class """
 
     def __init__(self):
         super().__init__()
@@ -27,6 +29,7 @@ class HtmlWriter(AbstractWriter):
         self.html = ""
 
     def write(self, generated_performance: performance.Performance):
+        """ Writes the HTML file """
         self.html = "<html><head>"
         self.html += "<style>"
         self.html += "td { font-family: Arial; font-size: 30px; padding: 5px; }"
@@ -60,16 +63,25 @@ class HtmlWriter(AbstractWriter):
 
             self.html += "</table>"
 
-        self._append_excluded_songs("Backup",
-                                    generated_performance.song_pool.get_leftover_songs())
-        self._append_excluded_songs("Inactive",
-                                    generated_performance.song_pool.obsolete_songs.inactive)
-        self._append_excluded_songs("Filtered by genre",
-                                    generated_performance.song_pool.obsolete_songs.filtered_by_genre)
-        self._append_excluded_songs("Filtered by language",
-                                    generated_performance.song_pool.obsolete_songs.filtered_by_language)
-        self._append_excluded_songs("Filtered for event",
-                                    generated_performance.song_pool.obsolete_songs.filtered_for_event)
+        self._append_excluded_songs(
+            "Backup",
+            generated_performance.song_pool.leftover_songs)
+
+        self._append_excluded_songs(
+            "Inactive",
+            generated_performance.song_pool.obsolete_songs.inactive)
+
+        self._append_excluded_songs(
+            "Filtered by genre",
+            generated_performance.song_pool.obsolete_songs.filtered_by_genre)
+
+        self._append_excluded_songs(
+            "Filtered by language",
+            generated_performance.song_pool.obsolete_songs.filtered_by_language)
+
+        self._append_excluded_songs(
+            "Filtered for event",
+            generated_performance.song_pool.obsolete_songs.filtered_for_event)
 
         self.html += "</body></html>"
 
@@ -92,4 +104,3 @@ class HtmlWriter(AbstractWriter):
                 leftover_html += "<br>"
             leftover_html += leftover_song.name
         self.html += leftover_html
-

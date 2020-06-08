@@ -1,8 +1,10 @@
-from config.constants import *
+""" Labeled checkbox control module """
 import tkinter
+from config.constants import GUI_CELL_WIDTH
 
 
 class LabeledCheckbox:
+    """ Labeled checkbox control class """
 
     def __init__(self, parent: tkinter.Toplevel, label_text: str, x_pos: int, y_pos: int):
         self._label = tkinter.Label(parent, text=label_text)
@@ -12,17 +14,22 @@ class LabeledCheckbox:
         self._checkbox = tkinter.Checkbutton(parent, text="", variable=self._val)
         self._checkbox.place(x=x_pos + GUI_CELL_WIDTH, y=y_pos)
 
-    def check(self):
-        self._val.set(True)
-
+    @property
     def is_checked(self) -> bool:
+        """ Tells if the checkbox is checked """
         return self._val.get()
 
+    def check(self):
+        """ Checks the checkbox """
+        self._val.set(True)
+
     def set_value(self, val: bool):
+        """ Sets checked / not checked directly """
         if val:
             self.check()
         else:
             self.uncheck()
 
     def uncheck(self):
+        """ Unchecks the checkbox """
         self._val.set(False)

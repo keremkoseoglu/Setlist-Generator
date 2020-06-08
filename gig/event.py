@@ -1,8 +1,10 @@
-from gig.set import Set
+""" Event module """
 from typing import List
+from gig.set import Set
 
 
 class Event:
+    """ Event class """
     def __init__(self,
                  name: str = None,
                  sets: List[Set] = None,
@@ -27,4 +29,3 @@ class Event:
             self.language_filter = []
         else:
             self.language_filter = language_filter
-
