@@ -7,7 +7,7 @@ sequence of songs.
 
 ## How To Use
 
-- Edit config/constants.py and put your own values here
+- Edit config.json and put your own values here
 - Create and put your JSON files into the /data folder. The file should look like the samples provided in /data. The format is very intuitive.
 - Run main.py
 

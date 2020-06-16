@@ -2,7 +2,7 @@
 import json
 from os import path
 from typing import List
-from config.constants import DATA_FILE_EXTENSION, SELECTION_VARIANT_DIR
+from config import Config
 from gig.band import Band
 from gig.event import Event
 from gig.song import SongCriteria
@@ -23,19 +23,20 @@ class SelectionVariant:
     def __init__(self, band: Band, event: Event):
         self.band = band
         self.event = event
+        self._config = Config()
 
     @property
     def file_name(self) -> str:
         """ Builds and returns a file name """
         output = self.band.name + SelectionVariant._SEPARATOR + self.event.name
-        output += "." + DATA_FILE_EXTENSION
+        output += "." + self._config.data_file_extension
         output = output.replace(" ", SelectionVariant._SEPARATOR)
         return output
 
     @property
     def file_path(self) -> str:
         """ Builds and returns the file path """
-        return path.join(SELECTION_VARIANT_DIR, self.file_name)
+        return path.join(self._config.selection_variant_dir, self.file_name)
 
     def load(self) -> List[SelectionVariantEntry]:
         """ Loads the selection variant from the file """

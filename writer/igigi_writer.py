@@ -17,7 +17,7 @@ from gig import performance
 from gig.song import Song
 from gig.sample import get_samples_as_list
 from writer.abstract_writer import AbstractWriter
-from config.constants import IGIGI_DIR, IGIGI_JSON
+from config import Config
 
 
 class IgigiWriter(AbstractWriter):
@@ -27,7 +27,8 @@ class IgigiWriter(AbstractWriter):
         super().__init__()
         self._json = {}
         self._json_before = {}
-        self._json_path = path.join(IGIGI_DIR, IGIGI_JSON)
+        config = Config()
+        self._json_path = path.join(config.igigi_dir, config.igigi_json)
         self._performance = performance.Performance(None, None)
 
     def write(self, generated_performance: performance.Performance):

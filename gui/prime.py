@@ -4,7 +4,7 @@ import tkinter
 from gui.labeled_combobox import LabeledCombobox
 from gui.performance_preview import PerformancePreviewWindow
 from gui.song_pick_option import SongPickOption
-from config.constants import GUI_CELL_WIDTH, GUI_CELL_HEIGHT, BAND_DIR, EVENT_DIR
+from config import Config
 from config.selection_variant import SelectionVariant, SelectionVariantEntry
 from reader.json_reader import JsonReader
 from generator import primal_generator
@@ -29,6 +29,7 @@ class Prime:
         # Initialization
         Prime._CURRENT_INSTANCE = self
         cell_y = 0
+        self._config = Config()
 
         # Main container
         self._root = tkinter.Tk()
@@ -43,9 +44,9 @@ class Prime:
         self._band_combo.set_callback(self._combo_change)
 
         gen_button = tkinter.Button(self._root, text="Edit", command=self._edit_band)
-        gen_button.place(x=(GUI_CELL_WIDTH * 2)+75, y=cell_y)
+        gen_button.place(x=(self._config.gui_cell_width * 2)+75, y=cell_y)
 
-        cell_y += GUI_CELL_HEIGHT
+        cell_y += self._config.gui_cell_height
 
         # Event selection
         self._events = JsonReader().event_list
@@ -55,23 +56,23 @@ class Prime:
         self._event_combo.set_callback(self._combo_change)
 
         gen_button = tkinter.Button(self._root, text="Edit", command=self._edit_event)
-        gen_button.place(x=(GUI_CELL_WIDTH * 2)+75, y=cell_y)
+        gen_button.place(x=(self._config.gui_cell_width * 2)+75, y=cell_y)
 
-        cell_y += GUI_CELL_HEIGHT * 2
+        cell_y += self._config.gui_cell_height * 2
 
         # Options
         self._by_key = SongPickOption(self._root, "Separate keys", 1, 0, cell_y)
         self._by_key.checkbox.check()
-        cell_y += GUI_CELL_HEIGHT
+        cell_y += self._config.gui_cell_height
         self._by_genre = SongPickOption(self._root, "Group by genre", 2, 0, cell_y)
-        cell_y += GUI_CELL_HEIGHT
+        cell_y += self._config.gui_cell_height
         self._by_mood = SongPickOption(self._root, "Group by mood", 3, 0, cell_y)
         self._by_mood.checkbox.check()
-        cell_y += GUI_CELL_HEIGHT
+        cell_y += self._config.gui_cell_height
         self._by_age = SongPickOption(self._root, "Group by age", 4, 0, cell_y)
-        cell_y += GUI_CELL_HEIGHT
+        cell_y += self._config.gui_cell_height
         self._by_chord = SongPickOption(self._root, "Group by chord", 5, 0, cell_y)
-        cell_y += GUI_CELL_HEIGHT
+        cell_y += self._config.gui_cell_height
 
         self._song_pick_options = [{"option": self._by_key, "criteria": SongCriteria.key},
                                    {"option": self._by_genre, "criteria": SongCriteria.genre},
@@ -79,7 +80,7 @@ class Prime:
                                    {"option": self._by_age, "criteria": SongCriteria.age},
                                    {"option": self._by_chord, "criteria": SongCriteria.chord}]
 
-        cell_y += GUI_CELL_HEIGHT
+        cell_y += self._config.gui_cell_height
 
         # Buttons
 
@@ -87,9 +88,9 @@ class Prime:
         gen_button.place(x=0, y=cell_y)
 
         gen_button = tkinter.Button(self._root, text="Stats", command=self._stats)
-        gen_button.place(x=GUI_CELL_WIDTH*2, y=cell_y)
+        gen_button.place(x=self._config.gui_cell_width*2, y=cell_y)
 
-        cell_y += GUI_CELL_HEIGHT
+        cell_y += self._config.gui_cell_height
 
         # Start GUI
         self._root.mainloop()
@@ -159,12 +160,12 @@ class Prime:
 
     def _get_selected_band_path(self) -> str:
         selected_file_name = self._band_combo.selected_value
-        selected_file_path = os.path.join(BAND_DIR, selected_file_name)
+        selected_file_path = os.path.join(self._config.band_dir, selected_file_name)
         return selected_file_path
 
     def _get_selected_event_path(self) -> str:
         selected_file_name = self._event_combo.selected_value
-        selected_file_path = os.path.join(EVENT_DIR, selected_file_name)
+        selected_file_path = os.path.join(self._config.event_dir, selected_file_name)
         return selected_file_path
 
     def _save_selection_variant(self, performance: Performance):

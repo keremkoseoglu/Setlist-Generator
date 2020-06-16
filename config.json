@@ -1,0 +1,14 @@
+{
+    "BAND_DIR": "band",
+    "DATA_FILE_EXTENSION": "json",
+    "DOWNLOAD_DIR": "/Users/kerem/Downloads/",
+    "EVENT_DIR": "event",
+    "SELECTION_VARIANT_DIR": "selvar",
+    "IGIGI_DIR": "/Users/kerem/Dropbox/Apps/igigi/",
+    "IGIGI_JSON": "igigi.json",
+    "LYRIC_DIR": "lyric",
+    "SAMPLE_DIR": "sample",
+    "SAMPLE_JSON": "sample.json",
+    "GUI_CELL_HEIGHT": 30,
+    "GUI_CELL_WIDTH": 150
+}

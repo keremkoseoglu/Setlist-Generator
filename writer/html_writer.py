@@ -5,7 +5,7 @@ from typing import List
 from writer.abstract_writer import AbstractWriter
 from gig import performance
 from gig.song import Song
-from config.constants import DOWNLOAD_DIR
+from config import Config
 
 
 def _get_formatted_time(raw_datetime: datetime) -> str:
@@ -25,7 +25,7 @@ class HtmlWriter(AbstractWriter):
 
     def __init__(self):
         super().__init__()
-        self._html_file = os.path.join(DOWNLOAD_DIR, 'setlist.html')
+        self._html_file = os.path.join(Config().download_dir, 'setlist.html')
         self.html = ""
 
     def write(self, generated_performance: performance.Performance):

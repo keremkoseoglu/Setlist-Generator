@@ -2,8 +2,7 @@
 from enum import Enum
 from typing import List
 from os import path
-from config.constants import LYRIC_DIR
-
+from config import Config
 
 class SongCriteria(Enum):
     """ Criteria to pick a song """
@@ -65,7 +64,7 @@ class Song:
         if self.lyrics == "":
             return output
 
-        lyric_path = path.join(LYRIC_DIR, self.lyrics)
+        lyric_path = path.join(Config().lyric_dir, self.lyrics)
         if not path.exists(lyric_path):
             raise Exception("File not found: " + lyric_path)
 

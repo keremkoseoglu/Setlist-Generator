@@ -7,12 +7,16 @@ from gig.band import Band, EventSetting
 from gig.event import Event
 from gig.set import Set
 from gig.song import Song
-from config.constants import EVENT_DIR, BAND_DIR
+from config import Config
 from util import file_system
 
 
 class JsonReader(AbstractReader):
     """ JSON reader class """
+
+    def __init__(self):
+        super().__init__()
+        self._config = Config()
 
     @staticmethod
     def _parse_json_date(json_date: str) -> datetime:
@@ -47,7 +51,7 @@ class JsonReader(AbstractReader):
     def event_list(self) -> list:
         """ Returns a list of events """
         output = []
-        for file in file_system.get_files_in_dir(EVENT_DIR):
+        for file in file_system.get_files_in_dir(self._config.event_dir):
             output.append(file)
         return output
 
@@ -55,7 +59,7 @@ class JsonReader(AbstractReader):
     def band_list(self) -> list:
         """ Returns a list of bands """
         output = []
-        for file in file_system.get_files_in_dir(BAND_DIR):
+        for file in file_system.get_files_in_dir(self._config.band_dir):
             output.append(file)
         return output
 
