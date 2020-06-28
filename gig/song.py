@@ -68,12 +68,14 @@ class Song:
         if not path.exists(lyric_path):
             raise Exception("File not found: " + lyric_path)
 
-        with open(lyric_path) as lyric_file:
+        with open(lyric_path, "r", encoding="utf-8", errors="ignore") as lyric_file:
             output = lyric_file.readlines()
 
         output = [x.strip() for x in output]
         for line_index in range(0, len(output)):
             line = output[line_index]
+            line = line.replace("\x00", "")
+            output[line_index] = line
             if line.replace(" ", "") == "":
                 line = "__________"
                 output[line_index] = line
