@@ -5,6 +5,8 @@ This project is targeted at musicians, who want to generate the best setlist pos
 Basically; you provide your song pool and set flow in JSON format, and the program automatically generates the best 
 sequence of songs. 
 
+You can watch a live demo [on YouTube](https://youtu.be/SyNAFOwRFCQ) .
+
 ## How To Use
 
 - Edit config.json and put your own values here
