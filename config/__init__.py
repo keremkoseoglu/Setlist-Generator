@@ -35,6 +35,11 @@ class Config:
         return Config._get_data_path_in_cwd(self._config["EVENT_DIR"])
 
     @property
+    def flukebox_dir(self) -> str:
+        """ Flukebox dir """
+        return self._config["FLUKEBOX_DIR"]
+
+    @property
     def selection_variant_dir(self) -> str:
         """ Selection variant directory """
         return Config._get_data_path_in_cwd(self._config["SELECTION_VARIANT_DIR"])
@@ -82,21 +87,3 @@ class Config:
     def _get_data_path_in_cwd(file: str) -> str:
         data_dir = Config._get_path_in_cwd(Config._DATA_DIR)
         return os.path.join(data_dir, file)
-        
-
-
-# File system
-BAND_DIR = "/Users/kerem/OneDrive/Software/Kerem/Development/setlist/data/band/"
-DATA_FILE_EXTENSION = "json"
-DOWNLOAD_DIR = "/Users/kerem/Downloads/"
-EVENT_DIR = "/Users/kerem/OneDrive/Software/Kerem/Development/setlist/data/event/"
-SELECTION_VARIANT_DIR = "/Users/kerem/OneDrive/Software/Kerem/Development/setlist/data/selvar/"
-IGIGI_DIR = "/Users/kerem/OneDrive/Apps/igigi/"
-IGIGI_JSON = "igigi.json"
-LYRIC_DIR = "/Users/kerem/OneDrive/Software/Kerem/Development/setlist/data/lyric/"
-SAMPLE_DIR = "/Users/kerem/OneDrive/Software/Kerem/Development/setlist/data/sample/"
-SAMPLE_JSON = "sample.json"
-
-# GUI
-GUI_CELL_HEIGHT = 30
-GUI_CELL_WIDTH = 150
