@@ -115,7 +115,8 @@ class Band:
     def __init__(self,
                  name: str = None,
                  songs: List[Song] = None,
-                 event_settings: EventSettings = None):
+                 event_settings: EventSettings = None,
+                 flukebox_playlists: List[str] = None):
 
         if name is None:
             self.name = ""
@@ -131,3 +132,8 @@ class Band:
             self.event_settings = EventSettings()
         else:
             self.event_settings = event_settings
+
+        if flukebox_playlists is None:
+            self.flukebox_playlists = []
+        else:
+            self.flukebox_playlists = flukebox_playlists

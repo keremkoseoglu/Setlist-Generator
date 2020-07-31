@@ -119,6 +119,8 @@ class JsonReader(AbstractReader):
 
             output.event_settings.append(json_event_setting["name"], event_setting_obj)
 
+        if "flukebox_playlists" in band_json:
+            output.flukebox_playlists = band_json["flukebox_playlists"]
         return output
 
     def read(self, band_param: str, event_param: str) -> performance.Performance:
