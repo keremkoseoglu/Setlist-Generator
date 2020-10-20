@@ -19,6 +19,19 @@ Igigi is a mobile gig helper app, available at https://github.com/keremkoseoglu/
 
 When you generate an HTML output, it will also generate an output for Igigi which can later be downloaded to Igigi (iPad) over Dropbox.
 
+## FlukeBox integration
+
+FlukeBox is a cross-streaming-service audio player, available at https://github.com/keremkoseoglu/flukebox .
+
+When you generate an HTML output, it will also trigger FlukeBox to generate an output for rehearsal / studying.
+
+To enable that functionality;
+
+- Install FlukeBox
+- Edit config.json so that **FLUKEBOX_DIR** points to your FlukeBox installation directory
+
+To disable that functionality; simply edit config.json and leave **FLUKEBOX_DIR** empty.
+
 ## How To Extend
 
 If you want to add new song properties;
