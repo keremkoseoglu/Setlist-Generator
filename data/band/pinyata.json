@@ -10,6 +10,7 @@
     { "name": "Ben Böyleyim"                , "lang": "TR", "genre": "rock" , "key": "A"  , "chord": "major"  , "duration": 3.25  , "bpm": 100  , "mood": "bright"  , "age": 2, "popular": 4, "we_like": 3, "we_play": 2, "volume": 2, "groove": 2, "active": true, "lyrics": "ben_boyleyim.txt", "pads": [] },
     { "name": "Blue Suede Shoes"            , "lang": "EN", "genre": "blues", "key": "D"  , "chord": "major"  , "duration": 2.5   , "bpm": 180  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 3, "we_play": 2, "volume": 2, "groove": 1, "active": true, "lyrics": "blue_suede_shoes.txt", "pads": [] },
     { "name": "Crazy Little Thing"          , "lang": "EN", "genre": "rock" , "key": "D"  , "chord": "major"  , "duration": 3     , "bpm": 150  , "mood": "bright"  , "age": 3, "popular": 4, "we_like": 3, "we_play": 2, "volume": 1, "groove": 2, "active": true, "lyrics": "crazy_little_thing_called_love.txt", "pads": [] },
+    { "name": "Creep"                       , "lang": "EN", "genre": "rock" , "key": "D"  , "chord": "major"  , "duration": 3     , "bpm": 105  , "mood": "dark"    , "age": 3, "popular": 4, "we_like": 2, "we_play": 2, "volume": 1, "groove": 2, "active": true, "lyrics": "creep.txt", "pads": [] },
     { "name": "Dağılmak İstiyorum"          , "lang": "TR", "genre": "pop"  , "key": "A"  , "chord": "minor"  , "duration": 3.75  , "bpm": 120  , "mood": "dark"    , "age": 3, "popular": 4, "we_like": 1, "we_play": 1, "volume": 2, "groove": 2, "active": true, "lyrics": "dagilmak_istiyorum.txt", "pads": [] },
     { "name": "Değmesin Ellerimiz"          , "lang": "TR", "genre": "rock" , "key": "D"  , "chord": "minor"  , "duration": 4.50  , "bpm": 100  , "mood": "dark"    , "age": 2, "popular": 4, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "active": true, "lyrics": "degmesinellerimiz.txt", "pads": [] },
     { "name": "Faith"                       , "lang": "EN", "genre": "pop"  , "key": "G"  , "chord": "minor"  , "duration": 3.5   , "bpm": 144  , "mood": "bright"  , "age": 1, "popular": 1, "we_like": 3, "we_play": 2, "volume": 2, "groove": 2, "active": true, "lyrics": "faith.txt", "pads": [] },
@@ -42,6 +43,7 @@
     { "name": "My Sharona"                  , "lang": "EN", "genre": "rock" , "key": "G"  , "chord": "major"  , "duration": 4.5   , "bpm": 155  , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 4, "we_play": 3, "volume": 3, "groove": 3, "active": true, "lyrics": "my_sharona.txt", "pads": [] },
     { "name": "Oh Pretty Woman"             , "lang": "EN", "genre": "blues", "key": "C"  , "chord": "minor"  , "duration": 3     , "bpm": 120  , "mood": "dark"    , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "active": true, "lyrics": "oh_pretty_woman.txt", "pads": [] },
     { "name": "Olduramadım"                 , "lang": "TR", "genre": "pop"  , "key": "F#" , "chord": "minor"  , "duration": 3.5   , "bpm": 116  , "mood": "bright"  , "age": 2, "popular": 4, "we_like": 4, "we_play": 3, "volume": 2, "groove": 3, "active": true, "lyrics": "olduramadim.txt", "pads": [] },
+    { "name": "Onlar Yanlış Biliyor"        , "lang": "TR", "genre": "pop"  , "key": "D"  , "chord": "minor"  , "duration": 4.5   , "bpm": 82   , "mood": "dark"    , "age": 3, "popular": 4, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "active": true, "lyrics": "onlar_yanlis_biliyor.txt", "pads": [] },
     { "name": "Only Girl In The World"      , "lang": "EN", "genre": "pop"  , "key": "A"  , "chord": "minor"  , "duration": 4     , "bpm": 125  , "mood": "dark"    , "age": 2, "popular": 4, "we_like": 4, "we_play": 2, "volume": 3, "groove": 2, "active": true, "lyrics": "only_girl_in_the_world.txt", "pads": [] },
     { "name": "Perfect"                     , "lang": "EN", "genre": "pop"  , "key": "D"  , "chord": "major"  , "duration": 3.5   , "bpm": 72   , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 3, "we_play": 2, "volume": 1, "groove": 2, "active": true, "lyrics": "perfect.txt", "pads": [] },
     { "name": "Perhaps, Perhaps, Perhaps"   , "lang": "EN", "genre": "rock" , "key": "A"  , "chord": "minor"  , "duration": 2.25  , "bpm": 120  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 4, "we_play": 3, "volume": 2, "groove": 2, "active": true, "lyrics": "perhaps_perhaps_perhaps.txt", "pads": [] },
@@ -50,6 +52,7 @@
     { "name": "Resimdeki Gözyaşları"        , "lang": "TR", "genre": "rock" , "key": "C"  , "chord": "minor"  , "duration": 3.5   , "bpm": 120  , "mood": "dark"    , "age": 4, "popular": 4, "we_like": 3, "we_play": 2, "volume": 3, "groove": 2, "active": true, "lyrics": "resimdekigozyaslari.txt", "pads": [] },
     { "name": "Saved"                       , "lang": "EN", "genre": "blues", "key": "E"  , "chord": "major"  , "duration": 3.75  , "bpm": 260  , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 3, "we_play": 2, "volume": 2, "groove": 1, "active": true, "lyrics": "saved.txt", "pads": [] },
     { "name": "Senden Benden Bizden"        , "lang": "TR", "genre": "rock" , "key": "A"  , "chord": "minor"  , "duration": 2.25  , "bpm": 120  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 4, "we_play": 3, "volume": 2, "groove": 2, "active": true, "lyrics": "senden_benden_bizden.txt", "pads": [] },
+    { "name": "Sen Olsan Bari"              , "lang": "TR", "genre": "pop"  , "key": "C"  , "chord": "minor"  , "duration": 3     , "bpm": 98   , "mood": "dark"    , "age": 1, "popular": 4, "we_like": 4, "we_play": 2, "volume": 2, "groove": 3, "active": true, "lyrics": "sen_olsan_bari.txt", "pads": [] },
     { "name": "Sevda Çiçeği"                , "lang": "TR", "genre": "rock" , "key": "C"  , "chord": "minor"  , "duration": 4     , "bpm": 115  , "mood": "dark"    , "age": 4, "popular": 4, "we_like": 4, "we_play": 3, "volume": 3, "groove": 1, "active": true, "lyrics": "sevdacicegi.txt", "pads": [] },
     { "name": "Sevenler Ağlarmış"           , "lang": "TR", "genre": "rock" , "key": "B"  , "chord": "minor"  , "duration": 3.5   , "bpm": 132  , "mood": "dark"    , "age": 4, "popular": 4, "we_like": 3, "we_play": 3, "volume": 3, "groove": 1, "active": true, "lyrics": "sevenleraglarmis.txt", "pads": [] },
     { "name": "Sing It Back"                , "lang": "EN", "genre": "pop"  , "key": "D"  , "chord": "minor"  , "duration": 3.5   , "bpm": 125  , "mood": "dark"    , "age": 3, "popular": 2, "we_like": 1, "we_play": 1, "volume": 2, "groove": 1, "active": false, "lyrics": "sing_it_back.txt", "pads": [] },
@@ -71,7 +74,9 @@
     { "name": "Yeniden Başlasın"            , "lang": "TR", "genre": "pop"  , "key": "D"  , "chord": "minor"  , "duration": 3.25  , "bpm": 135  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 1, "we_play": 1, "volume": 2, "groove": 1, "active": true, "lyrics": "yeniden_baslasin.txt", "pads": [] },
     { "name": "Yine Yol Göründü Gurbete"    , "lang": "TR", "genre": "pop"  , "key": "C"  , "chord": "major"  , "duration": 3.25  , "bpm": 95   , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 3, "we_play": 2, "volume": 2, "groove": 1, "active": true, "lyrics": "yine_yol_gorundu_gurbete.txt", "pads": [] },
     { "name": "Yıldızların Altında"         , "lang": "TR", "genre": "pop"  , "key": "A"  , "chord": "minor"  , "duration": 2.75  , "bpm": 140  , "mood": "dark"    , "age": 4, "popular": 4, "we_like": 4, "we_play": 3, "volume": 3, "groove": 1, "active": true, "lyrics": "yildizlarin_altinda.txt", "pads": [] },
-    { "name": "You Never Can Tell"          , "lang": "EN", "genre": "blues", "key": "A"  , "chord": "major"  , "duration": 3.75  , "bpm": 85   , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "active": true, "lyrics": "you_can_never_tell.txt", "pads": [] }
+    { "name": "You Are The One That I Want" , "lang": "EN", "genre": "pop"  , "key": "Bb" , "chord": "major"  , "duration": 3     , "bpm": 100  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 4, "we_play": 2, "volume": 2, "groove": 2, "active": true, "lyrics": "you_are_the_one_that_i_want.txt", "pads": [] },
+    { "name": "You Never Can Tell"          , "lang": "EN", "genre": "blues", "key": "A"  , "chord": "major"  , "duration": 3.75  , "bpm": 85   , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "active": true, "lyrics": "you_can_never_tell.txt", "pads": [] },
+    { "name": "You Ought To Know"           , "lang": "EN", "genre": "rock" , "key": "F#" , "chord": "minor"  , "duration": 4     , "bpm": 120  , "mood": "bright"  , "age": 3, "popular": 3, "we_like": 3, "we_play": 2, "volume": 2, "groove": 2, "active": true, "lyrics": "you_ought_to_know.txt", "pads": [] }
   ],
   "event_settings": [
     {
@@ -86,10 +91,8 @@
         "Sweet Home Alabama",
         "Walking By Myself"
       ],
-      "_gig_openers": ["Aint No Sunshine", "Human", "These Boots"],
-      "_gig_closers": ["Hound Dog", "Blue Suede Shoes", "The House Is Rocking", "Mary Had A Little Lamb", "Mercedes Benz","Johnny B. Goode"],
-      "gig_openers": [],
-      "gig_closers": [],
+      "gig_openers": ["Aint No Sunshine", "Human", "These Boots"],
+      "gig_closers": ["Hound Dog", "Blue Suede Shoes", "The House Is Rocking", "Mary Had A Little Lamb", "Mercedes Benz","Johnny B. Goode"],
       "set_openers": [],
       "set_closers": []
     }
