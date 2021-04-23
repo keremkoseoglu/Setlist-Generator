@@ -27,7 +27,8 @@ class EventSetting:
                  gig_openers: List[str] = None,
                  gig_closers: List[str] = None,
                  set_openers: List[str] = None,
-                 set_closers: List[str] = None):
+                 set_closers: List[str] = None,
+                 lineup: str = ""):
 
         if excluded_songs is None:
             self.excluded_songs = []
@@ -75,6 +76,13 @@ class EventSetting:
                 else:
                     song_reservation.set_closer = True
 
+        self.lineup = lineup
+
+    @property
+    def has_lineup_constraint(self) -> bool:
+        """ Returns true if event is played with a specific lineup """
+        return self.lineup != ""
+
     def get_song_reservation(self, song_name: str) -> SongReservation:
         """ Returns the reserved song """
         for song_reservation in self.song_reservations:
@@ -116,7 +124,8 @@ class Band:
                  name: str = None,
                  songs: List[Song] = None,
                  event_settings: EventSettings = None,
-                 flukebox_playlists: List[str] = None):
+                 flukebox_playlists: List[str] = None,
+                 lineups: List[str] = None):
 
         if name is None:
             self.name = ""
@@ -137,3 +146,8 @@ class Band:
             self.flukebox_playlists = []
         else:
             self.flukebox_playlists = flukebox_playlists
+
+        if lineups is None:
+            self.lineups = []
+        else:
+            self.lineups = lineups

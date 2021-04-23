@@ -45,6 +45,11 @@ class Song:
         self.lyrics = song_input["lyrics"]
         self.pads = song_input["pads"]
 
+        if "lineups" in song_input:
+            self.lineups = song_input["lineups"]
+        else:
+            self.lineups = []
+
         self._calculate_rating()
         self._calculate_energy()
 
@@ -80,6 +85,17 @@ class Song:
                 line = "__________"
                 output[line_index] = line
         return output
+
+    @property
+    def has_lineup_constraint(self) -> bool:
+        """ Returns true if the song can only be played with a specific lineup """
+        return len(self.lineups) > 0
+
+    def can_be_played_with_lineup(self, lineup: str) -> bool:
+        """ Can the song be played with the specified lineup """
+        if not self.has_lineup_constraint:
+            return True
+        return lineup in self.lineups
 
     def _calculate_energy(self):
         self.energy = self.bpm * self.volume * self.popular * self.groove
