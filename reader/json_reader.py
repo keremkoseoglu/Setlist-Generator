@@ -110,17 +110,27 @@ class JsonReader(AbstractReader):
             set_openers = json_event_setting["set_openers"]
             set_closers = json_event_setting["set_closers"]
 
+            if "lineup" in json_event_setting:
+                lineup = json_event_setting["lineup"]
+            else:
+                lineup = ""
+
             event_setting_obj = EventSetting(
                 excluded_songs,
                 gig_openers,
                 gig_closers,
                 set_openers,
-                set_closers)
+                set_closers,
+                lineup)
 
             output.event_settings.append(json_event_setting["name"], event_setting_obj)
 
         if "flukebox_playlists" in band_json:
             output.flukebox_playlists = band_json["flukebox_playlists"]
+
+        if "lineups" in band_json:
+            output.lineups = band_json["lineups"]
+
         return output
 
     def read(self, band_param: str, event_param: str) -> performance.Performance:

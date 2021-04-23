@@ -21,6 +21,7 @@ class ObsoleteSongs:
         self.filtered_by_genre = []
         self.filtered_by_language = []
         self.filtered_for_event = []
+        self.filtered_by_lineup = []
 
     @property
     def all(self) -> List[Song]:
@@ -29,7 +30,8 @@ class ObsoleteSongs:
             self.inactive,
             self.filtered_by_genre,
             self.filtered_by_language,
-            self.filtered_for_event])
+            self.filtered_for_event,
+            self.filtered_by_lineup])
 
 
 class SongPool:
@@ -181,21 +183,31 @@ class SongPool:
         else:
             event_setting = self.band.event_settings.get(self.event.name)
 
+        # todo
+        # yeni kategori: lineup
+        # lineup uymuyorsa hariç tut
+        # obsolete songs listelenen yerlerde lineup'ları da göster
+
         for song in self.band.songs:
             if not song.active:
                 self.obsolete_songs.inactive.append(song)
             elif self.event is not None and \
-                    len(self.event.genre_filter) > 0 and \
-                    song.genre not in self.event.genre_filter:
+                 len(self.event.genre_filter) > 0 and \
+                 song.genre not in self.event.genre_filter:
                 self.obsolete_songs.filtered_by_genre.append(song)
             elif self.event is not None and \
-                    len(self.event.language_filter) > 0 and \
-                    song.language not in self.event.language_filter:
+                 len(self.event.language_filter) > 0 and \
+                 song.language not in self.event.language_filter:
                 self.obsolete_songs.filtered_by_language.append(song)
             elif self.songs_excluded_from_event is not None and \
-                    song.name in self.songs_excluded_from_event:
+                 song.name in self.songs_excluded_from_event:
                 self.obsolete_songs.filtered_for_event.append(song)
-            elif event_setting is not None and event_setting.is_song_reserved(song.name):
+            elif event_setting is not None and \
+                 event_setting.has_lineup_constraint and \
+                 not song.can_be_played_with_lineup(event_setting.lineup):
+                self.obsolete_songs.filtered_by_lineup.append(song)
+            elif event_setting is not None and \
+                 event_setting.is_song_reserved(song.name):
                 self.reserved_songs.append(song)
             else:
                 self.unreserved_songs.append(song)
