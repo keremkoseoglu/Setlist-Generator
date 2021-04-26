@@ -183,14 +183,13 @@ class SongPool:
         else:
             event_setting = self.band.event_settings.get(self.event.name)
 
-        # todo
-        # yeni kategori: lineup
-        # lineup uymuyorsa hariç tut
-        # obsolete songs listelenen yerlerde lineup'ları da göster
-
         for song in self.band.songs:
             if not song.active:
                 self.obsolete_songs.inactive.append(song)
+            elif event_setting is not None and \
+                 event_setting.has_lineup_constraint and \
+                 not song.can_be_played_with_lineup(event_setting.lineup):
+                self.obsolete_songs.filtered_by_lineup.append(song)
             elif self.event is not None and \
                  len(self.event.genre_filter) > 0 and \
                  song.genre not in self.event.genre_filter:
@@ -202,10 +201,6 @@ class SongPool:
             elif self.songs_excluded_from_event is not None and \
                  song.name in self.songs_excluded_from_event:
                 self.obsolete_songs.filtered_for_event.append(song)
-            elif event_setting is not None and \
-                 event_setting.has_lineup_constraint and \
-                 not song.can_be_played_with_lineup(event_setting.lineup):
-                self.obsolete_songs.filtered_by_lineup.append(song)
             elif event_setting is not None and \
                  event_setting.is_song_reserved(song.name):
                 self.reserved_songs.append(song)
