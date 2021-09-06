@@ -114,7 +114,7 @@ class PerformancePreviewWindow(tkinter.Toplevel):
         self._performance.resurrect_song(
             self._selected_dead_song,
             self._set_index,
-            self._song_list.curselection()[0])
+            self._dead_list.curselection()[0])
 
         self._fill_song_list()
 
