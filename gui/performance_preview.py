@@ -6,7 +6,6 @@ from writer.html_writer import HtmlWriter
 from writer.igigi_writer import IgigiWriter
 from writer.flukebox_writer import FlukeBoxWriter
 
-
 class PerformancePreviewWindow(tkinter.Toplevel):
     """ Performance preview window """
 
@@ -47,6 +46,14 @@ class PerformancePreviewWindow(tkinter.Toplevel):
         cell_x += PerformancePreviewWindow._BUTTON_WIDTH + PerformancePreviewWindow._X_SPACING
 
         save_button = tkinter.Button(self, text=">>", command=self._next_set)
+        save_button.place(x=cell_x, y=cell_y)
+        cell_x += PerformancePreviewWindow._BUTTON_WIDTH + PerformancePreviewWindow._X_SPACING
+
+        save_button = tkinter.Button(self, text="Up", command=self._move_up)
+        save_button.place(x=cell_x, y=cell_y)
+        cell_x += PerformancePreviewWindow._BUTTON_WIDTH + PerformancePreviewWindow._X_SPACING
+
+        save_button = tkinter.Button(self, text="Down", command=self._move_down)
         save_button.place(x=cell_x, y=cell_y)
         cell_x += PerformancePreviewWindow._BUTTON_WIDTH + PerformancePreviewWindow._X_SPACING
 
@@ -117,6 +124,32 @@ class PerformancePreviewWindow(tkinter.Toplevel):
             self._dead_list.curselection()[0])
 
         self._fill_song_list()
+
+    def _move_up(self):
+        try:
+            list_index = self._song_list.curselection()[0]
+        except Exception:
+            return
+        self._performance.move_song_up(self._selected_live_song)
+        self._fill_song_list()
+        list_index -= 1
+        try:
+            self._song_list.select_set(list_index)
+        except Exception:
+            pass
+
+    def _move_down(self):
+        try:
+            list_index = self._song_list.curselection()[0]
+        except Exception:
+            return
+        self._performance.move_song_down(self._selected_live_song)
+        self._fill_song_list()
+        list_index += 1
+        try:
+            self._song_list.select_set(list_index)
+        except Exception:
+            pass
 
     def _save(self):
         HtmlWriter().write(self._performance)

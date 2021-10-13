@@ -37,9 +37,9 @@ class PrimalSongPickerInput:
 
 class PrimalCandidateSet:
     """ Defines a set of candidates """
-    candidates: []
+    candidates: List
 
-    def __init__(self, p_candidates: []):
+    def __init__(self, p_candidates: List):
         self.candidates = p_candidates
 
 

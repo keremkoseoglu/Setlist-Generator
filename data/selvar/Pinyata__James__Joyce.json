@@ -1,1 +1,1 @@
-[{"criteria": "key", "priority": 1, "selected": true}, {"criteria": "mood", "priority": 2, "selected": true}, {"criteria": "age", "priority": 3, "selected": true}, {"criteria": "genre", "priority": 4, "selected": true}, {"criteria": "chord", "priority": 5, "selected": true}]
+[{"criteria": "key", "priority": 1, "selected": true}, {"criteria": "mood", "priority": 2, "selected": true}, {"criteria": "genre", "priority": 3, "selected": true}, {"criteria": "age", "priority": 4, "selected": true}, {"criteria": "chord", "priority": 5, "selected": true}]

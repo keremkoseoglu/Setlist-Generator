@@ -5,13 +5,18 @@
   "sets": [
     {
       "number": 1,
-      "start": "2020-02-08T21:30:00.782Z",
-      "duration": 110,
-      "flow": [ { "part": 1  , "energy": 1, "percentage": 20 },
-                { "part": 2  , "energy": 2, "percentage": 20 },
-                { "part": 3  , "energy": 3, "percentage": 20 },
-                { "part": 4  , "energy": 2, "percentage": 20 },
-                { "part": 5  , "energy": 3, "percentage": 20 } ]
+      "start": "2021-10-02T21:30:00.782Z",
+      "duration": 70,
+      "flow": [ { "part": 1  , "energy": 1, "percentage": 30 },
+                { "part": 2  , "energy": 2, "percentage": 40 },
+                { "part": 3  , "energy": 3, "percentage": 30 } ]
+    },
+    {
+      "number": 2,
+      "start": "2021-10-02T22:55:00.782Z",
+      "duration": 65,
+      "flow": [ { "part": 1  , "energy": 2, "percentage": 50 },
+                { "part": 2  , "energy": 3, "percentage": 50 } ]
     }
   ]
 }
