@@ -19,6 +19,11 @@ class SongReservation:
         self.set_opener = set_opener
         self.set_closer = set_closer
 
+class ManualSet:
+    """ Manual set class """
+    def __init__(self, number: int, songs: List[str]):
+        self.number = number
+        self.songs = songs
 
 class EventSetting:
     """ Event settings class """
@@ -28,7 +33,8 @@ class EventSetting:
                  gig_closers: List[str] = None,
                  set_openers: List[str] = None,
                  set_closers: List[str] = None,
-                 lineup: str = ""):
+                 lineup: str = "",
+                 sets: List = None):
 
         if excluded_songs is None:
             self.excluded_songs = []
@@ -77,6 +83,12 @@ class EventSetting:
                     song_reservation.set_closer = True
 
         self.lineup = lineup
+
+        self.manual_sets = []
+
+        if sets is not None:
+            for set in sets:
+                self.manual_sets.append(ManualSet(set["number"], set["songs"]))
 
     @property
     def has_lineup_constraint(self) -> bool:

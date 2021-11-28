@@ -1,0 +1,50 @@
+{
+  "name": "Jazzge",
+  "songs": [
+    { "name": "Aint No Sunshine"  , "lang": "EN", "genre": "funk"   , "key": "E"  , "chord": "minor"  , "duration": 3     , "bpm": 83   , "mood": "dark"    , "age": 3, "popular": 3, "we_like": 2, "we_play": 2, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "aint_no_sunshine_jazzge.txt", "pads": [] },
+    { "name": "Amour Tes La"      , "lang": "PT", "genre": "brazil" , "key": "Ab" , "chord": "major"  , "duration": 3.5   , "bpm": 123  , "mood": "bright"  , "age": 2, "popular": 1, "we_like": 3, "we_play": 3, "volume": 2, "groove": 3, "active": true , "lineups": [], "lyrics": "amour_tes_la.txt", "pads": [] },
+    { "name": "Another Star"      , "lang": "EN", "genre": "brazil" , "key": "A"  , "chord": "minor"  , "duration": 4     , "bpm": 130  , "mood": "dark"    , "age": 3, "popular": 3, "we_like": 2, "we_play": 2, "volume": 3, "groove": 2, "active": true , "lineups": [], "lyrics": "another_star.txt", "pads": [] },
+    { "name": "Cafe/Muito"        , "lang": ""  , "genre": "brazil" , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 83   , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 1, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Didnt Cha Know"    , "lang": "EN", "genre": "funk"   , "key": "Eb" , "chord": "minor"  , "duration": 4.5   , "bpm": 72   , "mood": "dark"    , "age": 3, "popular": 1, "we_like": 3, "we_play": 2, "volume": 1, "groove": 3, "active": true , "lineups": [], "lyrics": "didnt_cha_know.txt", "pads": [] },
+    { "name": "Good Intent"       , "lang": "EN", "genre": "funk"   , "key": "Eb" , "chord": "minor"  , "duration": 4     , "bpm": 130  , "mood": "dark"    , "age": 2, "popular": 1, "we_like": 3, "we_play": 3, "volume": 2, "groove": 3, "active": true , "lineups": [], "lyrics": "good_intent.txt", "pads": [] },
+    { "name": "Happy"             , "lang": "EN", "genre": "funk"   , "key": "F"  , "chord": "minor"  , "duration": 3.5   , "bpm": 85   , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 3, "we_play": 3, "volume": 2, "groove": 3, "active": true , "lineups": [], "lyrics": "happy.txt", "pads": [] },
+    { "name": "Havana"            , "lang": "EN", "genre": "brazil" , "key": "G"  , "chord": "minor"  , "duration": 4.25  , "bpm": 97   , "mood": "dark"    , "age": 2, "popular": 3, "we_like": 1, "we_play": 1, "volume": 1, "groove": 1, "active": true , "lineups": [], "lyrics": "havana.txt", "pads": [] },
+    { "name": "How Insensitive"   , "lang": "EN", "genre": "brazil" , "key": "A"  , "chord": "minor"  , "duration": 3     , "bpm": 110  , "mood": "dark"    , "age": 4, "popular": 3, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "active": true , "lineups": [], "lyrics": "how_insensitive.txt", "pads": [] },
+    { "name": "I Wish"            , "lang": "EN", "genre": "funk"   , "key": "D"  , "chord": "minor"  , "duration": 4     , "bpm": 105  , "mood": "bright"  , "age": 3, "popular": 3, "we_like": 3, "we_play": 3, "volume": 2, "groove": 3, "active": true , "lineups": [], "lyrics": "I_wish.txt", "pads": [] },
+    { "name": "Mais Que Nada"     , "lang": "PT", "genre": "brazil" , "key": "F"  , "chord": "minor"  , "duration": 5.5   , "bpm": 87   , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 3, "we_play": 3, "volume": 3, "groove": 3, "active": true , "lineups": [], "lyrics": "mais_que_nada.txt", "pads": [] },
+    { "name": "Mercy"             , "lang": "EN", "genre": "brazil" , "key": "G"  , "chord": "major"  , "duration": 5     , "bpm": 75   , "mood": "bright"  , "age": 2, "popular": 2, "we_like": 3, "we_play": 2, "volume": 2, "groove": 1, "active": true , "lineups": [], "lyrics": "mercy_jazzge.txt", "pads": [] },
+    { "name": "On And On"         , "lang": "EN", "genre": "funk"   , "key": "E"  , "chord": "minor"  , "duration": 3.5   , "bpm": 83   , "mood": "dark"    , "age": 2, "popular": 1, "we_like": 1, "we_play": 2, "volume": 1, "groove": 2, "active": true , "lineups": [], "lyrics": "on_on.txt", "pads": [] },
+    { "name": "Oye Como Va"       , "lang": "PT", "genre": "brazil" , "key": "C"  , "chord": "minor"  , "duration": 4.75  , "bpm": 70   , "mood": "dark"    , "age": 3, "popular": 2, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "active": true , "lineups": [], "lyrics": "oye_comova.txt", "pads": [] },
+    { "name": "Partido Alto"      , "lang": "PT", "genre": "brazil" , "key": "G"  , "chord": "minor"  , "duration": 4.75  , "bpm": 95   , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 3, "we_play": 3, "volume": 2, "groove": 3, "active": true , "lineups": [], "lyrics": "partido_alto.txt", "pads": [] },
+    { "name": "Rim Shot"          , "lang": "EN", "genre": "funk"   , "key": "C"  , "chord": "minor"  , "duration": 3     , "bpm": 80   , "mood": "dark"    , "age": 2, "popular": 1, "we_like": 3, "we_play": 3, "volume": 1, "groove": 3, "active": true , "lineups": [], "lyrics": "rim_shot.txt", "pads": [] },
+    { "name": "Soberana/Ponteio"  , "lang": "EN", "genre": "brazil" , "key": "D"  , "chord": "major"  , "duration": 8.25  , "bpm": 68   , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 3, "we_play": 3, "volume": 2, "groove": 3, "active": true , "lineups": [], "lyrics": "she_walks_this_earth.txt", "pads": [] },
+    { "name": "Smooth Operator"   , "lang": "EN", "genre": "brazil" , "key": "D"  , "chord": "minor"  , "duration": 4.75  , "bpm": 110  , "mood": "dark"    , "age": 3, "popular": 3, "we_like": 2, "we_play": 1, "volume": 2, "groove": 1, "active": true , "lineups": [], "lyrics": "smooth_operator.txt", "pads": [] },
+    { "name": "So Danco Samba"    , "lang": "PT", "genre": "brazil" , "key": "D"  , "chord": "major"  , "duration": 4.5   , "bpm": 94   , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "so_danco_samba.txt", "pads": [] },
+    { "name": "Superstition"      , "lang": "EN", "genre": "funk"   , "key": "F"  , "chord": "minor"  , "duration": 5     , "bpm": 103  , "mood": "bright"  , "age": 3, "popular": 3, "we_like": 2, "we_play": 2, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "supersitition_jazzge.txt", "pads": [] },
+    { "name": "Tela Cigana"       , "lang": "PT", "genre": "brazil" , "key": "C"  , "chord": "major"  , "duration": 5     , "bpm": 108  , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "tela_cigana.txt", "pads": [] },
+    { "name": "Telefone"          , "lang": "PT", "genre": "brazil" , "key": "G"  , "chord": "major"  , "duration": 4.5   , "bpm": 95   , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 3, "we_play": 3, "volume": 3, "groove": 2, "active": true , "lineups": [], "lyrics": "telefone.txt", "pads": [] }
+  ],
+  "event_settings": [
+    {
+      "name": "Bova",
+      "lineup": "",
+      "excluded_songs": [],
+      "gig_openers": [],
+      "gig_closers": [],
+      "set_openers": [],
+      "set_closers": [],
+      "sets": [
+        {
+          "number": 1,
+          "songs": ["Cafe/Muito", "Rim Shot", "Aint No Sunshine", "Good Intent", "Happy", "Partido Alto", "Mercy", "Tela Cigana", "Oye Como Va", "Another Star", "Mais Que Nada"]
+        },
+        {
+          "number": 2,
+          "songs": ["Amour Tes La", "Smooth Operator", "On And On", "I Wish", "Superstition", "Didnt Cha Know", "Havana", "So Danco Samba", "How Insensitive", "Soberana/Ponteio", "Telefone"]
+        }
+      ]
+    }
+  ],
+  "flukebox_playlists": ["jazzge"],
+  "lineups": []
+}

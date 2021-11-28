@@ -45,7 +45,20 @@ class PrimalGenerator(AbstractGenerator):
                       set_count: int,
                       perf: Performance,
                       criteria: List[SongCriteria]):
+
+        # Prepare
         event_set = self._performance.event.sets[set_index]
+
+        # Case: Set is defined in band JSON
+        for manual_set in self._performance.event_setting.manual_sets:
+            if manual_set.number == set_index + 1:
+                flow_step = event_set.flow[0]
+                for manual_song in manual_set.songs:
+                    manual_song_obj = self._performance.song_pool.pop_leftover_song(manual_song)
+                    flow_step.songs.append(manual_song_obj)
+                return
+
+        # Case: Set is not defined in band JSON
         flow_step_count = len(event_set.flow)
 
         while not _plan_set_duration_surpassed(event_set):

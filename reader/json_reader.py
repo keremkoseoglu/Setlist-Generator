@@ -109,6 +109,11 @@ class JsonReader(AbstractReader):
             gig_closers = json_event_setting["gig_closers"]
             set_openers = json_event_setting["set_openers"]
             set_closers = json_event_setting["set_closers"]
+            
+            if "sets" in json_event_setting:
+                sets = json_event_setting["sets"]
+            else:
+                sets = []
 
             if "lineup" in json_event_setting:
                 lineup = json_event_setting["lineup"]
@@ -121,7 +126,8 @@ class JsonReader(AbstractReader):
                 gig_closers,
                 set_openers,
                 set_closers,
-                lineup)
+                lineup,
+                sets)
 
             output.event_settings.append(json_event_setting["name"], event_setting_obj)
 
