@@ -204,7 +204,7 @@ class PrimalSongPicker:
         song_reservation = self._input.performance.event_setting.get_song_reservation(song_name)
         return song_reservation.gig_closer_order
 
-    def _get_songs_of_desired_energy(self) -> []:
+    def _get_songs_of_desired_energy(self) -> List:
         output = []
 
         if self._input.flow_step.energy == 1:

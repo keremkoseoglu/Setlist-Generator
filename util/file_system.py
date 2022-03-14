@@ -1,5 +1,6 @@
 """ File system module """
 import os
+from typing import List
 from config import Config
 
 
@@ -14,7 +15,7 @@ def get_desktop_file_name(file_name: str, extension: str) -> str:
     return output
 
 
-def get_files_in_dir(dir_name: str) -> []:
+def get_files_in_dir(dir_name: str) -> List:
     """ Returns all files in the given dir """
     output = []
     extension = Config().data_file_extension

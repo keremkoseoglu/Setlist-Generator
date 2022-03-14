@@ -1,10 +1,11 @@
 """ Module regarding pad sample sounds """
 from os import path
+from typing import List
 import json
 from config import Config
 
 
-def get_samples_as_list() -> []:
+def get_samples_as_list() -> List:
     """ Returns sample file contents """
     config = Config()
     sample_file_path = path.join(config.sample_dir, config.sample_json)

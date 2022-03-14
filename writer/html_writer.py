@@ -22,7 +22,6 @@ def _get_formatted_time(raw_datetime: datetime) -> str:
 
 class HtmlWriter(AbstractWriter):
     """ HTML writer class """
-
     def __init__(self):
         super().__init__()
         self._html_file = os.path.join(Config().download_dir, 'setlist.html')

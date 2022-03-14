@@ -1,10 +1,4 @@
-Bugün çok yorulmuşsan
-Her yerde arayıp
-Yine de bulamamışsan
-O seni unutmuş
-Sen unutamamışsan
-Kalbinin kuşu uçmuş
-Sen tutamamışsan
+*Haydi gel içelim - İlk akor faminör Fm
 
 Bugün çok yorulmuşsan
 Her yerde arayıp
@@ -14,17 +8,27 @@ Sen unutamamışsan
 Kalbinin kuşu uçmuş
 Sen tutamamışsan
 
+[verse 1]
+Bugün çok yorulmuşsan
+Her yerde arayıp
+Yine de bulamamışsan
+O seni unutmuş
+Sen unutamamışsan
+Kalbinin kuşu uçmuş
+Sen tutamamışsan
+
+[Chorus]
 Haydi gel
-Haydi gel içelim
+
 Derdini al da gel
-Haydi gel içelim
+
 Bu evrende bir tozsun
 Tarih seni unutsun
 Haydi gel içelim
 Topla da gel
-Haydi gel içelim
+
 Hepsini al da gel
-Haydi gel içelim
+
 Mazi kalbinde yaraysa
 Unut artık ne varsa
 Haydi gel içelim
@@ -32,6 +36,7 @@ Yerlere düşelim
 Haydi gel içelim
 Yerlere düşelim
 
+[Verse 1]
 Bugün çok yorulmuşsan
 Her yerde arayıp
 Yine de bulamamışsan
@@ -40,17 +45,18 @@ Sen unutamamışsan
 Kalbinin kuşu uçmuş
 Sen tutamamışsan
 
+[Chorus]
 Haydi gel
-Haydi gel içelim
+
 Derdini al da gel
-Haydi gel içelim
+
 Bu evrende bir tozsun
 Tarih seni unutsun
 Haydi gel içelim
 Topla da gel
-Haydi gel içelim
+
 Hepsini al da gel
-Haydi gel içelim
+
 Mazi kalbinde yaraysa
 Unut artık ne varsa
 Haydi gel içelim
@@ -58,6 +64,9 @@ Yerlere düşelim
 Haydi gel içelim
 Yerlere düşelim
 
+Gitar solo
+
+[Chorus 2]
 Haydi gel
 Haydi gel içelim
 Derdini al da gel

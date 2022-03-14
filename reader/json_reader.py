@@ -109,7 +109,7 @@ class JsonReader(AbstractReader):
             gig_closers = json_event_setting["gig_closers"]
             set_openers = json_event_setting["set_openers"]
             set_closers = json_event_setting["set_closers"]
-            
+
             if "sets" in json_event_setting:
                 sets = json_event_setting["sets"]
             else:
