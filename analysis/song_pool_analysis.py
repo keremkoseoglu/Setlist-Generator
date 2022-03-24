@@ -80,7 +80,7 @@ class SongPoolAnalysis:
     immediately.
     """
 
-    def __init__(self, pool: SongPool):
+    def __init__(self, pool: SongPool, with_obsolete: bool = False):
         self.pool = pool
         self.result = None
 
@@ -93,7 +93,15 @@ class SongPoolAnalysis:
         energy_generator = NumericSongStatisticGenerator()
         rating_generator = NumericSongStatisticGenerator()
 
-        for song in pool.leftover_songs:
+        self.analysis_songs = []
+        self.analysis_songs.extend(pool.leftover_songs)
+        if with_obsolete:
+            self.analysis_songs.extend(pool.obsolete_songs.all)
+            self.analysis_songs.extend(pool.dead_songs)
+
+        self.analysis_songs.sort(key = lambda x : x.name)
+
+        for song in self.analysis_songs:
             duration_generator.analyse(p_song=song, p_value=song.duration)
             energy_generator.analyse(p_song=song, p_value=song.energy)
             rating_generator.analyse(p_song=song, p_value=song.rating)
@@ -172,7 +180,7 @@ class SongPoolAnalysisHtmlGenerator:
                             energy="Energy",
                             language="Language")
 
-        for song in self.analysis.pool.leftover_songs:
+        for song in self.analysis.analysis_songs:
             self._put_song_line(name=song.name,
                                 formatted_key=song.formatted_key,
                                 duration=str(song.duration),

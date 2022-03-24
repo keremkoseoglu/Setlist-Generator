@@ -183,6 +183,6 @@ class Prime:
         selected_band_path = self._get_selected_band_path()
         band = JsonReader().get_band(selected_band_path)
         band_song_pool = SongPool(band, None)
-        analysis = SongPoolAnalysis(band_song_pool)
+        analysis = SongPoolAnalysis(band_song_pool, with_obsolete=True)
         generator = SongPoolAnalysisHtmlGenerator(analysis)
         generator.generate()
