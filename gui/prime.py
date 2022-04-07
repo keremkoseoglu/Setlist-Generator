@@ -133,11 +133,11 @@ class Prime:
 
     def _edit_band(self):
         selected_file_path = self._get_selected_band_path()
-        os.system("open " + selected_file_path)
+        os.system(f"open {selected_file_path}")
 
     def _edit_event(self):
         selected_file_path = self._get_selected_event_path()
-        os.system("open " + selected_file_path)
+        os.system(f"open {selected_file_path}")
 
     def _generate(self):
         selected_band_path = self._get_selected_band_path()

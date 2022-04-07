@@ -142,7 +142,7 @@ class SongPoolAnalysisHtmlGenerator:
     def _download_file(self):
         with open(self._HTML_FILE, "w+") as file2:
             file2.write(self._html)
-        os.system("open " + self._HTML_FILE)
+        os.system(f"open {self._HTML_FILE}")
 
     def _put_numeric_song_statistic(self, stat: NumericSongStatistic, title: str):
         self._html += "<h1>" + title + "</h1><ul>"

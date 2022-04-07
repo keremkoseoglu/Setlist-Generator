@@ -10,11 +10,11 @@ class ConsoleWriter(AbstractWriter):
         """ Prints everything to console """
 
         for event_set in generated_performance.event.sets:
-            print("Set " + str(event_set.number))
+            print(f"Set {str(event_set.number)}")
 
             for flow_step in event_set.flow:
                 for song in flow_step.songs:
                     print(song.name + " - " + song.key + " " + song.chord)
 
             print("")
-            print("Total set duration: " + str(event_set.get_actual_duration()))
+            print(f"Total set duration: {str(event_set.get_actual_duration())}")

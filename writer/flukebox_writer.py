@@ -51,7 +51,7 @@ class FlukeBoxWriter(AbstractWriter):
             json.dump(self._output, output_file)
 
     def _submit_flukebox(self):
-        command = "cd " + self._config.flukebox_dir+ ";"
+        command = f"cd {self._config.flukebox_dir};"
         command += " venv/bin/python3 main.py seek="
         command += self._seek_path
         system(command)

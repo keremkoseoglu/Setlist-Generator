@@ -71,7 +71,7 @@ class Song:
 
         lyric_path = path.join(Config().lyric_dir, self.lyrics)
         if not path.exists(lyric_path):
-            raise Exception("File not found: " + lyric_path)
+            raise Exception(f"File not found: {lyric_path}")
 
         with open(lyric_path, "r", encoding="utf-8", errors="ignore") as lyric_file:
             output = lyric_file.readlines()
