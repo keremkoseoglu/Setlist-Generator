@@ -150,9 +150,8 @@ class SongPoolAnalysisHtmlGenerator:
         self._put_property_count(stat=self.analysis.result.language_count, title="Language")
 
     def _download_file(self):
-        file2 = open(self._HTML_FILE, "w+")
-        file2.write(self._html)
-        file2.close()
+        with open(self._HTML_FILE, "w+") as file2:
+            file2.write(self._html)
         os.system("open " + self._HTML_FILE)
 
     def _put_numeric_song_statistic(self, stat: NumericSongStatistic, title: str):

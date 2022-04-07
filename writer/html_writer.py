@@ -90,9 +90,8 @@ class HtmlWriter(AbstractWriter):
 
         self.html += "</body></html>"
 
-        file2 = open(self._html_file, "w+")
-        file2.write(self.html)
-        file2.close()
+        with open(self._html_file, "w+") as file2:
+            file2.write(self.html)
         os.system("open " + self._html_file)
 
     def _append_excluded_songs(self, title: str, songs: List[Song]):
