@@ -128,7 +128,7 @@ class SongPool:
                            gig_opener=False,
                            set_closer=False,
                            gig_closer=False,
-                           set_opener=False) -> []:
+                           set_opener=False) -> List:
         """ Returns reserved songs """
         output = []
         event_setting = self.band.event_settings.get(self.event.name)
@@ -230,7 +230,7 @@ class SongPool:
         return output
 
     @staticmethod
-    def _get_song_index(song_name: str, song_list: []) -> int:
+    def _get_song_index(song_name: str, song_list: List) -> int:
         output = -1
         for song in song_list:
             output += 1
@@ -239,7 +239,7 @@ class SongPool:
         return -1
 
     @staticmethod
-    def _pop_song_from_list(song_name: str, song_list: []) -> Song:
+    def _pop_song_from_list(song_name: str, song_list: List) -> Song:
         idx = SongPool._get_song_index(song_name, song_list)
         if idx >= 0:
             return song_list.pop(idx)

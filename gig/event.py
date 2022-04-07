@@ -1,31 +1,23 @@
 """ Event module """
+from dataclasses import dataclass
 from typing import List
 from gig.set import Set
 
 
+@dataclass
 class Event:
     """ Event class """
-    def __init__(self,
-                 name: str = None,
-                 sets: List[Set] = None,
-                 genre_filter: List[str] = None,
-                 language_filter: List[str] = None):
-        if name is None:
-            self.name = ""
-        else:
-            self.name = name
+    name: str = "",
+    sets: List[Set] = None,
+    genre_filter: List[str] = None,
+    language_filter: List[str] = None
 
-        if sets is None:
+    def __post_init__(self):
+        if self.sets is None:
             self.sets = []
-        else:
-            self.sets = sets
 
-        if genre_filter is None:
+        if self.genre_filter is None:
             self.genre_filter = []
-        else:
-            self.genre_filter = genre_filter
 
-        if language_filter is None:
+        if self.language_filter is None:
             self.language_filter = []
-        else:
-            self.language_filter = language_filter

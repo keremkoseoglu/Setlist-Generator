@@ -1,18 +1,18 @@
 """ Song pool analysis module """
+from dataclasses import dataclass
 import os
 from gig.song import Song
 from gig.song_pool import SongPool
 
-
+@dataclass
 class NumericSongStatistic:
     """ Numeric song statistic, containing average, min, max, etc values """
-    def __init__(self):
-        self.max_song = None
-        self.max_value = -999999
-        self.min_song = None
-        self.min_value = 999999
-        self.total_value = 0
-        self.song_count = 0
+    max_song = None
+    max_value = -999999
+    min_song = None
+    min_value = 999999
+    total_value = 0
+    song_count = 0
 
     @property
     def avg_value(self) -> int:
@@ -52,26 +52,16 @@ class SongPropertyCount:
         else:
             self.counts[key] = value
 
-
+@dataclass
 class SongPoolAnalysisResult:
     """ Result of a song pool analysis """
-
-    def __init__(self,
-                 key_count: SongPropertyCount,
-                 duration_stats: NumericSongStatistic,
-                 genre_count: SongPropertyCount,
-                 energy_stats: NumericSongStatistic,
-                 rating_stats: NumericSongStatistic,
-                 genre_duration: SongPropertyCount,
-                 language_count: SongPropertyCount
-                 ):
-        self.key_count = key_count
-        self.duration_stats = duration_stats
-        self.genre_count = genre_count
-        self.energy_stats = energy_stats
-        self.rating_stats = rating_stats
-        self.genre_duration = genre_duration
-        self.language_count = language_count
+    key_count: SongPropertyCount
+    duration_stats: NumericSongStatistic
+    genre_count: SongPropertyCount
+    energy_stats: NumericSongStatistic
+    rating_stats: NumericSongStatistic
+    genre_duration: SongPropertyCount
+    language_count: SongPropertyCount
 
 
 class SongPoolAnalysis:

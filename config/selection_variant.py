@@ -1,4 +1,5 @@
 """ Selection variant module """
+from dataclasses import dataclass
 import json
 from os import path
 from typing import List
@@ -8,12 +9,12 @@ from gig.event import Event
 from gig.song import SongCriteria
 
 
+@dataclass
 class SelectionVariantEntry:
     """ Selection variant entry """
-    def __init__(self, song_criteria: SongCriteria, priority: int, selected: bool):
-        self.song_criteria = song_criteria
-        self.priority = priority
-        self.selected = selected
+    song_criteria: SongCriteria
+    priority: int
+    selected: bool
 
 
 class SelectionVariant:

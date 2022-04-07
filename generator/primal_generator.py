@@ -106,17 +106,17 @@ class PrimalGenerator(AbstractGenerator):
                         is_last_flow_step_of_gig = False
 
                     psi_input = PrimalSongPickerInput(
-                        p_song_pool=self._performance.song_pool,
-                        p_flow_step=flow_step,
-                        p_prev_song=previous_song,
-                        p_prev_flow_step=previous_flow_step,
-                        p_next_flow_step=next_flow_step,
-                        p_is_last_flow_step_of_gig=is_last_flow_step_of_gig,
-                        p_set=event_set,
-                        p_is_last_set=is_last_set,
-                        p_is_first_set=set_index == 0,
-                        p_song_criteria=criteria,
-                        p_performance=perf)
+                        song_pool=self._performance.song_pool,
+                        flow_step=flow_step,
+                        prev_song=previous_song,
+                        prev_flow_step=previous_flow_step,
+                        next_flow_step=next_flow_step,
+                        is_last_flow_step_of_gig=is_last_flow_step_of_gig,
+                        set=event_set,
+                        is_last_set=is_last_set,
+                        is_first_set=set_index == 0,
+                        song_criteria=criteria,
+                        performance=perf)
 
                     song_found = PrimalSongPicker().pop_best_song(psi_input)
                     if not song_found:

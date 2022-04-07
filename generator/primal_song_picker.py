@@ -1,5 +1,6 @@
 """ Song picker module, used by primal generator """
 import copy
+from dataclasses import dataclass
 from typing import List
 from gig.performance import Performance
 from gig.song_pool import SongPool
@@ -8,39 +9,25 @@ from gig.set_flow_step import SetFlowStep
 from gig.set import Set
 
 
+@dataclass
 class PrimalSongPickerInput:
     """ Picks the next best song """
-    def __init__(self,
-                 p_song_pool: SongPool,
-                 p_flow_step: SetFlowStep,
-                 p_prev_song: Song,
-                 p_prev_flow_step: SetFlowStep,
-                 p_next_flow_step: SetFlowStep,
-                 p_is_last_flow_step_of_gig: bool,
-                 p_set: Set,
-                 p_is_last_set: bool,
-                 p_is_first_set: bool,
-                 p_song_criteria: List[SongCriteria],
-                 p_performance: Performance):
-        self.song_pool = p_song_pool
-        self.flow_step = p_flow_step
-        self.prev_song = p_prev_song
-        self.prev_flow_step = p_prev_flow_step
-        self.next_flow_step = p_next_flow_step
-        self.is_last_flow_step_of_gig = p_is_last_flow_step_of_gig
-        self.is_last_set = p_is_last_set
-        self.is_first_set = p_is_first_set
-        self.set = p_set
-        self.song_criteria = p_song_criteria
-        self.performance = p_performance
+    song_pool: SongPool
+    flow_step: SetFlowStep
+    prev_song: Song
+    prev_flow_step: SetFlowStep
+    next_flow_step: SetFlowStep
+    is_last_flow_step_of_gig: bool
+    set: Set
+    is_last_set: bool
+    is_first_set: bool
+    song_criteria: List[SongCriteria]
+    performance: Performance
 
-
+@dataclass
 class PrimalCandidateSet:
     """ Defines a set of candidates """
     candidates: List
-
-    def __init__(self, p_candidates: List):
-        self.candidates = p_candidates
 
 
 class PrimalSongPicker:

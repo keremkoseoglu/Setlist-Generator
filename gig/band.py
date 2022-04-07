@@ -1,59 +1,54 @@
 """ Band module """
+from dataclasses import dataclass
 from typing import List
 from gig.song import Song
 
-
+@dataclass
 class SongReservation:
     """ Song reservation class """
-    def __init__(self,
-                 song_name: str,
-                 gig_opener: bool = False,
-                 gig_closer: bool = False,
-                 gig_closer_order: int = 0,
-                 set_opener: bool = False,
-                 set_closer: bool = False):
-        self.song_name = song_name
-        self.gig_opener = gig_opener
-        self.gig_closer = gig_closer
-        self.gig_closer_order = gig_closer_order
-        self.set_opener = set_opener
-        self.set_closer = set_closer
+    song_name: str
+    gig_opener: bool = False
+    gig_closer: bool = False
+    gig_closer_order: int = 0
+    set_opener: bool = False
+    set_closer: bool = False
 
+
+@dataclass
 class ManualSet:
     """ Manual set class """
-    def __init__(self, number: int, songs: List[str]):
-        self.number = number
-        self.songs = songs
+    number: int
+    songs: List[str]
 
+
+@dataclass
 class EventSetting:
     """ Event settings class """
-    def __init__(self,
-                 excluded_songs: List[str] = None,
-                 gig_openers: List[str] = None,
-                 gig_closers: List[str] = None,
-                 set_openers: List[str] = None,
-                 set_closers: List[str] = None,
-                 lineup: str = "",
-                 sets: List = None):
+    excluded_songs: List[str] = None
+    gig_openers: List[str] = None
+    gig_closers: List[str] = None
+    set_openers: List[str] = None
+    set_closers: List[str] = None
+    lineup: str = ""
+    sets: List = None
 
-        if excluded_songs is None:
+    def __post_init__(self):
+        if self.excluded_songs is None:
             self.excluded_songs = []
-        else:
-            self.excluded_songs = excluded_songs
 
         self.song_reservations = []
 
-        if gig_openers is not None:
-            for gig_opener in gig_openers:
+        if self.gig_openers is not None:
+            for gig_opener in self.gig_openers:
                 song_reservation = self.get_song_reservation(gig_opener)
                 if song_reservation is None:
                     self.song_reservations.append(SongReservation(gig_opener, gig_opener=True))
                 else:
                     song_reservation.gig_opener = True
 
-        if gig_closers is not None:
+        if self.gig_closers is not None:
             gig_closer_index = -1
-            for gig_closer in gig_closers:
+            for gig_closer in self.gig_closers:
                 gig_closer_index += 1
                 song_reservation = self.get_song_reservation(gig_closer)
                 if song_reservation is None:
@@ -66,28 +61,26 @@ class EventSetting:
                     song_reservation.gig_closer = True
                     song_reservation.gig_closer_order = gig_closer_index
 
-        if set_openers is not None:
-            for set_opener in set_openers:
+        if self.set_openers is not None:
+            for set_opener in self.set_openers:
                 song_reservation = self.get_song_reservation(set_opener)
                 if song_reservation is None:
                     self.song_reservations.append(SongReservation(set_opener, set_opener=True))
                 else:
                     song_reservation.set_opener = True
 
-        if set_closers is not None:
-            for set_closer in set_closers:
+        if self.set_closers is not None:
+            for set_closer in self.set_closers:
                 song_reservation = self.get_song_reservation(set_closer)
                 if song_reservation is None:
                     self.song_reservations.append(SongReservation(set_closer, set_closer=True))
                 else:
                     song_reservation.set_closer = True
 
-        self.lineup = lineup
-
         self.manual_sets = []
 
-        if sets is not None:
-            for set in sets:
+        if self.sets is not None:
+            for set in self.sets:
                 self.manual_sets.append(ManualSet(set["number"], set["songs"]))
 
     @property
@@ -130,36 +123,24 @@ class EventSettings:
         return event_settings.excluded_songs
 
 
+@dataclass
 class Band:
     """ Band class """
-    def __init__(self,
-                 name: str = None,
-                 songs: List[Song] = None,
-                 event_settings: EventSettings = None,
-                 flukebox_playlists: List[str] = None,
-                 lineups: List[str] = None):
+    name: str = "",
+    songs: List[Song] = None,
+    event_settings: EventSettings = None,
+    flukebox_playlists: List[str] = None,
+    lineups: List[str] = None
 
-        if name is None:
-            self.name = ""
-        else:
-            self.name = name
-
-        if songs is None:
+    def __post_init__(self):
+        if self.songs is None:
             self.songs = []
-        else:
-            self.songs = songs
 
-        if event_settings is None:
+        if self.event_settings is None:
             self.event_settings = EventSettings()
-        else:
-            self.event_settings = event_settings
 
-        if flukebox_playlists is None:
+        if self.flukebox_playlists is None:
             self.flukebox_playlists = []
-        else:
-            self.flukebox_playlists = flukebox_playlists
 
-        if lineups is None:
+        if self.lineups is None:
             self.lineups = []
-        else:
-            self.lineups = lineups
