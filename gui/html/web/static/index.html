@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Setlist Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/static/css/skeleton/normalize.css">
+  <link rel="stylesheet" href="/static/css/skeleton/skeleton.css">
+  <link rel="stylesheet" href="/static/css/setlist_builder.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+        <h4>Performance</h4>
+        <div class="row">
+            <div class="three columns">Band</div>
+            <div class="six columns"><select id="bands" onchange="bandOrEventChanged()"><option>(loading...)</option></select></div>
+            <div class="three columns"><a class="button" href="#" onClick="editBand()">Edit</a></div>
+        </div>
+        <div class="row">
+            <div class="three columns">Event</div>
+            <div class="six columns"><select id="events" onchange="bandOrEventChanged()"><option>(loading...)</option></select></div>
+            <div class="three columns"><a class="button" href="#" onClick="editEvent()">Edit</a></div>
+        </div>
+
+        <h4>Options</h4>
+        <div class="row">
+            <div class="four columns">Separate keys</div>
+            <div class="two columns"><input id="sepKeyChk" type="checkbox" checked></div>
+            <div class="six columns"><input id="sepKeyPrio" type="text" value="1"></div>
+        </div>
+        <div class="row">
+            <div class="four columns">Group by genre</div>
+            <div class="two columns"><input id="grpGenChk" type="checkbox" checked></div>
+            <div class="six columns"><input id="grpGenPrio" type="text" value="2"></div>
+        </div>
+        <div class="row">
+            <div class="four columns">Group by mood</div>
+            <div class="two columns"><input id="grpMoodChk" type="checkbox" checked></div>
+            <div class="six columns"><input id="grpMoodPrio" type="text" value="3"></div>
+        </div>
+        <div class="row">
+            <div class="four columns">Group by age</div>
+            <div class="two columns"><input id="grpAgeChk" type="checkbox" checked></div>
+            <div class="six columns"><input id="grpAgePrio" type="text" value="4"></div>
+        </div>
+        <div class="row">
+            <div class="four columns">Group by chord</div>
+            <div class="two columns"><input id="grpChordChk" type="checkbox" checked></div>
+            <div class="six columns"><input id="grpChordPrio" type="text" value="5"></div>
+        </div>
+
+        <div class="row footer-buttons">
+            <div class="six columns centered"><button class="button-primary" onClick="generateSetlist()">Generate</button></div>
+            <div class="six columns centered"><button class="button-primary" onClick="generateStats()">Stats</button></div>
+        </div>
+    </div>
+  </div>
+
+  <script src="/static/js/jquery-3.6.0.min.js"></script>
+  <script src="/static/js/index.js"></script>
+</body>
+</html>

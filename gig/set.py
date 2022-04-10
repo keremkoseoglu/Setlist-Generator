@@ -1,4 +1,5 @@
 """ Gig set module """
+from typing import List
 from gig.set_flow_step import SetFlowStep
 from gig.song import Song
 
@@ -46,3 +47,17 @@ class Set:
             if found:
                 flow_step.songs.insert(flow_cursor, song)
                 return
+
+    def enforce_song_list(self, new_song_list: List[str], song_pool: List[Song]):
+        """ Enforces given song list """
+        first_step = True
+        for flow_step in self.flow:
+            flow_step.songs = []
+            if not first_step:
+                continue
+            first_step = False
+
+            for new_song in new_song_list:
+                for pool_entry in song_pool:
+                    if pool_entry.name == new_song:
+                        flow_step.songs.append(pool_entry)

@@ -16,6 +16,15 @@ class SelectionVariantEntry:
     priority: int
     selected: bool
 
+    @property
+    def as_dict(self) -> dict:
+        """ Returns entry as dict """
+        return {
+         "song_criteria": self.song_criteria.name,
+         "priority": self.priority,
+         "selected": self.selected
+        }
+
 
 class SelectionVariant:
     """ Selection variant """
@@ -43,7 +52,7 @@ class SelectionVariant:
         """ Loads the selection variant from the file """
         output = []
         try:
-            with open(self.file_path) as variant_file:
+            with open(self.file_path, encoding="utf-8") as variant_file:
                 data = json.load(variant_file)
                 for entry in data:
                     criteria = entry["criteria"]
@@ -56,6 +65,16 @@ class SelectionVariant:
             pass
         return output
 
+    def load_serialized(self) -> List:
+        """ Loads selection variant as JSON """
+        output = []
+        load_result = self.load()
+        if load_result is None:
+            return output
+        for sve in load_result:
+            output.append(sve.as_dict)
+        return output
+
     def save(self, entries: List[SelectionVariantEntry]):
         """ Writes the variant to disk """
         output = []
@@ -66,5 +85,5 @@ class SelectionVariant:
                           "selected": entry.selected}
             output.append(entry_dict)
 
-        with open(self.file_path, "w") as variant_file:
+        with open(self.file_path, "w", encoding="utf-8") as variant_file:
             json.dump(output, variant_file)

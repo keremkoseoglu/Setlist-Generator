@@ -11,7 +11,7 @@ class Config:
     def __init__(self):
         self._config = {}
         config_path = Config._get_path_in_cwd(Config._CONFIG_FILE)
-        with open(config_path) as config_file:
+        with open(config_path, encoding="utf-8") as config_file:
             self._config = json.load(config_file)
 
     @property

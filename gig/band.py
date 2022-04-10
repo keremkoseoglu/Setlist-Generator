@@ -80,8 +80,8 @@ class EventSetting:
         self.manual_sets = []
 
         if self.sets is not None:
-            for set in self.sets:
-                self.manual_sets.append(ManualSet(set["number"], set["songs"]))
+            for my_set in self.sets:
+                self.manual_sets.append(ManualSet(my_set["number"], my_set["songs"]))
 
     @property
     def has_lineup_constraint(self) -> bool:
@@ -126,10 +126,10 @@ class EventSettings:
 @dataclass
 class Band:
     """ Band class """
-    name: str = "",
-    songs: List[Song] = None,
-    event_settings: EventSettings = None,
-    flukebox_playlists: List[str] = None,
+    name: str = ""
+    songs: List[Song] = None
+    event_settings: EventSettings = None
+    flukebox_playlists: List[str] = None
     lineups: List[str] = None
 
     def __post_init__(self):

@@ -1,11 +1,12 @@
 """ Performance module """
+from typing import List
 from gig.band import Band, EventSetting
 from gig.event import Event
 from gig.song_pool import SongPool
 
 class Performance:
     """ Performance class """
-    def __init__(self, event: Event, band: Band):
+    def __init__(self, event: Event = None, band: Band = None):
         self.event = event
         self.band = band
 
@@ -16,6 +17,31 @@ class Performance:
     def event_setting(self) -> EventSetting:
         """ Returns settings of the event """
         return self.band.event_settings.get(self.event.name)
+
+    def reorder_songs(self, new_sets: List):
+        """ Re-orders songs according to given data
+        [
+            {"set": 1, "songs": ["Cafe/Muito", "Rim Shot"]},
+            {"set": 2, "songs": ["Amour Tes La", "Smooth Operator"]}
+        ]
+        """
+        killable_songs = []
+
+        for new_set in new_sets:
+            set_no = new_set["set"]
+            if set_no == 0:
+                killable_songs = new_set["songs"]
+            else:
+                set_index = set_no - 1
+                if set_index < len(self.event.sets):
+                    self.event.sets[set_index].enforce_song_list(new_set["songs"], self.band.songs)
+
+        self.kill_songs(killable_songs)
+
+    def kill_songs(self, names: List[str]):
+        """ Kills the given songs """
+        for name in names:
+            self.kill_song(name)
 
     def kill_song(self, name: str):
         """ Kills the given song """
