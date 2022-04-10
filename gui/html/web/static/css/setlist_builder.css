@@ -1,0 +1,39 @@
+body {
+    background-color: #222222;
+    color: white;
+    font-size: 16pt;
+}
+
+h4 {
+    margin-top: 5%;
+}
+
+input {
+    width: 150px;
+}
+
+input, select {
+    color: black;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-buttons {
+    margin-top: 5%;
+}
+
+.sortable-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sortable-li {
+    background: #7c7c7c;
+    margin: 1px;
+    padding: 5px 10px;
+    font-size: small;
+}

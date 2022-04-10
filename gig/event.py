@@ -7,9 +7,9 @@ from gig.set import Set
 @dataclass
 class Event:
     """ Event class """
-    name: str = "",
-    sets: List[Set] = None,
-    genre_filter: List[str] = None,
+    name: str = ""
+    sets: List[Set] = None
+    genre_filter: List[str] = None
     language_filter: List[str] = None
 
     def __post_init__(self):

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Setlist Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/static/css/skeleton/normalize.css">
+  <link rel="stylesheet" href="/static/css/skeleton/skeleton.css">
+  <link rel="stylesheet" href="/static/css/setlist_builder.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="six columns">
+            <h4>Active</h4>
+            <ul id="set_1" class="sortable-ul"></ul>
+            <ul id="set_2" class="sortable-ul"></ul>
+            <ul id="set_3" class="sortable-ul"></ul>
+            <ul id="set_4" class="sortable-ul"></ul>
+            <ul id="set_5" class="sortable-ul"></ul>
+            <ul id="set_6" class="sortable-ul"></ul>
+            <ul id="set_7" class="sortable-ul"></ul>
+            <ul id="set_8" class="sortable-ul"></ul>
+            <ul id="set_9" class="sortable-ul"></ul>
+        </div>
+        <div class="six columns">
+            <h4>Inactive</h4>
+            <ul id="set_0" class="sortable-ul">
+                <li class="sortable-li">(place holder)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row footer-buttons">
+        <div class="six columns centered"><button class="button-primary" onClick="history.back()">Back</button></div>
+        <div class="six columns centered"><button class="button-primary" onClick="saveClick()">Save</button></div>
+    </div>
+  </div>
+
+  <script src="/static/js/jquery-3.6.0.min.js"></script>
+  <script src="/static/js/sortable.min.js"></script>
+  <script src="/static/js/performance.js"></script>
+</body>
+</html>
