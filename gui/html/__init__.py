@@ -70,6 +70,23 @@ def api_stats():
     _PATH.generate_stats(request.args.get("json_file"))
     return ""
 
+@_FLASK_APP.route("/api/history_list")
+def history_list():
+    """ History entries """
+    return jsonify(_PATH.history_reader.get_file_list())
+
+@_FLASK_APP.route("/api/history_select")
+def history_select():
+    """ Returns selected file from history """
+    _PATH.load_history_file(request.args["file"])
+    return ""
+
+@_FLASK_APP.route("/api/history_delete")
+def history_delete():
+    """ Deletes given file """
+    _PATH.history_writer.delete(request.args["file"])
+    return ""
+
 def start_gui():
     """ Start GUI """
     webview.start()

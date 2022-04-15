@@ -2,7 +2,7 @@
 from typing import List
 from gig.band import Band, EventSetting
 from gig.event import Event
-from gig.song_pool import SongPool
+from gig.song_pool import SongPool, Song
 
 class Performance:
     """ Performance class """
@@ -25,6 +25,7 @@ class Performance:
             {"set": 2, "songs": ["Amour Tes La", "Smooth Operator"]}
         ]
         """
+        self.song_pool.dead_songs = []
         killable_songs = []
 
         for new_set in new_sets:
@@ -46,7 +47,7 @@ class Performance:
         else:
             for song in self.song_pool.band.songs:
                 if song.name in names:
-                    self.song_pool.dead_songs.append(song)
+                    self._collect_dead_song(song)
 
     def kill_song(self, name: str):
         """ Kills the given song """
@@ -65,10 +66,7 @@ class Performance:
             if song_to_backup is not None:
                 break
 
-        if song_to_backup is None:
-            return
-
-        self.song_pool.dead_songs.append(song_to_backup)
+        self._collect_dead_song(song_to_backup)
 
     def resurrect_song(self, name: str, set_index: int, song_index: int):
         """ Resurrects the given song """
@@ -134,3 +132,13 @@ class Performance:
 
         flow_set = event_set.flow[new_flow_step_index]
         flow_set.songs.insert(new_song_index, song)
+
+    def _collect_dead_song(self, song: Song):
+        if song is None:
+            return
+
+        for already_dead in self.song_pool.dead_songs:
+            if already_dead.name == song.name:
+                return
+
+        self.song_pool.dead_songs.append(song)

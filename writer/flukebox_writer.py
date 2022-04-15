@@ -30,10 +30,8 @@ class FlukeBoxWriter(AbstractWriter):
         self._submit_flukebox()
 
     def _build_output(self, generated_performance: performance.Performance):
-        self._output = {
-            "seek_songs": [],
-            "seek_in_playlists": []
-        }
+        self._output = {"seek_songs": [],
+                        "seek_in_playlists": []}
         self._seek_path = ""
         if self._config.flukebox_dir == "":
             return
@@ -47,7 +45,7 @@ class FlukeBoxWriter(AbstractWriter):
 
     def _write_file(self):
         self._seek_path = path.join(self._config.download_dir, FlukeBoxWriter._FILE)
-        with open(self._seek_path, "w") as output_file:
+        with open(self._seek_path, "w", encoding="utf-8") as output_file:
             json.dump(self._output, output_file)
 
     def _submit_flukebox(self):

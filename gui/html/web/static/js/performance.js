@@ -17,6 +17,7 @@ function createSetULs(data) {
         setSongs = data[i]["songs"]
         for (var s = 0; s < setSongs.length; s++) { htmlCode += "<li class='sortable-li'>" + setSongs[s] + "</li>" }
         setPos = i + 1;
+        if (data[i]["set"] == 0) {setPos = 0;}
         document.getElementById("set_" + setPos).innerHTML = htmlCode;
     }
 }
