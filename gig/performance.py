@@ -36,12 +36,17 @@ class Performance:
                 if set_index < len(self.event.sets):
                     self.event.sets[set_index].enforce_song_list(new_set["songs"], self.band.songs)
 
-        self.kill_songs(killable_songs)
+        self.kill_songs(killable_songs, seek_in_sets = False)
 
-    def kill_songs(self, names: List[str]):
+    def kill_songs(self, names: List[str], seek_in_sets: bool = True):
         """ Kills the given songs """
-        for name in names:
-            self.kill_song(name)
+        if seek_in_sets:
+            for name in names:
+                self.kill_song(name)
+        else:
+            for song in self.song_pool.band.songs:
+                if song.name in names:
+                    self.song_pool.dead_songs.append(song)
 
     def kill_song(self, name: str):
         """ Kills the given song """
