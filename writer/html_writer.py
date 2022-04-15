@@ -90,7 +90,7 @@ class HtmlWriter(AbstractWriter):
 
         self.html += "</body></html>"
 
-        with open(self._html_file, "w+") as file2:
+        with open(self._html_file, "w+", encoding="utf-8") as file2:
             file2.write(self.html)
         os.system(f"open {self._html_file}")
 

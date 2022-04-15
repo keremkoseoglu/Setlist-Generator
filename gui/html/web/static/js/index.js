@@ -125,6 +125,10 @@ function buildSelectionVariant() {
       ];
 }
 
+function showHistory() {
+    window.location.href = "/static/history.html";
+}
+
 /* UTILITY */
 
 function fillCombo(data, id) {

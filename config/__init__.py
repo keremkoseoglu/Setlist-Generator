@@ -40,6 +40,11 @@ class Config:
         return self._config["FLUKEBOX_DIR"]
 
     @property
+    def history_dir(self) -> str:
+        """ History directory """
+        return Config._get_data_path_in_cwd(self._config["HISTORY_DIR"])
+
+    @property
     def selection_variant_dir(self) -> str:
         """ Selection variant directory """
         return Config._get_data_path_in_cwd(self._config["SELECTION_VARIANT_DIR"])

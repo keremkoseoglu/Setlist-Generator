@@ -43,7 +43,7 @@ class IgigiWriter(AbstractWriter):
 
     def _read_json(self):
         if path.exists(self._json_path):
-            with open(self._json_path) as igigi_json_file:
+            with open(self._json_path, encoding="utf-8") as igigi_json_file:
                 self._json = json.load(igigi_json_file)
         else:
             self._json = {
@@ -54,10 +54,10 @@ class IgigiWriter(AbstractWriter):
 
     def _write_json(self):
         try:
-            with open(self._json_path, "w") as igigi_json_file:
+            with open(self._json_path, "w", encoding="utf-8") as igigi_json_file:
                 json.dump(self._json, igigi_json_file, indent=4)
         except Exception as error:
-            with open(self._json_path, "w") as igigi_json_file:
+            with open(self._json_path, "w", encoding="utf-8") as igigi_json_file:
                 json.dump(self._json_before, igigi_json_file, indent=4)
             raise error
 

@@ -6,10 +6,10 @@ from config.selection_variant import SelectionVariant, SelectionVariantEntry
 from gig.song_pool import SongPool
 from gig.performance import Performance
 from gig.song import conv_str_to_song_criteria
-from reader import json_reader
+from reader import history_reader, json_reader
 from analysis.song_pool_analysis import SongPoolAnalysis, SongPoolAnalysisHtmlGenerator
 from generator import primal_generator
-from writer import html_writer, igigi_writer, flukebox_writer
+from writer import html_writer, igigi_writer, flukebox_writer, history_writer
 
 class PathHelper():
     """ Main helper for GUI """
@@ -17,6 +17,8 @@ class PathHelper():
         self._config = Config()
         self.performance = Performance()
         self.reader = json_reader.JsonReader()
+        self.history_reader = history_reader.HistoryReader()
+        self.history_writer = history_writer.HistoryWriter()
 
     @property
     def static_folder(self) -> str:
@@ -87,14 +89,18 @@ class PathHelper():
         output = []
 
         for event_set in self.performance.event.sets:
-            set_dict = {"set": event_set.number,
-                        "songs": []}
+            set_dict = {"set": event_set.number, "songs": []}
 
             for flow_step in event_set.flow:
                 for song in flow_step.songs:
                     set_dict["songs"].append(song.name)
 
             output.append(set_dict)
+
+        dead_set_dict = {"set": 0, "songs": []}
+        for dead_song in self.performance.song_pool.dead_songs:
+            dead_set_dict["songs"].append(dead_song.name)
+        output.append(dead_set_dict)
 
         return output
 
@@ -113,7 +119,12 @@ class PathHelper():
         self.performance.reorder_songs(song_order)
         html_writer.HtmlWriter().write(self.performance)
         igigi_writer.IgigiWriter().write(self.performance)
+        self.history_writer.write(self.performance)
         flukebox_writer.FlukeBoxWriter().write(self.performance)
+
+    def load_history_file(self, file_name: str):
+        """ Set history file as performance """
+        self.performance = self.history_reader.get_performance(file_name)
 
     def _edit_file(self, file_path: str): # pylint: disable=R0201
         system(f"open {file_path}")
