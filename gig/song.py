@@ -4,7 +4,7 @@ from typing import List
 from os import path
 from config import Config
 
-class SongCriteria(Enum): # pylint: disable = C0103
+class SongCriteria(Enum):
     """ Criteria to pick a song """
     undefined = 0
     key = 1
@@ -14,9 +14,10 @@ class SongCriteria(Enum): # pylint: disable = C0103
     age = 5
 
 def conv_str_to_song_criteria(str_val: str) -> SongCriteria:
-    for sc in SongCriteria:
-        if sc.name == str_val:
-            return sc
+    """ Convert literal to song criteria enum """
+    for song_crit in SongCriteria:
+        if song_crit.name == str_val:
+            return song_crit
     return None
 
 
