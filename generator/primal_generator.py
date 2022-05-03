@@ -1,6 +1,6 @@
 """ Primal setlist generator module """
 from typing import List
-from generator.abstract_generator import AbstractGenerator
+from generator import Generator
 from generator.primal_song_picker import PrimalSongPicker, PrimalSongPickerInput
 from gig.performance import Performance
 from gig.set import Set
@@ -23,7 +23,7 @@ def _plan_set_duration_surpassed(event_set: Set):
     return event_set.actual_duration >= event_set.plan_duration
 
 
-class PrimalGenerator(AbstractGenerator):
+class PrimalGenerator(Generator):
     """ Primal setlist generator class """
 
     def __init__(self):

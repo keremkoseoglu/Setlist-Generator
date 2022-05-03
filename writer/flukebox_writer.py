@@ -8,12 +8,12 @@ generated and opened in Flukebox.
 """
 from os import path, system
 import json
-from writer.abstract_writer import AbstractWriter
+from writer import Writer
 from gig import performance
 from config import Config
 
 
-class FlukeBoxWriter(AbstractWriter):
+class FlukeBoxWriter(Writer):
     """ Writes output JSON for FlukeBox and submits the program """
     _FILE = "flukebox_seek.json"
 

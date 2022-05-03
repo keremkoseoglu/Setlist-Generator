@@ -2,7 +2,7 @@
 from datetime import datetime, timedelta
 import os
 from typing import List
-from writer.abstract_writer import AbstractWriter
+from writer import Writer
 from gig import performance
 from gig.song import Song
 from config import Config
@@ -20,7 +20,7 @@ def _get_formatted_time(raw_datetime: datetime) -> str:
     return hour_txt + ":" + minute_txt
 
 
-class HtmlWriter(AbstractWriter):
+class HtmlWriter(Writer):
     """ HTML writer class """
     def __init__(self):
         super().__init__()

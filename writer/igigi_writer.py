@@ -16,13 +16,12 @@ from datetime import datetime
 from gig import performance
 from gig.song import Song
 from gig.sample import get_samples_as_list
-from writer.abstract_writer import AbstractWriter
+from writer import Writer
 from config import Config
 
 
-class IgigiWriter(AbstractWriter):
+class IgigiWriter(Writer):
     """ Generates files in Igigi format """
-
     def __init__(self):
         super().__init__()
         self._json = {}

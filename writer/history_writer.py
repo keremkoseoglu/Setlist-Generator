@@ -11,9 +11,9 @@ from os import path, remove
 import pickle
 from config import Config
 from gig.performance import Performance
-from writer.abstract_writer import AbstractWriter
+from writer import Writer
 
-class HistoryWriter(AbstractWriter):
+class HistoryWriter(Writer):
     """ History Writer """
     FILE_FORMAT = "pickle"
     EXTENSION = f".{FILE_FORMAT}"
