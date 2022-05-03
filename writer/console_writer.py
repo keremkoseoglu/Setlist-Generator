@@ -1,11 +1,10 @@
 """ Console writer module """
-from writer.abstract_writer import AbstractWriter
+from writer import Writer
 from gig import performance
 
 
-class ConsoleWriter(AbstractWriter):
+class ConsoleWriter(Writer):
     """ Console writer class """
-
     def write(self, generated_performance: performance.Performance):
         """ Prints everything to console """
 

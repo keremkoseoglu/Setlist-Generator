@@ -1,7 +1,7 @@
 """ JSON reader """
 import datetime
 import json
-from reader.abstract_reader import AbstractReader
+from reader import Reader
 from gig import performance, set_flow_step
 from gig.band import Band, EventSetting
 from gig.event import Event
@@ -11,9 +11,8 @@ from config import Config
 from util import file_system
 
 
-class JsonReader(AbstractReader):
+class JsonReader(Reader):
     """ JSON reader class """
-
     def __init__(self):
         super().__init__()
         self._config = Config()
