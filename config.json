@@ -10,7 +10,7 @@
     "LYRIC_DIR": "lyric",
     "SAMPLE_DIR": "sample",
     "SAMPLE_JSON": "sample.json",
-    "FLUKEBOX_DIR": "/Users/kerem/Documents/software/Kerem/Development/flukebox/",
+    "FLUKEBOX_DIR": "/Users/kerem/Documents/dev/flukebox/",
     "GUI_CELL_HEIGHT": 30,
     "GUI_CELL_WIDTH": 150
 }

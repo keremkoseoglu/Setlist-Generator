@@ -43,6 +43,16 @@
           "songs": ["Amour Tes La", "Smooth Operator", "On And On", "I Wish", "Superstition", "Didnt Cha Know", "Havana", "So Danco Samba", "How Insensitive", "Soberana/Ponteio", "Telefone"]
         }
       ]
+    },
+    {
+      "name": "Nardis",
+      "lineup": "",
+      "excluded_songs": [],
+      "gig_openers": ["Cafe/Muito", "Rim Shot"],
+      "gig_closers": ["Telefone"],
+      "set_openers": ["Amour Tes La"],
+      "set_closers": ["Mais Que Nada"],
+      "sets": []
     }
   ],
   "flukebox_playlists": ["jazzge"],
