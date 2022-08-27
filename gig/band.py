@@ -31,6 +31,7 @@ class EventSetting:
     set_closers: List[str] = None
     lineup: str = ""
     sets: List = None
+    skippables: List[str] = None
 
     def __post_init__(self):
         if self.excluded_songs is None:
@@ -122,6 +123,12 @@ class EventSettings:
             return []
         return event_settings.excluded_songs
 
+    def get_skippable_songs(self, event_name: str) -> List[str]:
+        """ Returns excluded songs of the given event """
+        event_settings = self.get(event_name)
+        if event_settings is None:
+            return []
+        return event_settings.skippables
 
 @dataclass
 class Band:

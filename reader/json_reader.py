@@ -66,7 +66,7 @@ class JsonReader(Reader):
         """ Returns event """
         output = Event()
 
-        with open(event_param) as event_file:
+        with open(event_param, encoding="utf-8") as event_file:
             event_json = json.load(event_file)
 
         output.name = event_json["name"]
@@ -93,7 +93,7 @@ class JsonReader(Reader):
     def get_band(self, band_param: str) -> Band:
         output = Band()
 
-        with open(band_param) as band_file:
+        with open(band_param, encoding="utf-8") as band_file:
             band_json = json.load(band_file)
 
         output.name = band_json["name"]
@@ -119,6 +119,11 @@ class JsonReader(Reader):
             else:
                 lineup = ""
 
+            if "skippables" in json_event_setting:
+                skippables = json_event_setting["skippables"]
+            else:
+                skippables = []
+
             event_setting_obj = EventSetting(
                 excluded_songs,
                 gig_openers,
@@ -126,7 +131,8 @@ class JsonReader(Reader):
                 set_openers,
                 set_closers,
                 lineup,
-                sets)
+                sets,
+                skippables)
 
             output.event_settings.append(json_event_setting["name"], event_setting_obj)
 

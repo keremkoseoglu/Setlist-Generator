@@ -79,7 +79,7 @@ class IgigiWriter(Writer):
 
             for flow_step in event_set.flow:
                 for song in flow_step.songs:
-                    igigi_song = IgigiWriter._song_to_igigi_dict(song)
+                    igigi_song = self._song_to_igigi_dict(song)
                     igigi_set["songs"].append(igigi_song)
 
             igigi_gig["sets"].append(igigi_set)
@@ -102,25 +102,25 @@ class IgigiWriter(Writer):
             output = "0" + output
         return output
 
-    @staticmethod
-    def _song_to_igigi_dict(song: Song):
+    def _song_to_igigi_dict(self, song: Song):
         output = {
             "name": song.name,
             "duration": song.duration,
             "key": song.formatted_key,
             "pads": song.pads,
-            "lyrics": song.lyrics_as_list
+            "lyrics": song.lyrics_as_list,
+            "skippable": song.name in self._performance.event_setting.skippables
         }
         return output
 
     def _write_inactive_songs(self, igigi_gig: dict):
         for inactive_song in self._performance.song_pool.leftover_songs:
-            igigi_song = IgigiWriter._song_to_igigi_dict(inactive_song)
+            igigi_song = self._song_to_igigi_dict(inactive_song)
             igigi_gig["inactive_songs"].append(igigi_song)
 
     def _write_filtered_songs(self, igigi_gig: dict):
         for filtered_song in self._performance.song_pool.obsolete_songs.all:
-            igigi_song = IgigiWriter._song_to_igigi_dict(filtered_song)
+            igigi_song = self._song_to_igigi_dict(filtered_song)
             igigi_gig["filtered_songs"].append(igigi_song)
 
     def _append_or_get_performance(self) -> dict:
