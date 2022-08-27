@@ -14,7 +14,7 @@
     {
       "number": 2,
       "start": "2022-08-26T22:55:00.782Z",
-      "duration": 60,
+      "duration": 55,
       "flow": [ { "part": 1 , "energy": 2, "percentage": 50 },
                 { "part": 2 , "energy": 3, "percentage": 50 } ]
     }
