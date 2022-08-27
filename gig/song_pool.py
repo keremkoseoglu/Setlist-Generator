@@ -52,8 +52,10 @@ class SongPool:
 
         if self.event is None:
             self.songs_excluded_from_event = []
+            self.skippable_songs = []
         else:
             self.songs_excluded_from_event = self.band.event_settings.get_excluded_songs(self.event.name) # pylint: disable=C0301
+            self.skippable_songs = self.band.event_settings.get_skippable_songs(self.event.name)
 
         self.obsolete_songs = ObsoleteSongs()
         self._accept_songs_checking_reservation()
