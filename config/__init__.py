@@ -84,6 +84,21 @@ class Config:
         """ GUI cell width """
         return self._config["GUI_CELL_WIDTH"]
 
+    @property
+    def backup_dir(self) -> str:
+        """ Backup directory """
+        return Config._get_data_path_in_cwd(self._config["BACKUP_DIR"])
+
+    @property
+    def backup_dir_name(self) -> str:
+        """ Backup directory """
+        return self._config["BACKUP_DIR"]
+
+    @property
+    def data_dir(self) -> str:
+        """ Data directory """
+        return Config._get_path_in_cwd(Config._DATA_DIR)
+
     @staticmethod
     def _get_path_in_cwd(file: str) -> str:
         return os.path.join(os.getcwd(), file)
