@@ -1,0 +1,14 @@
+{
+    "name": "Test Band",
+    "songs": [
+      { "name": "Aint No Sunshine"            , "lang": "EN", "genre": "pop"  , "key": "E"  , "chord": "minor"  , "duration": 3.25  , "bpm": 85   , "mood": "dark"    , "age": 3, "popular": 4, "we_like": 2, "we_play": 3, "volume": 1, "groove": 1, "active": true , "lineups": []          , "lyrics": "aint_no_sunshine.txt", "pads": [] },
+      { "name": "Animal Instinct"             , "lang": "EN", "genre": "rock" , "key": "E"  , "chord": "minor"  , "duration": 3.5   , "bpm": 130  , "mood": "dark"    , "age": 3, "popular": 4, "we_like": 3, "we_play": 3, "volume": 2, "groove": 1, "active": true , "lineups": []          , "lyrics": "animal_instinct.txt", "pads": [] },
+      { "name": "Bad Guy"                     , "lang": "EN", "genre": "pop"  , "key": "C#" , "chord": "minor"  , "duration": 3.75  , "bpm": 120  , "mood": "dark"    , "age": 1, "popular": 4, "we_like": 4, "we_play": 3, "volume": 2, "groove": 3, "active": true , "lineups": []          , "lyrics": "bad_guy.txt", "pads": [] },
+      { "name": "Because The Night"           , "lang": "EN", "genre": "pop"  , "key": "B"  , "chord": "minor"  , "duration": 3.75  , "bpm": 120  , "mood": "dark"    , "age": 3, "popular": 4, "we_like": 4, "we_play": 2, "volume": 3, "groove": 1, "active": true , "lineups": []          , "lyrics": "because_the_night.txt", "pads": [] },
+      { "name": "Billie Jean"                 , "lang": "EN", "genre": "pop"  , "key": "F#" , "chord": "minor"  , "duration": 2.5   , "bpm": 180  , "mood": "bright"  , "age": 4, "popular": 4, "we_like": 3, "we_play": 2, "volume": 2, "groove": 1, "active": true , "lineups": []          , "lyrics": "billie_jean.txt", "pads": [] }
+    ],
+    "event_settings": [
+    ],
+    "flukebox_playlists": [],
+    "lineups": []
+  }

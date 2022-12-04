@@ -1,0 +1,22 @@
+{
+    "name": "Test Event",
+    "genre_filter": [],
+    "lang_filter": ["EN"],
+    "sets": [
+      {
+        "number": 1,
+        "start": "2022-12-10T22:00:00.782Z",
+        "duration": 6,
+        "flow": [ { "part": 1  , "energy": 1, "percentage": 30 },
+                  { "part": 2  , "energy": 2, "percentage": 40 },
+                  { "part": 3  , "energy": 3, "percentage": 30 } ]
+      },
+      {
+        "number": 2,
+        "start": "2022-12-10T23:45:00.782Z",
+        "duration": 6,
+        "flow": [ { "part": 1  , "energy": 2, "percentage": 50 },
+                  { "part": 2  , "energy": 3, "percentage": 50 } ]
+      }
+    ]
+  }
