@@ -31,11 +31,15 @@ class Song:
     _MULTIPLIER_LOW = 0.90
     _MULTIPLIER_HIGH = 1.10
 
+    _SONG_PAUSE = 0
+    _SONG_PAUSE_READ = False
+    _CONFIG = Config()
+
     def __init__(self, song_input: dict):
         self.name = song_input["name"]
         self.key = song_input["key"]
         self.chord = song_input["chord"]
-        self.duration = song_input["duration"]
+        self.duration = song_input["duration"] + Song._CONFIG.pause_between_songs_in_minutes
         self.bpm = song_input["bpm"]
         self.genre = song_input["genre"]
         self.mood = song_input["mood"]
@@ -76,7 +80,7 @@ class Song:
         if self.lyrics == "":
             return output
 
-        lyric_path = path.join(Config().lyric_dir, self.lyrics)
+        lyric_path = path.join(Song._CONFIG.lyric_dir, self.lyrics)
         if not path.exists(lyric_path):
             raise Exception(f"File not found: {lyric_path}")
 
