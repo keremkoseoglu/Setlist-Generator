@@ -102,11 +102,13 @@ class PathHelper():
         dead_set_dict = {"set": 0, "songs": []}
         for dead_song in self.performance.song_pool.dead_songs:
             dead_set_dict["songs"].append(dead_song.name)
+        for leftover_song in self.performance.song_pool.leftover_songs:
+            dead_set_dict["songs"].append(leftover_song.name)
         output.append(dead_set_dict)
 
         return output
 
-    def build_selection_variant_from_list(self, sv_list: List): # pylint: disable=R0201
+    def build_selection_variant_from_list(self, sv_list: List):
         """ Build variant """
         output = []
         for entry in sv_list:
@@ -128,5 +130,5 @@ class PathHelper():
         """ Set history file as performance """
         self.performance = self.history_reader.get_performance(file_name)
 
-    def _edit_file(self, file_path: str): # pylint: disable=R0201
+    def _edit_file(self, file_path: str):
         system(f"open {file_path}")
