@@ -99,6 +99,18 @@ class Config:
         """ Data directory """
         return Config._get_path_in_cwd(Config._DATA_DIR)
 
+    @property
+    def pause_between_songs_in_seconds(self) -> int:
+        """ Pause duration between songs """
+        if "PAUSE_AFTER_SONG_IN_SECONDS" in self._config:
+            return self._config["PAUSE_AFTER_SONG_IN_SECONDS"]
+        return 0
+
+    @property
+    def pause_between_songs_in_minutes(self) -> float:
+        """ Pause duration between songs """
+        return self.pause_between_songs_in_seconds / 60
+
     @staticmethod
     def _get_path_in_cwd(file: str) -> str:
         return os.path.join(os.getcwd(), file)

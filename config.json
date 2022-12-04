@@ -13,5 +13,6 @@
     "SAMPLE_JSON": "sample.json",
     "FLUKEBOX_DIR": "/Users/kerem/Documents/dev/flukebox/",
     "GUI_CELL_HEIGHT": 30,
-    "GUI_CELL_WIDTH": 150
+    "GUI_CELL_WIDTH": 150,
+    "PAUSE_AFTER_SONG_IN_SECONDS": 0
 }
