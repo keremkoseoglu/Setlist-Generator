@@ -1,0 +1,22 @@
+{
+  "name": "James Joyce",
+  "genre_filter": [],
+  "lang_filter": ["EN"],
+  "sets": [
+    {
+      "number": 1,
+      "start": "2022-04-09T21:00:00.782Z",
+      "duration": 80,
+      "flow": [ { "part": 1  , "energy": 1, "percentage": 30 },
+                { "part": 2  , "energy": 2, "percentage": 40 },
+                { "part": 3  , "energy": 3, "percentage": 30 } ]
+    },
+    {
+      "number": 2,
+      "start": "2022-04-09T22:40:00.782Z",
+      "duration": 80,
+      "flow": [ { "part": 1  , "energy": 2, "percentage": 50 },
+                { "part": 2  , "energy": 3, "percentage": 50 } ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Jozi Levi",
+  "songs": [
+    { "name": "Agua De Beber"     , "lang": "PT", "genre": "bossa"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 85   , "mood": "dark"    , "age": 4, "popular": 3, "we_like": 2, "we_play": 1, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "A Ra"              , "lang": "PT", "genre": "samba"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 100  , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 1, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Balada Boa"        , "lang": "PT", "genre": "samba"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 130  , "mood": "bright"  , "age": 2, "popular": 2, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "active": false, "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Batucada"          , "lang": "PT", "genre": "samba"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 120  , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 2, "active": false, "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Bebete Vambora"    , "lang": "PT", "genre": "samba"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 100  , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Berimbau"          , "lang": "PT", "genre": "samba"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 100  , "mood": "dark"    , "age": 4, "popular": 2, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "active": true , "lineups": ["piyanolu"], "lyrics": "", "pads": [] },
+    { "name": "Brazil Nago"       , "lang": "PT", "genre": "samba"  , "key": "A"  , "chord": "minor"  , "duration": 5     , "bpm": 125  , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 3, "we_play": 3, "volume": 3, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Cafe Com Pao"      , "lang": ""  , "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 80   , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 1, "groove": 2, "active": true , "lineups": ["piyanolu"], "lyrics": "", "pads": [] },
+    { "name": "Carnival"          , "lang": "PT", "genre": "samba"  , "key": "B"  , "chord": "minor"  , "duration": 5     , "bpm": 105  , "mood": "dark"    , "age": 4, "popular": 3, "we_like": 3, "we_play": 3, "volume": 3, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Cicatrizes"        , "lang": "PT", "genre": "samba"  , "key": "G"  , "chord": "minor"  , "duration": 5     , "bpm": 105  , "mood": "dark"    , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "active": true , "lineups": ["piyanolu"], "lyrics": "", "pads": [] },
+    { "name": "Corcovado"         , "lang": "PT", "genre": "bossa"  , "key": "A"  , "chord": "minor"  , "duration": 5     , "bpm": 75   , "mood": "dark"    , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Desafinado"        , "lang": "PT", "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 75   , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 1, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Escrudas Do Jo"    , "lang": "PT", "genre": "baiao"  , "key": "C"  , "chord": "minor"  , "duration": 5     , "bpm": 120  , "mood": "dark"    , "age": 3, "popular": 1, "we_like": 1, "we_play": 2, "volume": 2, "groove": 1, "active": false, "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Favela"            , "lang": "PT", "genre": "samba"  , "key": "B"  , "chord": "minor"  , "duration": 5     , "bpm": 105  , "mood": "dark"    , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 2, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Fugir"             , "lang": "PT", "genre": "baiao"  , "key": "A"  , "chord": "minor"  , "duration": 5     , "bpm": 125  , "mood": "dark"    , "age": 3, "popular": 3, "we_like": 2, "we_play": 3, "volume": 3, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Girl From Ipanema" , "lang": "PT", "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 70   , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "How Insensitive"   , "lang": "PT", "genre": "bossa"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 60   , "mood": "dark"    , "age": 4, "popular": 3, "we_like": 2, "we_play": 2, "volume": 1, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Mais Que Nada"     , "lang": "PT", "genre": "samba"  , "key": "F"  , "chord": "minor"  , "duration": 5     , "bpm": 90   , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 3, "we_play": 3, "volume": 3, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Maracangalha"      , "lang": "PT", "genre": "samba"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 100  , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Muito A Vondate"   , "lang": ""  , "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 90   , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 1, "groove": 2, "active": true , "lineups": ["piyanolu"], "lyrics": "", "pads": [] },
+    { "name": "One Note Samba"    , "lang": "PT", "genre": "bossa"  , "key": "Bb" , "chord": "major"  , "duration": 5     , "bpm": 105  , "mood": "bright"  , "age": 4, "popular": 3, "we_like": 2, "we_play": 2, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Ponteio"           , "lang": "PT", "genre": "baiao"  , "key": "E"  , "chord": "major"  , "duration": 5     , "bpm": 125  , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 2, "we_play": 2, "volume": 3, "groove": 3, "active": true , "lineups": ["piyanolu"], "lyrics": "", "pads": [] },
+    { "name": "Samba Morrer"      , "lang": "PT", "genre": "bossa"  , "key": "D"  , "chord": "minor"  , "duration": 5     , "bpm": 85   , "mood": "dark"    , "age": 4, "popular": 2, "we_like": 1, "we_play": 2, "volume": 2, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Sim Ou Nao"        , "lang": "PT", "genre": "samba"  , "key": "B"  , "chord": "minor"  , "duration": 5     , "bpm": 105  , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 2, "we_play": 2, "volume": 3, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "So Danco Samba"    , "lang": "PT", "genre": "samba"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 100  , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Soberana Rosa"     , "lang": "PT", "genre": "bossa"  , "key": "F"  , "chord": "major"  , "duration": 5     , "bpm": 70   , "mood": "bright"  , "age": 2, "popular": 1, "we_like": 3, "we_play": 3, "volume": 1, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Tela Cigana"       , "lang": "PT", "genre": "baiao"  , "key": "C"  , "chord": "major"  , "duration": 5     , "bpm": 110  , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Telefone"          , "lang": "PT", "genre": "samba"  , "key": "G"  , "chord": "major"  , "duration": 5     , "bpm": 95   , "mood": "bright"  , "age": 3, "popular": 1, "we_like": 3, "we_play": 3, "volume": 3, "groove": 2, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Triste"            , "lang": "PT", "genre": "bossa"  , "key": "A"  , "chord": "major"  , "duration": 5     , "bpm": 70   , "mood": "dark"    , "age": 4, "popular": 1, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Voce Abousou"      , "lang": "PT", "genre": "samba"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 95   , "mood": "bright"  , "age": 4, "popular": 1, "we_like": 2, "we_play": 2, "volume": 2, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] },
+    { "name": "Wave"              , "lang": "PT", "genre": "bossa"  , "key": "D"  , "chord": "major"  , "duration": 5     , "bpm": 75   , "mood": "bright"  , "age": 4, "popular": 2, "we_like": 2, "we_play": 1, "volume": 1, "groove": 1, "active": true , "lineups": [], "lyrics": "", "pads": [] }
+  ],
+  "event_settings": [
+    {
+      "name": "Nardis",
+      "lineup": "piyanolu",
+      "excluded_songs": [],
+      "gig_openers": ["Cafe Com Pao", "Muito A Vondate"],
+      "gig_closers": ["Mais Que Nada", "Fugir", "Telefone", "Carnival"],
+      "set_openers": ["Berimbau"],
+      "set_closers": ["Favela"]
+    },
+    {
+      "name": "Nardis Piyanosuz",
+      "lineup": "piyanosuz",
+      "excluded_songs": [],
+      "gig_openers": [],
+      "gig_closers": ["Carnival"],
+      "set_openers": [],
+      "set_closers": ["Fugir"]
+    }
+  ],
+  "flukebox_playlists": ["jozi"],
+  "lineups": ["piyanolu", "piyanosuz"]
+}

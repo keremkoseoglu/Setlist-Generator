@@ -1,0 +1,15 @@
+{
+    "name": "Caddebostan",
+    "genre_filter": [],
+    "lang_filter": [],
+    "sets": [
+      {
+        "number": 1,
+        "start": "2022-09-25T21:00:00.782Z",
+        "duration": 60,
+        "flow": [ { "part": 1  , "energy": 1, "percentage": 30 },
+                  { "part": 2  , "energy": 2, "percentage": 40 },
+                  { "part": 3  , "energy": 3, "percentage": 30 } ]
+      }
+    ]
+  }

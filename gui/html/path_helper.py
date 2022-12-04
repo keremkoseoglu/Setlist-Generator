@@ -93,6 +93,8 @@ class PathHelper():
 
             for flow_step in event_set.flow:
                 for song in flow_step.songs:
+                    if song is None:
+                        assert False
                     set_dict["songs"].append(song.name)
 
             output.append(set_dict)

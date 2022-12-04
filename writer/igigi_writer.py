@@ -103,13 +103,18 @@ class IgigiWriter(Writer):
         return output
 
     def _song_to_igigi_dict(self, song: Song):
+        is_skippable = self._performance != None and \
+                       self._performance.event_setting != None and \
+                       self._performance.event_setting.skippables != None and \
+                       song.name in self._performance.event_setting.skippables
+
         output = {
             "name": song.name,
             "duration": song.duration,
             "key": song.formatted_key,
             "pads": song.pads,
             "lyrics": song.lyrics_as_list,
-            "skippable": song.name in self._performance.event_setting.skippables
+            "skippable": is_skippable
         }
         return output
 
