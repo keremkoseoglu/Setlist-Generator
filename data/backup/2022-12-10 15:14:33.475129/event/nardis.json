@@ -1,0 +1,22 @@
+{
+  "name": "Nardis",
+  "genre_filter": [],
+  "lang_filter": [],
+  "sets": [
+    {
+      "number": 1,
+      "start": "2022-08-26T21:30:00.782Z",
+      "duration": 55,
+      "flow": [ { "part": 1 , "energy": 1, "percentage": 20 },
+                { "part": 2 , "energy": 2, "percentage": 45 },
+                { "part": 3 , "energy": 3, "percentage": 35 } ]
+    },
+    {
+      "number": 2,
+      "start": "2022-08-26T22:55:00.782Z",
+      "duration": 55,
+      "flow": [ { "part": 1 , "energy": 2, "percentage": 50 },
+                { "part": 2 , "energy": 3, "percentage": 50 } ]
+    }
+  ]
+}

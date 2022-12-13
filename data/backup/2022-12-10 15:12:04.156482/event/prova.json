@@ -1,0 +1,13 @@
+{
+  "name": "Prova",
+  "genre_filter": [],
+  "lang_filter": [],
+  "sets": [
+    {
+      "number": 1,
+      "start": "2020-02-08T21:30:00.782Z",
+      "duration": 9999,
+      "flow": [ { "part": 1 , "energy": 2, "percentage": 100 } ]
+    }
+  ]
+}
