@@ -1,5 +1,5 @@
 {
-  "name": "Jazzge",
+  "name": "Ozge Jazz",
   "songs": [
     { "name": "Aint No Sunshine"  , "lang": "EN", "genre": "funk"   , "key": "E"  , "chord": "minor"  , "duration": 4     , "bpm": 83   , "mood": "dark"    , "age": 3, "popular": 3, "we_like": 2, "we_play": 2, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "aint_no_sunshine_jazzge.txt", "pads": [] },
     { "name": "Agua De Beber"     , "lang": "EN", "genre": "brazil" , "key": "C"  , "chord": "minor"  , "duration": 4     , "bpm": 87   , "mood": "dark"    , "age": 3, "popular": 2, "we_like": 3, "we_play": 3, "volume": 2, "groove": 2, "active": true , "lineups": [], "lyrics": "agua_de_beber.txt", "pads": [] },
@@ -109,6 +109,6 @@
       ]
     }
   ],
-  "flukebox_playlists": ["jazzge"],
+  "flukebox_playlists": ["ozge.jazz"],
   "lineups": []
 }
